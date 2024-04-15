@@ -1,0 +1,388 @@
+<!-- Navbar start -->
+    <nav class="navbar">
+        <input type="checkbox" id="sidbar-active">
+        <label for="sidbar-active" class="open-sidbar-button">
+            <img src="./images/menu_FILL0_wght400_GRAD0_opsz24.png" width="32" height="32" alt="">
+        </label>
+        <div class="links-container">
+            <label for="sidbar-active" class="close-sidbar-button">
+                <img src="./images/close_FILL0_wght400_GRAD0_opsz24.png" width="32" height="32" alt="">
+            </label>
+        </div>
+        <img src="./images/disney-hotstar-logo-dark.svg" alt="" class="brand-logo">
+        <ul class="nav-links">
+            <li class="nav-item"><a href="#" class="home-link">Tv</a></li>
+            <li class="nav-item"><a href="#">Movies</a></li>
+            <li class="nav-item"><a href="#">Sports</a></li>
+            <li class="nav-item"><a href="#">Disney</a></li>
+            <li class="nav-item"><a href="#"><img src="./images/kids.svg" alt="" class="kids-icon"></a></li>
+        </ul>
+
+        <div class="right-container">
+            <input type="search" placeholder="search movives.." class="search-box">
+            <button class="sub-btn">Search</button>
+            <a href="#" class="login-link">Login</a>
+        </div>
+
+    </nav>
+
+
+
+    /* .right-container{
+    display: block;
+    margin-left: auto;
+}
+.search-box{
+    border: none;
+    border-bottom: 1px solid #aaa;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #fff;
+    width: 250px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.search-box:focus{
+    width: 300px;
+    border-color: #1f88ce;
+}
+.sub-btn{
+    background: #1f88ce;
+    height: 30px;
+    padding: 0 20px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 0 10px;
+}
+.login-link{
+    color: #fff;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 80px;
+    text-decoration: none;
+} */
+
+/* carousel section start */
+
+
+
+<!-- Popular section Start -->
+<section class="popular container " id="popular">
+    <!-- Heading -->
+    <div class="heading1">
+        <h2 class="heading-title1">Popular Movies</h2>
+        <!-- Swiper Buttnos -->
+        <div class="swiper-btn1">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="popular-content swiper">
+        <div class="swiper-wrapper">
+            <!-- Movies Box 1 -->
+            <div class="swiper-slide">
+           <div class="movie-box">
+            <img src="images/fast-image2.jpeg" class="movie-box-img">
+            <div class="box-text">
+                <h2 class="movie-title">They're Here</h2>
+                <span class="movie-type">Horror</span>
+                <a href="#" class="watch-btn play-btn">
+                    <i class='bx bxs-right-arrow' ></i>
+                    <i class='bx bx-cloud-download down'></i>
+                </a>
+            </div>
+           </div>
+        </div>
+       <!-- Movies Box 2 -->
+       <div class="swiper-slide">
+        <div class="movie-box">
+         <img src="images/fast-image2.jpeg" class="movie-box-img">
+         <div class="box-text">
+             <h2 class="movie-title">They're Here</h2>
+             <span class="movie-type">Horror</span>
+             <a href="#" class="watch-btn play-btn">
+                 <i class='bx bxs-right-arrow' ></i>
+             </a>
+         </div>
+        </div>
+     </div>
+         <!-- Movies Box 3 -->
+         <div class="swiper-slide">
+            <div class="movie-box">
+             <img src="images/fast-image2.jpeg" class="movie-box-img">
+             <div class="box-text">
+                 <h2 class="movie-title">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+        <!-- Movies Box 4 -->
+        <div class="swiper-slide">
+            <div class="movie-box">
+             <img src="images/fast-image2.jpeg" class="movie-box-img">
+             <div class="box-text">
+                 <h2 class="movie-title">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+        <!-- Movies Box 5 -->
+        <div class="swiper-slide">
+            <div class="movie-box1">
+             <img src="images/fast-image2.jpeg" class="movie-box-img1">
+             <div class="box-text1">
+                 <h2 class="movie-title1">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+        <!-- Movies Box 6 -->
+        <div class="swiper-slide">
+            <div class="movie-box">
+             <img src="images/fast-image2.jpeg" class="movie-box-img">
+             <div class="box-text">
+                 <h2 class="movie-title">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+        <!-- Movies Box 7 -->
+        <div class="swiper-slide">
+            <div class="movie-box">
+             <img src="images/fast-image2.jpeg" class="movie-box-img1">
+             <div class="box-text">
+                 <h2 class="movie-title">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+        <!-- Movies Box 8 -->
+        <div class="swiper-slide">
+            <div class="movie-box">
+             <img src="images/fast-image2.jpeg" class="movie-box-img">
+             <div class="box-text">
+                 <h2 class="movie-title">They're Here</h2>
+                 <span class="movie-type">Horror</span>
+                 <a href="#" class="watch-btn play-btn">
+                     <i class='bx bxs-right-arrow' ></i>
+                 </a>
+             </div>
+            </div>
+         </div>
+          </div>
+    </div>
+</section>
+<!-- Popular section End -->
+
+/* Heading */
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--container-color);
+    padding: 8px 14px;
+    border: 1px solid hsl(200, 100%, 99%/5%);
+    margin-bottom: 2rem;
+}
+.heading-tiile{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* Movie Box */
+.movie-box{
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    overflow: hidden;
+}
+.movie-box-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.movie-box .box-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px;
+    background: linear-gradient(
+    8deg, 
+    hsl(240 17% 14% / 74%) 14%,
+    hsl(240 17% 14% / 14%) 44%
+    );
+    overflow: hidden; 
+}
+.movie-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.movie-type{
+    font-size: 0.938rem;
+}
+.play-btn{
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+}
+/* Swiper Btns */
+.swiper-btn{
+    display: flex;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    position: static !important;
+    margin: 0 0 0 10px !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    color: var(--text-color);
+    font-size: 18px !important;
+    font-weight: 700;
+}
+/* Movies and Shows */
+.movies .heading{
+    padding: 10px 14px;
+}
+.movies-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
+    gap: 1.5rem;
+}
+.movies-content .movie-box:hover .movie-box-img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.next-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.next-btn{
+    background: var(--main-color);
+    padding: 12px 20px;
+    color: var(--body-color);
+    font-weight: 500;
+}
+.next-btn:hover{
+    background: var(--hover-color);
+    transition: 0.3s all linear;
+}
+/* copyright */
+.copyright{
+    text-align: center;
+    padding: 20px;
+}
+/* play container */
+.play-container{
+    position: relative;
+    width: 85%;
+    min-height: 540px;
+    margin-top: 5rem !important;
+}
+.play-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+.play-text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+    8deg, 
+    hsl(240 17% 14% / 74%) 14%,
+    hsl(240 17% 14% / 14%) 44%
+    );
+}
+.play-text h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    margin-top: 4px;
+}
+.tags{
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin: 1rem 0;
+}
+.tags span{
+    background: var(--container-color);
+    padding: 0 4px;
+}
+.play-movie{
+    position: absolute;
+    bottom: 18rem;
+    right: 10rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--main-color);
+    font-size: 24px;
+    animation: animate 2s linear infinite;
+}
+
+.about-movie{
+    margin-top: 2rem;
+}
+.about-movie h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+.about-movie p {
+    max-width: 600px;
+    font-size: 0.938rem;
+    margin: 10px 0;
+}
