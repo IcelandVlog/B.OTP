@@ -590,10 +590,11 @@ a.active,a:hover{
 /* disney studio */
 
 .title2{
+    display: block;
     color: #fff;
     align-items: center;
     justify-content: center;
-    display: flex;
+    text-align: center;
     position: relative;
     top: 129px;
 }
