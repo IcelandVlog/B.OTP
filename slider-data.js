@@ -1,10 +1,5 @@
 let movies = [
     {
-        name: 'T20 World Cup 2024',
-        des: 'Join us for ICC Men-s T20 World Cup as this June West Indie-s and the USA..',
-        image: 'img-1.png'
-    },
-    {
         name: 'Rudra: The Edge of Darkness',
         des: 'Rudra: The Edge of Darkness is an Indian, created for Disney+ Hotstar. It is a remake of British series Luther',
         image: 'slider 1.PNG'
