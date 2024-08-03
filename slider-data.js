@@ -5,6 +5,11 @@ let movies = [
         image: 'slider 1.PNG'
     },
     {
+        name: 'olympic-2024',
+        des: 'Paris Olympics" redirects here. For the first two Olympics held in Paris, see 1900 Summer Olympics and 1924 Summer Olympics',
+        image: 'olympic.jpeg'
+    },
+    {
         name: 'The Book of Boba Fett',
         des: 'The Book of Boba Fett is an American space Western television rvice Disney+',
         image: 'slider 3.PNG'
