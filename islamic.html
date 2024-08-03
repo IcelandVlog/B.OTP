@@ -18,6 +18,18 @@
 </head>
 <body>
 
+       <style>
+    .search{
+        display: flex;
+        font-size: 20px;
+        position: relative;
+        z-index: 9999;
+    }
+    .search-a{
+        color: aliceblue;
+    }
+</style>
+
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -25,8 +37,9 @@
         </label>
         <div class="icon"><a href="index.html"><img src="logo.png" width="150px"></a></div>
         <div class="search-box">
-            <input id="myInput" type="search" placeholder="search movies..." required>
-            <i class='bx bx-search-alt' style='color:#ffffff' ></i>
+            <div class="search">
+    <a class="search-a" href="search.html">Search Box</a>
+</div>
         </div>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
