@@ -18,37 +18,217 @@
 </head>
 <body>
 
-       <style>
-    .search{
-        display: flex;
-        font-size: 20px;
-        position: relative;
-        z-index: 9999;
-    }
-    .search-a{
-        color: aliceblue;
-    }
-</style>
-
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class='bx bx-menu' id="bars"></i>
-        </label>
-        <div class="icon"><a href="index.html"><img src="logo.png" width="150px"></a></div>
-        <div class="search-box">
-           <div class="search">
-    <a class="search-a" href="search.html">Search Box</a>
-</div>
-        </div>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="http://172.17.17.27/">Tv</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="https://bdixtv.info/live/uefa-europa-league/">Sports</a></li>
-            <li><a href="http://172.16.50.4/" class="download">All</a></li>
-        </ul>
+         <!--=============== HEADER ===============-->
+    <header class="header-1">
+    <nav class="nav container-1">
+    <div class="nav__data-1">
+      <a href="index.html" class="nav__logo-1"><img style="width: 150px;" src="./logo.png" alt=""></a>
+      
+      <div class="nav__toggle-1" id="nav-toggle-1">
+          <i class="ri-menu-line nav__burger-1"></i>
+          <i class="ri-close-line nav__close-1"></i>
+      </div>
+    </div>
+    
+    <!--=============== NAV MENU ===============-->
+    <div class="nav__menu-1" id="nav-menu-1">
+      <ul class="nav__list-1">
+          <li><a href="index.html" class="nav__link-1">Home</a></li>
+    
+          <li><a href="" class="nav__link-1">TV</a></li>
+    
+          <!--=============== DROPDOWN 1 ===============-->
+          <li class="dropdown__item-1">
+            <div class="nav__link-1">
+              Genre <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+            </div>
+    
+            <ul class="dropdown__menu-1">
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-pie-chart-line"></i>Action
+                  </a>                          
+                </li>
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-pie-chart-line"></i>Adventure
+                  </a>                          
+                </li>
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-pie-chart-line"></i>Animation
+                  </a>                          
+                </li>
+                <li class="dropdown__subitem-1">
+                  <div class="dropdown__link-1">
+                    <i class="ri-bar-chart-line"></i>More Genre<i class="ri-add-line dropdown__add-1"></i>
+                  </div>
+    
+              <ul class="dropdown__submenu-1">
+                    <li>
+                        <a href="#" class="dropdown__sublink-1">
+                          <i class="ri-pie-chart-line"></i> Horror
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#" class="dropdown__sublink-1">
+                          <i class="ri-pie-chart-line"></i> Drama
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown__sublink-1">
+                          <i class="ri-pie-chart-line"></i> Sci-Fi
+                        </a>
+                    </li>
+    
+                    <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Romance
+                      </a>
+                  </li>
+                    
+                  <li>
+                    <a href="#" class="dropdown__sublink-1">
+                      <i class="ri-pie-chart-line"></i> History
+                    </a>
+                </li>
+    
+                    <li>
+                        <a href="#" class="dropdown__sublink-1">
+                          <i class="ri-pie-chart-line"></i> Mystery
+                        </a>
+                    </li>
+                  </ul>
+              </li>
+    
+    
+              <li class="dropdown__subitem-1">
+                <div class="dropdown__link-1">
+                  <i class="ri-bar-chart-line"></i>More Genre<i class="ri-add-line dropdown__add-1"></i>
+                </div>
+    
+            <ul class="dropdown__submenu-1">
+                  <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Western
+                      </a>
+                  </li>
+    
+                  <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Sport
+                      </a>
+                  </li>
+    
+                  <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Fantasy
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Comedy
+                      </a>
+                  </li>
+    
+                  <li>
+                      <a href="#" class="dropdown__sublink-1">
+                        <i class="ri-pie-chart-line"></i> Thriller
+                      </a>
+                  </li>
+    
+                </ul>
+            </li>
+    
+                <!--=============== DROPDOWN SUBMENU ===============-->
+    
+    
+            </ul>
+            
+          </li>
+          
+          <li><a href="movies.html" class="nav__link-1"> Movies</a></li>
+          
+          <li><a href="" class="nav__link-1"> Sports</a></li>
+    
+          <!--=============== DROPDOWN 2 ===============-->
+          <li class="dropdown__item-1">
+            <div class="nav__link-1">
+             Language <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+            </div>
+    
+            <ul class="dropdown__menu-1">
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> English
+                  </a>                          
+                </li>
+    
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> Hindi
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> Bangla
+                  </a>
+                </li>
+    
+                <li class="dropdown__subitem-1">
+                  <div class="dropdown__link-1">
+                    <i class="ri-bar-chart-line"></i>More Genre<i class="ri-add-line dropdown__add-1"></i>
+                  </div>
+      
+              <ul class="dropdown__submenu-1">
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> Chinese 
+                  </a>
+                </li>
+      
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> German 
+                  </a>
+                </li>
+      
+                <li>
+                  <a href="#" class="dropdown__link-1">
+                    <i class="ri-global-fill"></i> Japanese  
+                  </a>
+              </li>
+              <li>
+                <a href="#" class="dropdown__link-1">
+                  <i class="ri-global-fill"></i> Spanish  
+                </a>
+            </li>
+      
+            <li>
+              <a href="#" class="dropdown__link-1">
+                <i class="ri-global-fill"></i> Korean  
+              </a>
+          </li>
+    
+          <li>
+            <a href="#" class="dropdown__link-1">
+              <i class="ri-global-fill"></i> Italian  
+            </a>
+        </li>
+      
+                  </ul>
+              </li>
+    
+            </ul>
+          </li>
+    
+          <li><a href="search.html" class="nav__link-1">Search Box</a></li>
+      </ul>
+    </div>
     </nav>
+    </header>
 
     <h2 class="title2">Pixar Studio Movies</h2>
 
@@ -650,6 +830,26 @@
         </div>
     </section>
 
+<script>
+
+    /*=============== SHOW MENU ===============*/
+    const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+    
+    toggle.addEventListener('click', () =>{
+    // Add show-menu class to nav menu
+    nav.classList.toggle('show-menu-1')
+    
+    // Add show-icon to show and hide the menu icon
+    toggle.classList.toggle('show-icon-1')
+    })
+    }
+    
+    showMenu('nav-toggle-1','nav-menu-1')
+    
+    </script>
+    
     <!---- js file-->
     <script src="slider-data.js"></script>
     <script src="app.js"></script>
