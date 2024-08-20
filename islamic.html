@@ -790,6 +790,156 @@
         </div>
     </section>
 
+
+    <div class="load">
+        <div id="load-more"> Load More . . . </div>
+    </div>
+
+
+
+    <style>
+
+        .card{
+          display: none;
+        }
+        
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(5),
+        .card:nth-child(6),
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(10),
+        .card:nth-child(11),
+        .card:nth-child(12),
+        .card:nth-child(13),
+        .card:nth-child(14),
+        .card:nth-child(15),
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(18),
+        .card:nth-child(19),
+        .card:nth-child(20),
+        .card:nth-child(21),
+        .card:nth-child(22),
+        .card:nth-child(23), 
+        .card:nth-child(24),
+        .card:nth-child(25),
+        .card:nth-child(26),
+        .card:nth-child(27),
+        .card:nth-child(28),
+        .card:nth-child(29),
+        .card:nth-child(30),
+        .card:nth-child(31),
+        .card:nth-child(32){
+          display: flex;
+        } 
+        
+        
+        #load-more{
+          margin-top: 20px;
+          display: inline-block;
+          padding:13px 30px;
+          font-weight: 900;
+          border:1px solid #334;
+          color:#334;
+          font-size: 16px;
+          background-color: #fff;
+          cursor: pointer;
+        }
+        
+        .load{
+            display: block;
+            position: relative;
+            top: 150px;
+            text-align: center;
+        }
+        
+        #load-more:hover{
+          background-color: crimson;
+          border-color: crimson;
+          color:#fff;
+        }
+        
+        
+        .contact-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        }
+        
+        .contact-title h2{
+        font-weight: 600;
+        color: rgb(255, 0, 149);
+        font-size: 30px;
+        margin-bottom: 5px;
+        }
+        
+        .contact-title hr{
+        border: none;
+        width: 180px;
+        height: 3px;
+        background-color: #f70000;
+        } 
+        
+        .contact-inputs{
+        width: 500px;
+        height: 50px;
+        border: none;
+        font-size: 16px;
+        outline: none;
+        padding-left: 25px;
+        font-weight: 500;
+        color: rgb(255, 255, 255);
+        background-color: #211f1f;
+        border-radius: 50px;
+        }
+        
+        .contact-inputs:focus{
+        border: 2px solid #211f1f;
+        }
+        
+        .contact-inputs::placeholder{
+        color: #5f5e5e;
+        }
+        
+        .contact button{
+        display: flex;
+        align-items: center;
+        padding: 12px 22px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #1c068c;
+        background-color: #01d0fe;
+        border: none;
+        gap: 10px;
+        outline: none;
+        cursor: pointer;
+        }
+        
+        .contact button:hover{
+        background-color: #90fe01;
+        }
+        
+        @media(max-width:800px){
+        .contact-inputs{
+        width: 80vw;
+        }
+        } 
+        
+        </style>
+
+
     <script>
 
     /*=============== SHOW MENU ===============*/
@@ -809,6 +959,27 @@
     showMenu('nav-toggle-1','nav-menu-1')
     
     </script>
+
+
+<script>
+
+    let loadMoreBtn = document.querySelector('#load-more');
+    let currentItem = 32;
+    
+    loadMoreBtn.onclick = () =>{
+       let boxes = [...document.querySelectorAll('.movies-content .card')];
+       for (var i = currentItem; i < currentItem + 32; i++){
+          boxes[i].style.display = 'flex';
+       }
+       currentItem += 32;
+    
+       if(currentItem >= boxes.length){
+          loadMoreBtn.style.display = 'none';
+       }
+    }
+    
+</script>
+
 
     <!---- js file-->
     <script src="slider-data.js"></script>
