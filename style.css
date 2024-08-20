@@ -149,7 +149,7 @@ cursor: pointer;
 transition: opacity .1s, transform .4s;
 }
 
-.movies-content .card{
+.card{
   background-color: #fff;
   padding:5px;
   border-radius: 5px;
