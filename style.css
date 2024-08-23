@@ -92,6 +92,16 @@ text-decoration: none;
 }
 
 
+.movies-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
+    gap: 4.0rem;
+}
+
+
 @media (max-width: 450px){
     .movies-content{
         display: flex;
