@@ -92,22 +92,10 @@ text-decoration: none;
 }
 
 
-@media (max-width: 450px){
-    .movies-content{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
-        gap: 0.5rem;
-    }
-}
-
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container-1 {
 margin-inline: 1.5rem;
-max-width: 1350px;
+max-width: 1650px;
 }
 
 /*=============== HEADER ===============*/
@@ -178,17 +166,6 @@ transition: opacity .1s, transform .4s;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
-
-@media (max-width: 450px){
-    .movies-content{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
-        gap: 0.5rem;
-    }
-}
 
 
 .card-container .card{
@@ -790,6 +767,15 @@ a.active,a:hover{
     grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
     gap: 4.0rem;
 }
+
+
+@media (max-width: 450px){
+    .movies-content{
+        gap: 0.5rem;
+    }
+}
+
+
 .movies-content .movie-box:hover .movie-box-img {
     transform: scale(1.1);
     transition: 0.5s;
