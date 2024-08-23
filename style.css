@@ -84,14 +84,6 @@ text-decoration: none;
 .movies-content .card:hover{
     transform: scale(1.3);
 }
-
-@media(max-width:550px){
-
-.movies-content .card:hover{
-    transform: scale(1.1);
-}
-       
-}
        
 
 
@@ -598,6 +590,7 @@ a.active,a:hover{
 }
 .card:hover{
     transform: scale(1.1);
+    z-index: 99999;
 }
 .card:hover .card-body:hover{
     opacity: 1;
