@@ -84,7 +84,14 @@ text-decoration: none;
 .movies-content .card:hover{
     transform: scale(1.3);
 }
-       
+
+
+@media(max-width: 550px){
+
+ .movies-content .card:hover{
+    transform: scale(1.1);
+}
+}
 
 
 .movies{
