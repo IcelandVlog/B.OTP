@@ -178,6 +178,19 @@ transition: opacity .1s, transform .4s;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
+
+@media (max-width: 450px){
+    .movies-content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
+        gap: 0.5rem;
+    }
+}
+
+
 .card-container .card{
   background-color: #fff;
   padding:5px;
