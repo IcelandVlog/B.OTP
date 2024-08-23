@@ -80,6 +80,30 @@ a {
 text-decoration: none;
 }
 
+
+.movies-content .card:hover{
+    transform: scale(1.3);
+}
+
+
+.movies{
+    width: 80%;
+    margin: auto;
+}
+
+
+@media (max-width: 450px){
+    .movies-content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(247px,1fr));
+        gap: 0.5rem;
+    }
+}
+
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container-1 {
 margin-inline: 1.5rem;
