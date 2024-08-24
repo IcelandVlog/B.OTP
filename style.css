@@ -597,7 +597,7 @@ a.active,a:hover{
 }
 .card:hover{
     transform: scale(1.1);
-    z-index: 99999;
+    z-index: 90;
 }
 .card:hover .card-body:hover{
     opacity: 1;
