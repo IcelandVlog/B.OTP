@@ -606,10 +606,10 @@ a.active,a:hover{
     height: 100%;
     object-fit: cover;
 }
-.card:hover{
+/* .movies-content .card:hover{
     transform: scale(1.1);
     z-index: 90;
-}
+} */
 .card:hover .card-body:hover{
     opacity: 1;
 }
