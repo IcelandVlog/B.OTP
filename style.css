@@ -21,8 +21,6 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
@@ -174,6 +172,11 @@ transition: opacity .1s, transform .4s;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
+.movies-content .card:hover{
+  background-color: #0edc0b;
+  padding:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
 
 
 .card-container .card{
