@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.OTT Movies</title>
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    img{
+        width: 100%;
+        max-width: 250px;
+        border-radius: 10px;
+        z-index: 100;
+        box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+    }
+
+
+    .banner {
+      background: url('https://m.media-amazon.com/images/M/MV5BY2FmYmJiYTQtYmJhZC00ZTIxLTk3OTAtNzc3NDk0NGMxYTdmXkEyXkFqcGc@._V1_.jpg') center center/cover;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .banner h2 {
+      font-size: 36px;
+    }
+
+    .sessions {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .session {
+      background: #444;
+      padding: 10px 10px;
+      margin: 0 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media(max-width:700px){
+        .session {
+      font-size: 8px;
+    }
+    .episode-title {
+      font-size: 10px;
+    }
+    .banner {
+      background: url('https://m.media-amazon.com/images/M/MV5BY2FmYmJiYTQtYmJhZC00ZTIxLTk3OTAtNzc3NDk0NGMxYTdmXkEyXkFqcGc@._V1_.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    }
+
+    .session:hover {
+      background: #666;
+    }
+
+    .content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .episode {
+      margin-top: 20px;
+      padding: 15px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .episode:hover {
+      background: #444;
+    }
+
+    .episode img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .episode-title {
+      font-size: 20px;
+    }
+
+    .episode-actions button {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #f44336;
+      color: white;
+    }
+
+    .episode-actions button:hover {
+      background: #e53935;
+    }
+
+    .episode-actions .play-btn {
+      background: #4CAF50;
+    }
+
+    .episode-actions .download-btn {
+      background: #2196F3;
+    }
+    img.imgborder {border-style: solid;  border-color:#e3d4d2 1px;}
+
+
+  </style>
+</head>
+<body>
+
+
+<div class="banner">
+    <img class="imgborder" src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="">
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+    <div class="session" onclick="showContent(4)">Season 4</div>
+  </div>
+
+
+ <!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 1</h3>
+
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/04rQxWLvqjzEb2N')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWLvqjzEb2N')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPeGqZM5o4k')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPeGqZM5o4k')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWdqnjOKjM')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWdqnjOKjM')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZ6G7Kx9oR')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZ6G7Kx9oR')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg164n2OBze')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg164n2OBze')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/b4ZJx2m8j9Q52P3')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx2m8j9Q52P3')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoBdom95yGe')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoBdom95yGe')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/k3gG5q8jw4ZO1N2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q8jw4ZO1N2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1B8Zep5z17')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1B8Zep5z17')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/q_wE5VV71WQq54TTdAe2DlHvTaQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vY2YzMWI1Y2YtNGIyZS00NThlLTg0NTUtZGUyNjhlMWIxOGJhLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa06raoxZPa')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa06raoxZPa')">Download</button>
+    </div>
+  </div>
+
+  <!-- Add more episodes here for Season 1 -->
+</div>
+<!-- Content for Season 1 End-->
+
+ <!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 2</h3>
+
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/NMRLEprNpyJ5XaG')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEprNpyJ5XaG')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMYq9ZlEJ39')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYq9ZlEJ39')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoEr8Dmye59Pa')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8Dmye59Pa')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGMnNw7xKjM')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMnNw7xKjM')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/3Q0lxBW68wnEj1J')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBW68wnEj1J')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmG7jy4xKkz')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmG7jy4xKkz')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qL0YEyPdnydxDRX')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPdnydxDRX')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO10QjNDEz17')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10QjNDEz17')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvDW4yZO8B9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvDW4yZO8B9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/85/47f596de9b48f682308f47b9719eed76_300x442.jpeg?t=1636148895" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxgJXl0B5Bze')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxgJXl0B5Bze')">Download</button>
+    </div>
+  </div>
+
+
+  <!-- Add more episodes here for Season 1 -->
+</div>
+<!-- Content for Season 2 End-->
+
+ <!-- Content for Season 3 -->
+<div class="content" id="season3">
+  <h3>Season 3</h3>
+
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/b4ZJx21LPnV52P3')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21LPnV52P3')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORW1V3g53XD')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORW1V3g53XD')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoRz4lQ5yGe')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRz4lQ5yGe')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbNo7awEn1m')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbNo7awEn1m')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMYq9jaEJ39')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYq9jaEJ39')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/LQm9OXNG0eRx1lg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNG0eRx1lg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDNg89a5kbp')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDNg89a5kbp')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENLANYo5mjA')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLANYo5mjA')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4Ownq8yZEDLj')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4Ownq8yZEDLj')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXg-T-RuJDuvhdhPpEwxjs2A62tFvn68uWIoOmRZShZ1U3N-ZfN17xQfM7eisewi2SUGWZSo3izEKuYhez2L7UjGK4RAoGM_-y5OtkT6_cDuGBGIN7LOdPDrtiLS9fpR6NkO99tTn-FywYy8CGXvw5aB.jpg?r=f90" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/pVa4E8MoZNyOkzM')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MoZNyOkzM')">Download</button>
+    </div>
+  </div>
+
+
+  <!-- Add more episodes here for Season 3 -->
+</div>
+<!-- Content for Season 3 End-->
+
+ <!-- Content for Season 4 -->
+<div class="content" id="season4">
+  <h3>Season 4</h3>
+
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/pVa4E8vnB0g5kzM')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8lKQxYQR96DxDGY')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4lndnDEYWm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4lndnDEYWm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdd6j66Oe9o')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdd6j66Oe9o')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPeGrGX5o4k')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPeGrGX5o4k')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4lndn0EYWm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4lndn0EYWm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/04rQxWLvq0jEb2N')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWLvq0jEb2N')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg164eAOBze')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg164eAOBze')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdd6PMqOe9o')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdd6PMqOe9o')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/Ro7kOVJpqyJOZWB')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVJpqyJOZWB')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/HHg8Uq2O5KXR2lzp6rE60qWpNf8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vZmU0ZWZiOGUtOTg1MS00NGU2LWFkYzUtNjdjNmExMjdlNmViLmpwZw==" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4lnBqwEYWm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4lnBqwEYWm')">Download</button>
+    </div>
+  </div>
+
+
+  <!-- Add more episodes here for Season 1 -->
+</div>
+<!-- Content for Season 4 End-->
+
+  </div>
+
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Show the clicked season's content
+    document.getElementById('season' + season).classList.add('active');
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, '_blank');
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
