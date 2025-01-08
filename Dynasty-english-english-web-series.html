@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon"/>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+  }
+
+  .banner {
+    background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7") center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .session {
+    background: #444;
+    padding: 10px 10px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+    .session {
+      font-size: 8px;
+    }
+    .episode-title {
+      font-size: 10px;
+    }
+    .banner {
+      background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7")
+        no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .session:hover {
+    background: #1a03c8;
+    color: azure;
+  }
+
+  .content {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  .content h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .episode {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .episode:hover {
+    background: #444444;
+  }
+
+  .episode img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .episode-title {
+    font-size: 20px;
+  }
+
+  .episode-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+  }
+
+  .episode-actions button:hover {
+    background: #e53935;
+  }
+
+  .episode-actions .play-btn {
+    background: #4caf50;
+  }
+
+  .episode-actions .download-btn {
+    background: #2196f3;
+  }
+  img.imgborder {
+    border-style: solid;
+    border-color: #e3d4d2 1px;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <img class="imgborder" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="" />
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+    <div class="session" onclick="showContent(4)">Season 4</div>
+    <div class="session" onclick="showContent(5)">Season 5</div>
+      </div>
+
+  <!-- Content for Season 1 start -->
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/e028E6eRYymxYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6eRYymxYAv')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/3Q0lxBbWAJVxj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBbWAJVxj1J')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPeN1zM5o4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPeN1zM5o4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg1Jyp2OBze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg1Jyp2OBze')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzznqv4xbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzznqv4xbyd')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/QNB7xAW2AJ1O0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xAW2AJ1O0WG')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdd3J2bOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdd3J2bOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53BgYDGOQzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53BgYDGOQzp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/dNjgOlP4gjyO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOlP4gjyO9Wn')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/e028E6eRYgdxYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6eRYgdxYAv')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWMYzrOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWMYzrOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdd3JenOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdd3JenOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoErb8qyNE9Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoErb8qyNE9Pa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMGzy3OKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMGzy3OKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/4bQVOj376dw5wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj376dw5wKm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMd7Z0EmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMd7Z0EmX4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWMYwjOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWMYwjOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/dNjgOlP4gW7O9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOlP4gW7O9Wn')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg1JyQGOBze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg1JyQGOBze')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157KdYJJ5rw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157KdYJJ5rw4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/04rQxWLWMazEb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWLWMazEb2N')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Dynasty_%282017%29_S1_promo.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157KdY8b5rw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157KdY8b5rw4')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 1 -->
+  </div>
+  <!-- Content for Season 1 end -->
+
+  <!-- Content for Season 2 start -->
+  <div class="content" id="season2">
+    <h3>Season 2</h3>
+
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/4bQVOj37w335wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj37w335wKm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1B0zBP5z17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1B0zBP5z17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoBRy405yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoBRy405yGe')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoBRyJa5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoBRyJa5yGe')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/b4ZJx2m1NP852P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx2m1NP852P3')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORNWgV0O3XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORNWgV0O3XD')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ10r1gxDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ10r1gxDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWM2NrOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWM2NrOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWYyWV5J39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWYyWV5J39')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENDLQNZ5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENDLQNZ5mjA')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwWnd8bODLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwWnd8bODLj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/k3gG5q83l3AO1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q83l3AO1N2')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LL80Mw5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LL80Mw5XPB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMGXMgOKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMGXMgOKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWYy945J39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWYy945J39')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/Ro7kOVJVZVmOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVJVZVmOZWB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdd3p3bOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdd3p3bOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/3Q0lxBbWpbmxj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBbWpbmxj1J')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/nyg9EKMDXnj5bk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKMDXnj5bk4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvgDN4yE8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvgDN4yE8B9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQDQ7QNEKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQDQ7QNEKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://resizing.flixster.com/QSA2gla0ckXBb6xiqBhsaWSKVgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjM1MzQ1OS53ZWJw" alt="Episode 1" />
+    <div class="episode-title">Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/YWA8E9ew3joEGmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9ew3joEGmM')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 2 -->
+  </div>
+  <!-- Content for Season 2 end -->
+
+  <!-- Content for Season 3 start -->
+  <div class="content" id="season3">
+    <h3>Season 3</h3>
+
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1B0zBL5z17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1B0zBL5z17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoBRyR05yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoBRyR05yGe')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMGXV2OKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMGXV2OKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDLNbNnEkbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDLNbNnEkbp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4lrZldEYWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4lrZldEYWm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWM2WrOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWM2WrOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/b4ZJx2m1N1852P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx2m1N1852P3')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/pVa4E8vMrZ05kzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8vMrZ05kzM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/Ro7kOVJVZ0mOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVJVZ0mOZWB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/QNB7xAW29aAO0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xAW29aAO0WG')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157KdBLq5rw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157KdBLq5rw4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/YWA8E9ew3ekEGmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9ew3ekEGmM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/NMRLEpzr8zl5XaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpzr8zl5XaG')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDLNb8nEkbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDLNb8nEkbp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1B0z0L5z17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1B0z0L5z17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qL0YEyzPjPLODRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyzPjPLODRX')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWYyKW5J39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWYyKW5J39')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPeN6o85o4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPeN6o85o4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ10re8xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ10re8xDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/96/Dynasty_%282017%29_S3_poster.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/e028E6eR1eyxYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6eR1eyxYAv')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 3 -->
+  </div>
+  <!-- Content for Season 3 end -->
+
+
+  <!-- Content for Season 4 start -->
+  <div class="content" id="season4">
+    <h3>Season 4</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWbzja5J39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWbzja5J39')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbBPRDkEn1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbBPRDkEn1m')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGW4KoKOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGW4KoKOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/e028E6eqd3MxYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6eqd3MxYAv')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvgleroE8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvgleroE8B9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/pVa4E8vqjnB5kzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8vqjnB5kzM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPe2z3X5o4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPe2z3X5o4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/dNjgOlPRlVqO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOlPRlVqO9Wn')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoBwXdM5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoBwXdM5yGe')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENDRyBJ5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENDRyBJ5mjA')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQDwaDbEKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQDwaDbEKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZ4LoBx9oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZ4LoBx9oR')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1BqyGk5z17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1BqyGk5z17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LLvyZn5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LLvyZn5XPB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa0mV6GxZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa0mV6GxZPa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoErbXPvqE9Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoErbXPvqE9Pa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORNaz4wO3XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORNaz4wO3XD')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/04rQxWL8kedEb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWL8kedEb2N')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ1dje6xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ1dje6xDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5Jy921jOqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5Jy921jOqQj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qL0YEyzgXMmODRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyzgXMmODRX')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH-agxqjkG3qDw5lCaRPNhyHeqZ3Pd3LLQviuk9T6a-ryhzeg7" alt="Episode 1" />
+    <div class="episode-title">Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORNazqdO3XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORNazqdO3XD')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 4 -->
+  </div>
+  <!-- Content for Season 4 end -->
+
+
+  <!-- Content for Season 4 start -->
+  <div class="content" id="season5">
+    <h3>Season 5</h3>
+
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGW4zNPOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGW4zNPOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ1djw8xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ1djw8xDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4lqkpMEYWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4lqkpMEYWm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/nyg9EKMpzko5bk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKMpzko5bk4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa0mGRjxZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa0mGRjxZPa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwW6LqBODLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwW6LqBODLj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoErbXg8WE9Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoErbXg8WE9Pa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMbZlbEmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMbZlbEmX4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/3Q0lxBb3DWZxj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBb3DWZxj1J')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQDwGQmEKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQDwGQmEKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZ4Lamx9oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZ4Lamx9oR')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDLPJgKEkbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDLPJgKEkbp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa0mWkpxZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa0mWkpxZPa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg1L2pnOBze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg1L2pnOBze')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/e028E6eqzARxYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6eqzARxYAv')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/m7WJxg1L2lAOBze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxg1L2lAOBze')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1BqDj15z17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1BqDj15z17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5Jy9jDgOqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5Jy9jDgOqQj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/dNjgOlPR2QnO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOlPR2QnO9Wn')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qL0YEyzg0ngODRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyzg0ngODRX')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzzg0aLxbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzzg0aLxbyd')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Dynasty_%282017%29_S4_poster.png" alt="Episode 1" />
+    <div class="episode-title">Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZ4wKVx9oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZ4wKVx9oR')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 4 -->
+  </div>
+  <!-- Content for Season 4 end -->
+
+
+</div>
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll(".content");
+    contents.forEach((content) => content.classList.remove("active"));
+
+    // Show the clicked season's content
+    document.getElementById("season" + season).classList.add("active");
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, "_blank");
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, "_blank");
+  }
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+  // <![CDATA[  <-- For SVG support
+  if ("WebSocket" in window) {
+    (function () {
+      function refreshCSS() {
+        var sheets = [].slice.call(document.getElementsByTagName("link"));
+        var head = document.getElementsByTagName("head")[0];
+        for (var i = 0; i < sheets.length; ++i) {
+          var elem = sheets[i];
+          var parent = elem.parentElement || head;
+          parent.removeChild(elem);
+          var rel = elem.rel;
+          if (
+            (elem.href && typeof rel != "string") ||
+            rel.length == 0 ||
+            rel.toLowerCase() == "stylesheet"
+          ) {
+            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+            elem.href =
+              url +
+              (url.indexOf("?") >= 0 ? "&" : "?") +
+              "_cacheOverride=" +
+              new Date().valueOf();
+          }
+          parent.appendChild(elem);
+        }
+      }
+      var protocol =
+        window.location.protocol === "http:" ? "ws://" : "wss://";
+      var address =
+        protocol + window.location.host + window.location.pathname + "/ws";
+      var socket = new WebSocket(address);
+      socket.onmessage = function (msg) {
+        if (msg.data == "reload") window.location.reload();
+        else if (msg.data == "refreshcss") refreshCSS();
+      };
+      if (
+        sessionStorage &&
+        !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+      ) {
+        console.log("Live reload enabled.");
+        sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+      }
+    })();
+  } else {
+    console.error(
+      "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+    );
+  }
+  // ]]>
+</script>
+</body>
+</html>
