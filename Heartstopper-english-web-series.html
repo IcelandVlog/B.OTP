@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon"/>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+  }
+
+  .banner {
+    background: url("https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c") center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .session {
+    background: #444;
+    padding: 10px 10px;
+    margin: 0 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+    .session {
+      font-size: 8px;
+    }
+    .episode-title {
+      font-size: 10px;
+    }
+    .banner {
+      background: url("https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c")
+        no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .session:hover {
+    background: #1a03c8;
+    color: azure;
+  }
+
+  .content {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  .content h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .episode {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .episode:hover {
+    background: #444444;
+  }
+
+  .episode img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .episode-title {
+    font-size: 20px;
+  }
+
+  .episode-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+  }
+
+  .episode-actions button:hover {
+    background: #e53935;
+  }
+
+  .episode-actions .play-btn {
+    background: #4caf50;
+  }
+
+  .episode-actions .download-btn {
+    background: #2196f3;
+  }
+  img.imgborder {
+    border-style: solid;
+    border-color: #e3d4d2 1px;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <img class="imgborder" src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="" />
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+  </div>
+
+  <!-- Content for Season 1 start -->
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPNg4G8xo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNg4G8xo4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/nyg9EKDw30oObk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKDw30oObk4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/wP2050eM2z3xdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eM2z3xdmy')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8lKQxYV32RDEDGY')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8lKQxYV32RDEDGY')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmG1q62xKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmG1q62xKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75L8JmnV5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75L8JmnV5XPB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/k3gG5q341jjE1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q341jjE1N2')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF7SMKgaymhUXYzAJ_B-N7B0SQrOTfCbwCsQpdg_0kymR-2DaS" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/YWA8E9wl6Gb5GmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9wl6Gb5GmM')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 1 -->
+  </div>
+  <!-- Content for Season 1 end -->
+
+  <!-- Content for Season 1 start -->
+  <div class="content" id="season2">
+    <h3>Season 2</h3>
+
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO10ewZXEz17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10ewZXEz17')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ao9rxoRmZGe5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRmZGe5yGe')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvDwPvrO8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvDwPvrO8B9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwnJGrBEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnJGrBEDLj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoEr8LB1J59Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8LB1J59Pa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmG1q61xKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmG1q61xKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORWDLq953XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORWDLq953XD')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXqZK6UIYnN3JvQvjn2soKZ99RnF-qqUXRsm0XyovTD_LJXnQC4JFV4ttnfsc9AuSHOeH56fiPG_5myg-jA6CyxoC8PoAwCYZqJmVUn65L9mnuzkiMKKpQizAvxZrD-gPMxo4knnCBUuEGwyql7rVoOF.jpg?r=e1f" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOd3lgjqEe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOd3lgjqEe9o')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 2 -->
+  </div>
+  <!-- Content for Season 2 end -->
+
+  <!-- Content for Season 3 start -->
+  <div class="content" id="season3">
+    <h3>Season 3</h3>
+
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGMLj0MxKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMLj0MxKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENL8Gz75mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENL8Gz75mjA')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPNg4rVxo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNg4rVxo4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQQNeXAOKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQQNeXAOKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4rRXLM5YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rRXLM5YWm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbNX634En1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbNX634En1m')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53gvJ195Qzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53gvJ195Qzp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQT1SJuGwXrIq6N15TNK87wplv_0DO1tn1n0RLuAZ5vR-d3Fv5q-MvDs9bRG_8NHhDAkyIbk6oeQDdugMD-pa-YnK1lxDYZHkadUBsU8k45yobNlI1Nu10uuX2VqoaY-7Ic7PiQHWBY0v5WSHsg.jpg?r=14c" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157dX8nkxrw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157dX8nkxrw4')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 3 -->
+  </div>
+  <!-- Content for Season 3 end -->
+
+
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll(".content");
+    contents.forEach((content) => content.classList.remove("active"));
+
+    // Show the clicked season's content
+    document.getElementById("season" + season).classList.add("active");
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, "_blank");
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, "_blank");
+  }
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+  // <![CDATA[  <-- For SVG support
+  if ("WebSocket" in window) {
+    (function () {
+      function refreshCSS() {
+        var sheets = [].slice.call(document.getElementsByTagName("link"));
+        var head = document.getElementsByTagName("head")[0];
+        for (var i = 0; i < sheets.length; ++i) {
+          var elem = sheets[i];
+          var parent = elem.parentElement || head;
+          parent.removeChild(elem);
+          var rel = elem.rel;
+          if (
+            (elem.href && typeof rel != "string") ||
+            rel.length == 0 ||
+            rel.toLowerCase() == "stylesheet"
+          ) {
+            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+            elem.href =
+              url +
+              (url.indexOf("?") >= 0 ? "&" : "?") +
+              "_cacheOverride=" +
+              new Date().valueOf();
+          }
+          parent.appendChild(elem);
+        }
+      }
+      var protocol =
+        window.location.protocol === "http:" ? "ws://" : "wss://";
+      var address =
+        protocol + window.location.host + window.location.pathname + "/ws";
+      var socket = new WebSocket(address);
+      socket.onmessage = function (msg) {
+        if (msg.data == "reload") window.location.reload();
+        else if (msg.data == "refreshcss") refreshCSS();
+      };
+      if (
+        sessionStorage &&
+        !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+      ) {
+        console.log("Live reload enabled.");
+        sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+      }
+    })();
+  } else {
+    console.error(
+      "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+    );
+  }
+  // ]]>
+</script>
+
+</body>
+</html>
