@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon"/>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+  }
+
+  .banner {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx") center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .session {
+    background: #444;
+    padding: 10px 10px;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+    .session {
+      font-size: 8px;
+    }
+    .episode-title {
+      font-size: 10px;
+    }
+    .banner {
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx")
+        no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .session:hover {
+    background: #1a03c8;
+    color: azure;
+  }
+
+  .content {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  .content h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .episode {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .episode:hover {
+    background: #444444;
+  }
+
+  .episode img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .episode-title {
+    font-size: 20px;
+  }
+
+  .episode-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+  }
+
+  .episode-actions button:hover {
+    background: #e53935;
+  }
+
+  .episode-actions .play-btn {
+    background: #4caf50;
+  }
+
+  .episode-actions .download-btn {
+    background: #2196f3;
+  }
+  img.imgborder {
+    border-style: solid;
+    border-color: #e3d4d2 1px;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <img class="imgborder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="" />
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+    <div class="session" onclick="showContent(4)">Season 4</div>
+    <div class="session" onclick="showContent(5)">Season 5</div>
+      </div>
+
+  <!-- Content for Season 1 start -->
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/dfcb9hyej91i')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/zx9yny')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/fd3wsr54lytb')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/gn3k0d')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/ydpkwg0nqa62')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/34zx07')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/t2r8r4t6h6ej')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/41jxg2')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/k4sctfiny6xe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/np8j4v')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/e37m2e2gqocl')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/yg9pe3')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeqRA63m_3UQ-E9BnqYky6oA8DrI1mRisGW1NAj5-ap9W6GGtgTKfv5XlAIAzknTn8_LU&usqp=CAU" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/76kixg64fvib')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/m21n09')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 1 -->
+  </div>
+  <!-- Content for Season 1 end -->
+
+  <!-- Content for Season 2 start -->
+  <div class="content" id="season2">
+    <h3>Season 2</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/4nzmv244o4wh')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/8xj90o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/ea84o920wi1q')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/xq9270')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/8ldcrjpm40i0')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/oyqj30')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/1v6phe217r4g')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/zx9y7v')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/f7r1kad8ue94')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/gn3kdz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/uldr6cqeecrs')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/m21npg')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/z1x1jl7cn2ni')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/8xj93o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/fn0kq9dh0ixp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/ejpm28')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/t897w6x828gs')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/70jxyj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/mleso1x7chk8')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/2kj913')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/infyugjolvyi')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/m21n13')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/5798g138t3hr')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/q6gzgn')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTZJDwtTJgmlHklGOs53gFouuEpGrSEekFiA&s" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/edssef3klpy3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/np8jd1')" > Download </button>
+    </div>
+  </div>
+
+    <!-- Add more episodes here for Season 1 -->
+  </div>
+  <!-- Content for Season 2 end -->
+
+  <!-- Content for Season 3 start -->
+  <div class="content" id="season3">
+    <h3>Season 3</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/b4ZJx2mmo9252P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx2mmo9252P3')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/YWA8E9eeZMoEGmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9eeZMoEGmM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5JyygooOqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JyygooOqQj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQDD0VGEKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQDD0VGEKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ113k0xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ113k0xDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdddvZbOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdddvZbOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzzzMa8xbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzzzMa8xbyd')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdddvbnOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdddvbnOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQDD0QJEKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQDD0QJEKdW')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORNNyWBO3XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORNNyWBO3XD')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzzzMz4xbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzzzMz4xbyd')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdddv1YOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdddv1YOe9o')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LLL2Dw5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LLL2Dw5XPB')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 3 -->
+  </div>
+  <!-- Content for Season 3 end -->
+
+  <!-- Content for Season 4 start -->
+  <div class="content" id="season4">
+    <h3>Season 4</h3>
+
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53BBRbGOQzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53BBRbGOQzp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzzz7q4xbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzzz7q4xbyd')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMMb4lEmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMMb4lEmX4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENDDvZz5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENDDvZz5mjA')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwWWlpbODLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwWWlpbODLj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ11lr0xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ11lr0xDv9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/nyg9EKMMLYR5bk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKMMLYR5bk4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMMRdgOKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMMRdgOKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/Ro7kOVJJXGyOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVJJXGyOZWB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LLL9Aw5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LLL9Aw5XPB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMMRd9OKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMMRd9OKkz')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/k3gG5q88aqZO1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q88aqZO1N2')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://assets.gadgets360cdn.com/pricee/assets/product/202203/BreakingBad-4_1647286045.jpg" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZZMlWx9oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZZMlWx9oR')" > Download </button>
+    </div>
+  </div>
+
+
+    <!-- Add more episodes here for Season 4 -->
+  </div>
+  <!-- Content for Season 4 end -->
+
+  <!-- Content for Season 5 start -->
+  <div class="content" id="season5">
+    <h3>Season 5</h3>
+
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 1</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5Jyy9raOqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5Jyy9raOqQj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 2</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4llqX1EYWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4llqX1EYWm')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 3</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/QNB7xAWWrYYO0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xAWWrYYO0WG')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 4</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/LQm9OXrrloYx1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXrrloYx1lg')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 5</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvgglw3E8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvgglw3E8B9')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 6</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LLLvJ75XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LLLvJ75XPB')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 7</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/7QWN5eZZ4aWx9oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eZZ4aWx9oR')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 8</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMMbkjEmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMMbkjEmX4')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 9</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPee2ZG5o4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPee2ZG5o4k')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWW4jrOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWW4jrOKjM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/YWA8E9eeqlkEGmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9eeqlkEGmM')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwWW6GbODLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwWW6GbODLj')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoErbbXD7E9Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoErbbXD7E9Pa')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53BBq9oOQzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53BBq9oOQzp')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWWbq45J39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWWbq45J39')" > Download </button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEUOnXKnRL0jeo6y4_Nzt0RggJHYbxI_RjJUgCvmdG28BAwpAx" alt="Episode 1" />
+    <div class="episode-title">Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/k3gG5q88J1AO1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q88J1AO1N2')" > Download </button>
+    </div>
+  </div>
+
+    <!-- Add more episodes here for Season 5 -->
+  </div>
+  <!-- Content for Season 5 end -->
+
+
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll(".content");
+    contents.forEach((content) => content.classList.remove("active"));
+
+    // Show the clicked season's content
+    document.getElementById("season" + season).classList.add("active");
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, "_blank");
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, "_blank");
+  }
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+  // <![CDATA[  <-- For SVG support
+  if ("WebSocket" in window) {
+    (function () {
+      function refreshCSS() {
+        var sheets = [].slice.call(document.getElementsByTagName("link"));
+        var head = document.getElementsByTagName("head")[0];
+        for (var i = 0; i < sheets.length; ++i) {
+          var elem = sheets[i];
+          var parent = elem.parentElement || head;
+          parent.removeChild(elem);
+          var rel = elem.rel;
+          if (
+            (elem.href && typeof rel != "string") ||
+            rel.length == 0 ||
+            rel.toLowerCase() == "stylesheet"
+          ) {
+            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+            elem.href =
+              url +
+              (url.indexOf("?") >= 0 ? "&" : "?") +
+              "_cacheOverride=" +
+              new Date().valueOf();
+          }
+          parent.appendChild(elem);
+        }
+      }
+      var protocol =
+        window.location.protocol === "http:" ? "ws://" : "wss://";
+      var address =
+        protocol + window.location.host + window.location.pathname + "/ws";
+      var socket = new WebSocket(address);
+      socket.onmessage = function (msg) {
+        if (msg.data == "reload") window.location.reload();
+        else if (msg.data == "refreshcss") refreshCSS();
+      };
+      if (
+        sessionStorage &&
+        !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+      ) {
+        console.log("Live reload enabled.");
+        sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+      }
+    })();
+  } else {
+    console.error(
+      "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+    );
+  }
+  // ]]>
+</script>
+
+</body>
+</html>
