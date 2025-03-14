@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.OTT Movies</title>
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+    }
+  
+    .banner {
+      background: url("https://m.media-amazon.com/images/M/MV5BMjU0ZjZhNDQtMDhkYi00OWQyLWE3NGYtNzBlY2VmM2I4ZDg5XkEyXkFqcGc@._V1_.jpg") center center/cover;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  
+    .banner h2 {
+      font-size: 36px;
+    }
+  
+    .sessions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    .session {
+      background: #444;
+      padding: 10px 10px;
+      margin: 0 10px 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .session {
+        font-size: 8px;
+      }
+      .episode-title {
+        font-size: 10px;
+      }
+      .banner {
+        background: url("https://m.media-amazon.com/images/M/MV5BZmNlODJlMmQtZTBmYy00ZmQwLTk5YzItN2RhOWU5NWQ2NjdhXkEyXkFqcGc@._V1_.jpg")
+          no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+    }
+  
+    .session:hover {
+      background: #1a03c8;
+      color: azure;
+    }
+  
+    .content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .content.active {
+      display: block;
+    }
+  
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .episode {
+      margin-top: 20px;
+      padding: 15px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .episode:hover {
+      background: #444444;
+    }
+  
+    .episode img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  
+    .episode-title {
+      font-size: 20px;
+    }
+  
+    .episode-actions button {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #f44336;
+      color: white;
+    }
+  
+    .episode-actions button:hover {
+      background: #e53935;
+    }
+  
+    .episode-actions .play-btn {
+      background: #4caf50;
+    }
+  
+    .episode-actions .download-btn {
+      background: #2196f3;
+    }
+    img.imgborder {
+      border-style: solid;
+      border-color: #e3d4d2 1px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<div class="banner">
+    <img class="imgborder" src="https://m.media-amazon.com/images/M/MV5BMjU0ZjZhNDQtMDhkYi00OWQyLWE3NGYtNzBlY2VmM2I4ZDg5XkEyXkFqcGc@._V1_.jpg" alt="">
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+    <div class="session" onclick="showContent(4)">Season 4</div>
+    <div class="session" onclick="showContent(5)">Season 5</div>
+    <div class="session" onclick="showContent(6)">Season 6</div>
+    <div class="session" onclick="showContent(7)">Season 7</div>
+    <div class="session" onclick="showContent(8)">Season 8</div>
+    <div class="session" onclick="showContent(9)">Season 9</div>
+  </div>
+
+
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 01</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYBzbWEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYBzbWEJ39')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 02</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGdY2exKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGdY2exKkz')">Download</button>
+      </div>
+    </div> 
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 03</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PKN4OwnMX7NEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnMX7NEDLj')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 04</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/kKJVORWGza953XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORWGza953XD')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 05</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYBzoWEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYBzoWEJ39')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 06</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8MVjqzOkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MVjqzOkzM')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 07</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/njJYOd38y4qEe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOd38y4qEe9o')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 08</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rVK0M5YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rVK0M5YWm')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 09</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO10VKa1Ez17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10VKa1Ez17')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx21VKqR52P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21VKqR52P3')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8lKQxYVvDd2EDGY')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8lKQxYVvDd2EDGY')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/4bQVOj7Nybm5wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj7Nybm5wKm')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 13</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRjXwe5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRjXwe5yGe')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 14</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/P0poO10VKqXEz17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10VKqXEz17')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 15</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/LQm9OXNpalex1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNpalex1lg')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/g9Vd5JWZ29XxqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JWZ29XxqQj')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeXZgxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeXZgxDRX')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/7QWN5eylReV59oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eylReV59oR')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PlBVEZ0baZm5Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0baZm5Dv9')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/3Q0lxBWVe3KEj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBWVe3KEj1J')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVKwpxdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVKwpxdmy')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/mMq75L81yRy5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75L81yRy5XPB')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/73/The_Flash_season_1.jpg" alt="Episode 1">
+      <div class="episode-title"> Episode 23</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeXgpxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeXgpxDRX')">Download</button>
+      </div>
+    </div>
+
+    <!-- Add more episodes here for Season 1 -->
+  </div>
+
+  <!-- Content for Season 2 -->
+<div class="content" id="season2">
+    <h3>Season 2</h3>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/g9Vd5JWZ27dxqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JWZ27dxqQj')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/k3gG5q3BgBkE1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q3BgBkE1N2')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/mMq75L81y1m5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75L81y1m5XPB')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/VqbX53gVKVd5Qzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53gVKVd5Qzp')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/0DogOGMVKV8xKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMVKV8xKjM')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW9k3exb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW9k3exb2N')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/QNB7xA2V4w7E0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xA2V4w7E0WG')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/3Q0lxBWVeVLEj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBWVeVLEj1J')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8MVjemOkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MVjemOkzM')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/Ro7kOVVL2rBOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVVL2rBOZWB')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/k3gG5q3BgzkE1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q3BgzkE1N2')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qM1VOPNmwmmxo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNmwmmxo4k')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVKBaxdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVKBaxdmy')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/eL2157dVZ4oxrw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157dVZ4oxrw4')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGdYdrxKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGdYdrxKkz')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ZMVoEr8r7rq59Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8r7rq59Pa')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeX1JxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeX1JxDRX')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rVKV85YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rVKV85YWm')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/dNjgOl4Dl8KO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOl4Dl8KO9Wn')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/m7WJxgJ70aj5Bze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/m7WJxgJ70aj5Bze')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRjX7J5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRjX7J5yGe')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 22</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/nyg9EKDj2gBObk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKDj2gBObk4')">Download</button>
+    </div>
+    </div>
+
+    <div class="episode">
+    <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p11904956_b_v8_aa.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 23</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/e028E6RVdMBEYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6RVdMBEYAv')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 2 End -->
+
+  <!-- Content for Season 3 -->
+<div class="content" id="season3">
+    <h3>Season 3</h3>
+
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVDR3xdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVDR3xdmy')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/YWA8E9wVWQQ5GmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9wVWQQ5GmM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8ozgENLr3965mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLr3965mjA')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/6zeREaDXWN0xZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREaDXWN0xZPa')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGdg32xKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGdg32xKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/7QWN5eylwYl59oR')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/7QWN5eylwYl59oR')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYBrMyEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYBrMyEJ39')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/LQm9OXNpvXKx1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNpvXKx1lg')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ZMVoEr8rg4J59Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8rg4J59Pa')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRj03m5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRj03m5yGe')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/vQBYEbN02n6En1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbN02n6En1m')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/0DogOGMVzBYxKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMVzBYxKjM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx21VD2P52P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21VD2P52P3')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx21VD0P52P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21VD0P52P3')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGdgB2xKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGdgB2xKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDNVzBy5kbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDNVzBy5kbp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PKN4OwnM0vnEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnM0vnEDLj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/LQm9OXNpvRKx1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNpvRKx1lg')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qM1VOPNmPv8xo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNmPv8xo4k')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/NMRLEpr10QQ5XaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpr10QQ5XaG')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/kKJVORWGMR153XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORWGMR153XD')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 22</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/3Q0lxBWVDYMEj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBWVDYMEj1J')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/65q05CQK/The-Flash-3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 23</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/6zeREaDXW80xZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREaDXW80xZPa')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 3 End -->
+
+  <!-- Content for Season 4 -->
+<div class="content" id="season4">
+    <h3>Season 4</h3>
+
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ0boml5Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0boml5Dv9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYB39kEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYB39kEJ39')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/JzkPxznL06Lxbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxznL06Lxbyd')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/eL2157dVzXBxrw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157dVzXBxrw4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rVne45YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rVne45YWm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/4bQVOj7NQMm5wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj7NQMm5wKm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVDMpxdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVDMpxdmy')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8ozgENLr38n5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLr38n5mjA')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRjdWJ5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRjdWJ5yGe')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/YWA8E9wVnM25GmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9wVnM25GmM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/g9Vd5JWZ1GdxqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JWZ1GdxqQj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/VqbX53gVnP85Qzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53gVnP85Qzp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/P0poO10V8j1Ez17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10V8j1Ez17')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/NMRLEpr1ZoG5XaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpr1ZoG5XaG')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qM1VOPNmGVdxo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNmGVdxo4k')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/vQBYEbN0DJNEn1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbN0DJNEn1m')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/kKJVORWG4QN53XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORWG4QN53XD')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/YWA8E9wVnjD5GmM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/YWA8E9wVnjD5GmM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRj0mL5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRj0mL5yGe')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx21V8eX52P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21V8eX52P3')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGd6jexKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGd6jexKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 22</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/0DogOGMVdNPxKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMVdNPxKjM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nLmpDdHt/The-Flash-4.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 23</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/mMq75L81rMy5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75L81rMy5XPB')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 4 End -->
+
+  <!-- Content for Season 5 -->
+<div class="content" id="season5">
+    <h3>Season 5</h3>
+
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeM9mxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeM9mxDRX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/NMRLEpr1ZYe5XaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpr1ZYe5XaG')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/l4vexvDGmRVO8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvDGmRVO8B9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8MVn9BOkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MVn9BOkzM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW9vVAxb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW9vVAxb2N')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/rabVOQQPM1bOKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQQPM1bOKdW')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/KrdZ5kdn6QaxmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kdn6QaxmX4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/27BaOn1ZY92EMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOn1ZY92EMDX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/nyg9EKDjBZaObk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKDjBZaObk4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/QNB7xA2VnawE0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xA2VnawE0WG')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/QNB7xA2Vn8wE0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xA2Vn8wE0WG')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/njJYOd386B7Ee9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOd386B7Ee9o')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/dNjgOl4DVGqO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOl4DVGqO9Wn')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ao9rxoRjd9M5yGe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ao9rxoRjd9M5yGe')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/e028E6RVn9oEYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6RVn9oEYAv')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW9vGAxb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW9vGAxb2N')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/KNWlEDNVDaM5kbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDNVDaM5kbp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVzjGxdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVzjGxdmy')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/LQm9OXNpb2bx1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNpb2bx1lg')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/eL2157dVnpWxrw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157dVnpWxrw4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/Ro7kOVVLpPoOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVVLpPoOZWB')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/nrB3KDXr/The-Flash-5.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 22</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rVn335YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rVn335YWm')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 5 End -->
+
+  <!-- Content for Season 6 -->
+<div class="content" id="season6">
+    <h3>Season 6</h3>
+
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/KrdZ5kdn6oMxmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kdn6oMxmX4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx21V8lA52P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx21V8lA52P3')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rVnyD5YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rVnyD5YWm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/l4vexvDGmQkO8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvDGmQkO8B9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/nyg9EKDjBWnObk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKDjBWnObk4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeM6jxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeM6jxDRX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PKN4OwnMPQlEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnMPQlEDLj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/vQBYEbN0D48En1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbN0D48En1m')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/e028E6RVnQMEYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6RVnQMEYAv')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW9vKdxb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW9vKdxb2N')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8MVnDaOkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MVnDaOkzM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGd6LPxKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGd6LPxKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/6zeREaDX6ymxZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREaDX6ymxZPa')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYB3JaEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYB3JaEJ39')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/27BaOn1ZYLgEMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOn1ZYLgEMDX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/dNjgOl4DV9DO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOl4DV9DO9Wn')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/VqbX53gVnlW5Qzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53gVnlW5Qzp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/kKJVORWG4Jd53XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORWG4Jd53XD')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://i.postimg.cc/Zq6PMSTs/The-Flash-6.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/NMRLEpr1ZL95XaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpr1ZL95XaG')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 6 End -->
+
+  <!-- Content for Season 7 -->
+<div class="content" id="season7">
+    <h3>Season 7</h3>
+
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8MVnmROkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8MVnmROkzM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PKN4OwnMP2GEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnMP2GEDLj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/P0poO10V8dkEz17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10V8dkEz17')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8ozgENLrmpJ5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLrmpJ5mjA')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYB36bEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYB36bEJ39')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/eL2157dVn3bxrw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157dVn3bxrw4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qM1VOPNmGpXxo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNmGpXxo4k')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ZMVoEr8r1pY59Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8r1pY59Pa')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/wP2050eVzQexdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP2050eVzQexdmy')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/3Q0lxBWVnvGEj1J')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBWVnvGEj1J')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/0DogOGMVdyGxKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGMVdyGxKjM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/e028E6RVnrmEYAv')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/e028E6RVnrmEYAv')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGd6eNxKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGd6eNxKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/LQm9OXNpb60x1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXNpb60x1lg')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qL0YEyPeMDzxDRX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyPeMDzxDRX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PlBVEZ0boWX5Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0boWX5Dv9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/27BaOn1ZYJpEMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOn1ZYJpEMDX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/The_Flash_season_7.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/JzkPxznL4D8xbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxznL4D8xbyd')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 7 End -->
+
+  <!-- Content for Season 8 -->
+<div class="content" id="season8">
+    <h3>Season 8</h3>
+
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/KNWlEDNX1Nm5kbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDNX1Nm5kbp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/4bQVOj70gJ95wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj70gJ95wKm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGlaMNxKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGlaMNxKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/Ro7kOVVrKJNOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVVrKJNOZWB')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/P0poO10r43pEz17')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO10r43pEz17')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/b4ZJx213Qm252P3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/b4ZJx213Qm252P3')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/njJYOd3o1Z6Ee9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOd3o1Z6Ee9o')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/k3gG5q3zd8oE1N2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/k3gG5q3zd8oE1N2')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/rabVOQQdRmGOKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQQdRmGOKdW')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/g9Vd5JW7KyoxqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JW7KyoxqQj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qM1VOPNKYeBxo4k')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPNKYeBxo4k')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PKN4OwnZ3WGEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwnZ3WGEDLj')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/nyg9EKDgKMnObk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKDgKMnObk4')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8ozgENLnKeJ5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLnKeJ5mjA')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/qA3WOmGlaMPxKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmGlaMPxKkz')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/27BaOn16bMpEMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOn16bMpEMDX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PlBVEZ0GNkX5Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0GNkX5Dv9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PlBVEZ0GN165Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0GN165Dv9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW3NdZxb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW3NdZxb2N')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/The_Flash_season_8_poster.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/QNB7xA2wd34E0WG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/QNB7xA2wd34E0WG')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 8 End -->
+
+  <!-- Content for Season 9 -->
+<div class="content" id="season9">
+    <h3>Season 9</h3>
+
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/ZMVoEr8NZWR59Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoEr8NZWR59Pa')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/27BaOn16bb0EMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOn16bb0EMDX')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/MAlwEMYNKJVEJ39')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMYNKJVEJ39')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/KNWlEDNX11n5kbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDNX11n5kbp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/PlBVEZ0GN605Dv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ0GN605Dv9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/edVqE4rPzyd5YWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4rPzyd5YWm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/pVa4E8Me440OkzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8Me440OkzM')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/04rQxWW3NNJxb2N')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/04rQxWW3NNJxb2N')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/VqbX53gm4lG5Qzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53gm4lG5Qzp')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/8ozgENLnKKZ5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENLnKKZ5mjA')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/l4vexvDdrQ3O8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvDdrQ3O8B9')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/4bQVOj70gL35wKm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/4bQVOj70gL35wKm')">Download</button>
+    </div>
+    </div>
+    <div class="episode">
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/The_Flash_season_9.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/v/njJYOd3o1LbEe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOd3o1LbEe9o')">Download</button>
+    </div>
+    </div>
+
+</div>
+  <!-- Content for Season 9 End -->
+
+
+  </div>
+
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Show the clicked season's content
+    document.getElementById('season' + season).classList.add('active');
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, '_blank');
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
