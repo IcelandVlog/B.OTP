@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.OTT Movies</title>
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+    }
+  
+    .banner {
+      background: url("https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw") center center/cover;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  
+    .banner h2 {
+      font-size: 36px;
+    }
+  
+    .sessions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    .session {
+      background: #444;
+      padding: 10px 10px;
+      margin: 0 10px 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .session {
+        font-size: 8px;
+      }
+      .episode-title {
+        font-size: 10px;
+      }
+      .banner {
+      background: url("https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw")
+          no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+    }
+  
+    .session:hover {
+      background: #1a03c8;
+      color: azure;
+    }
+  
+    .content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .content.active {
+      display: block;
+    }
+  
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .episode {
+      margin-top: 20px;
+      padding: 15px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .episode:hover {
+      background: #444444;
+    }
+  
+    .episode img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  
+    .episode-title {
+      font-size: 20px;
+    }
+  
+    .episode-actions button {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #f44336;
+      color: white;
+    }
+  
+    .episode-actions button:hover {
+      background: #e53935;
+    }
+  
+    .episode-actions .play-btn {
+      background: #4caf50;
+    }
+  
+    .episode-actions .download-btn {
+      background: #2196f3;
+    }
+    img.imgborder {
+      border-style: solid;
+      border-color: #e3d4d2 1px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<div class="banner">
+    <img class="imgborder" src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="">
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(3)">Season 3</div>
+  </div>
+
+<!-- Content for Season 1 -->
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 01</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/qcd2l30rl6vn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1Knu6DA5lHulrWb8HXmL-IA')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 02</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/xl43fi0dii0h')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1lZO3I4OLzDL4jo5-fgxqkQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 03</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/q270irkbx3ud')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1uDPbDTHwhEcJ5h-VJcEW3A')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 04</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/r9lwkx6di4iq')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1HjDEX0HFokAmphqwP8XDCg')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 05</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/t0owsmb46att')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1zfY7KjIJmo8dSGJ8PLD-4w')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 06</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/pyn3g8fn0zlu')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/13o1RKwmfHdeUsvV_gLkg1A')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 07</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/wxbn94tsnsep')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1S-XaR5-7bh7PLVOk7zhenQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 08</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/0o9xuzcv1kbz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/16ojWTmACbn7p9Q59uOrqvQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 09</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/vw007i35s9h2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/10bY2CFsYdDhuJ6fWTzbKdQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/AUdprxI4PGyV4JCgsJNYuY7ViOs=/fit-in/705x460/v2/https://resizing.flixster.com/xvfdB-xK1Ec8AkRnBZFSZiRhTWo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjUxNTIxNC53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/964t0jcpfi7l')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1KiSMxAGUd_WesT5ZgLGbZA')">Download</button>
+      </div>
+    </div>
+
+  </div>
+<!-- Content for Season 1 -->
+
+<!-- Content for Season 2 -->
+  <div class="content" id="season2">
+    <h3>Season 2</h3>
+
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 01</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/lld2eq6tcnt3')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1gkkn4IsvfzHBXvZ2RnZwOQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 02</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/3czij0dpw8zp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1GR9CCTJ7FG-7cihosI3Bag')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 03</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/36ko1diunj15')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1X9BOGV-TwznIPF3g8Pn4Wg')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 04</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/5178una1ri3r')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1kRgPfNZs-TXk-1LPKOQ10w')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 05</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/77ddhznstt5a')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1UpjkubRnfRH2AjURiCqYXA')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 06</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/wtqaqg3zrg7q')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1C_YimPzlb6aeQZfNHlRaSQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 07</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/yjlnxngsxgul')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1yb3wISvacFCO6rK2Pct8xQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/da/DarkNetflixPosterEnglish.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 08</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/hh5njtimjhkm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1f-4DAzlQK0B2yjPUR_8ukw')">Download</button>
+      </div>
+    </div>
+
+
+  </div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 3 -->
+  <div class="content" id="season3">
+    <h3>Season 3</h3>
+
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 01</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/awf2hpfrt6ze')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1z2NMqwhY1KfeDAp3ZpgTmQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 02</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/8fjzrihdkal6')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1hieSZao5oqlNO0r_0XWKrA')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 03</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/tum2sdv629aj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1yDQWjMg9I0CG_IZ9o4AWpQ')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 04</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/op6yed6uiuzd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1qpjTY4NqJYj35ucTwp8Y5g')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 05</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/w22oocq3dlmt')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1bm_KkjB-ZAlQZ__79sHwwA')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 06</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/pzz2t8tmu42i')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1ZS6-T6qqRFxbWmTuWbRZAw')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 07</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/9fp9cwlln9sz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/1HbqfqGpa9aOKB5_XDGQk6w')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Episode 1">
+      <div class="episode-title">Episode 08</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://cybervynx.com/e/go01yh3fc7o1')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://1024terabox.com/s/12x0qVmSugJZ6FKLe_iMuIA')">Download</button>
+      </div>
+    </div>
+
+
+  </div>
+<!-- Content for Season 3 -->
+
+</div>
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Show the clicked season's content
+    document.getElementById('season' + season).classList.add('active');
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, '_blank');
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
