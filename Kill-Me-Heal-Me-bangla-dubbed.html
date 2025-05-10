@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.OTT Movies</title>
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+    }
+  
+    .banner {
+      background: url("https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg") center center/cover;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  
+    .banner h2 {
+      font-size: 36px;
+    }
+  
+    .sessions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+  
+    .session {
+      background: #444;
+      padding: 10px 10px;
+      margin: 0 10px 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .session {
+        font-size: 8px;
+      }
+      .episode-title {
+        font-size: 10px;
+      }
+      .banner {
+      background: url("https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg")
+          no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+    }
+  
+    .session:hover {
+      background: #1a03c8;
+      color: azure;
+    }
+  
+    .content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .content.active {
+      display: block;
+    }
+  
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .episode {
+      margin-top: 20px;
+      padding: 15px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .episode:hover {
+      background: #444444;
+    }
+  
+    .episode img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  
+    .episode-title {
+      font-size: 20px;
+    }
+  
+    .episode-actions button {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #f44336;
+      color: white;
+    }
+  
+    .episode-actions button:hover {
+      background: #e53935;
+    }
+  
+    .episode-actions .play-btn {
+      background: #4caf50;
+    }
+  
+    .episode-actions .download-btn {
+      background: #2196f3;
+    }
+    img.imgborder {
+      border-style: solid;
+      border-color: #d2d4e3 1px;
+      height: 350px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<div class="banner">
+    <img class="imgborder" src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="">
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 1</div>
+  </div>
+
+<!-- Content for Season 1 -->
+  <div class="content" id="season1">
+    <h3>Season 1</h3>
+
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [01-03]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzwRWvXEbyd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzwRWvXEbyd')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [04-06]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/LQm9OXZA2qbx1lg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXZA2qbx1lg')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [07-09]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREaMA9pREZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREaMA9pREZPa')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [10-12]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbpAqlQ5n1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbpAqlQ5n1m')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [13-15]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kP1NWMxmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kP1NWMxmX4')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [16-18]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/rabVOQmARWpOKdW')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/rabVOQmARWpOKdW')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [19-21]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOdZA1Anxe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOdZA1Anxe9o')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [22-24]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORKAoZ053XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORKAoZ053XD')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [25-27]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/edVqE4MQz8dOYWm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/edVqE4MQz8dOYWm')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [28-30]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/27BaOnM3bdKEMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOnM3bdKEMDX')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [31-33]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/NMRLEpWPbGYxXaG')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpWPbGYxXaG')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [34-36]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbpAy7N5n1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbpAy7N5n1m')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [37-39]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KNWlEDWndaRxkbp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KNWlEDWndaRxkbp')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [40-42]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75L6APomEXPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75L6APomEXPB')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [43-45]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157MwDBJErw4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157MwDBJErw4')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [46-48]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kP1wkjxmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kP1wkjxmX4')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [49-53]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbpAejm5n1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbpAejm5n1m')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 54</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGDAb7G5KjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGDAb7G5KjM')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [55-57]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwzpyNXEDLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwzpyNXEDLj')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://i.ibb.co/Y3gMVdg/Kill-Me-Heal-Me-2023-S01-E58-60-Bengali-Dubbed-ORG-Chorki-WEB-DL-H264-AAC-1080p-720p-Download.jpg" alt="Episode 1">
+      <div class="episode-title">Episode [58-60]</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGDAw805KjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGDAw805KjM')">Download</button>
+      </div>
+    </div>
+
+  </div>
+<!-- Content for Season 1 -->
+
+
+</div>
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Show the clicked season's content
+    document.getElementById('season' + season).classList.add('active');
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, '_blank');
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
