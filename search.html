@@ -2,159 +2,106 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Box icons -->
-<link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
-
-<link rel="stylesheet" href="./search.css">
-
-<!-- font-icon-favicon -->
- <link rel="shortcut icon" href="./images&videos/logo1.png" type="image/x-icon">
-
-</head>
-<body>
-
-
-    <style>
-        
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+<title>Movie Search</title>
+<style>
 * {
   box-sizing: border-box;
-  background-color: #000000;
-  font-family: "Comic Sans Ms", sans-serif;
+  background-color: #000;
+  font-family: "Comic Sans MS", sans-serif;
   color: #fff;
   text-decoration: none;
 }
-.search-boxx{
-    display: flex;
-    position: relative;
-    /* align-items: center; */
-    justify-content: center;
+.search-boxx {
+  display: flex;
+  justify-content: center;
 }
-
-.container{
-    position: absolute;
-    width: 700px;
-    align-items: center;
-    justify-content: center;
+.container {
+  position: relative;
+  width: 700px;
+  padding: 20px;
 }
-
-@media(max-width:750px){
-    .container{
-        width: 450px;
-    }
-    #myUL li a {
-        border: 1px solid #ddd;
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #000;
-        border-radius: 10px;
-        padding: 12px;
-        text-decoration: none;
-        font-size: 10px;
-        color: #f6ff00;
-        display: block
-      }
-}
-
-@media(max-width:550px){
-    .container{
-        width: 350px;
-    }
-    #myUL li a {
-        border: 1px solid #ddd;
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #000;
-        border-radius: 10px;
-        padding: 12px;
-        text-decoration: none;
-        font-size: 10px;
-        color: #f6ff00;
-        display: block
-      }
-}
-  
+@media(max-width:750px){ .container{ width: 450px; } }
+@media(max-width:550px){ .container{ width: 350px; } }
 
 #myInput {
-    background-image: url('./images&videos/search-alt-regular-24.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-width: 320px;
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #fff;
-    margin-bottom: 12px;
+  background-image: url('./images&videos/search-alt-regular-24.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #fff;
+  margin-bottom: 12px;
 }
-
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 #myUL li a {
-    display: flex;
-    border: 1px solid #ddd;
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #000;
-    border-radius: 10px;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #f6ff00;
-    display: block
+  display: flex;
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 18px;
+  color: #f6ff00;
 }
-
 #myUL li a:hover:not(.header) {
   background-color: #2a2a2b;
 }
-
-.search-text{
-    display: block;
-    font-size: 35px;
-    font-weight: 100;
-    text-align: center;
+.search-text {
+  font-size: 35px;
+  font-weight: 100;
+  text-align: center;
 }
-
-.search-text-1{
-    position: relative;
-    display: inline-flex;
-    text-align: center;
+.open {
+  padding: 5px;
+  background: #ff0000;
+  border-radius: 15px;
+  margin-right: 8px;
 }
-
-.search-img{
-    width: 50px;
+#adminPanel {
+  display: none;
+  padding: 20px;
+  border: 2px solid #f6ff00;
+  border-radius: 10px;
+  margin: 20px 0;
+  background-color: #111;
 }
-
-.open{
-    padding: 5px;
-    background: #ff0000;
-    border-radius: 15px;
+#adminPanel input {
+  padding: 10px;
+  width: 60%;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #f6ff00;
 }
-
-.open-1{
-    display: inline-flex;
-    position: relative;
-    width: 40px;
+#adminPanel button {
+  padding: 10px;
+  background: #f6ff00;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-
-    </style>
-
-
+</style>
+</head>
+<body>
 <section class="search-boxx">
-    <div class="container">
-        
-<a href="index.html"><h1 class="search-text">Search Movies</h1></a>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search For Movies.." title="Type in a name">
-<ul id="myUL">
-
-  <li><a target="_blank" class="search-text-1" href="squid-game-english-web-series.html"><i class="bx bxs-right-arrow open"></i> Squid Game (2021-2025) [23 Language] (All Episode) </a>
+  <div class="container">
+    <h1 class="search-text">Search Movies</h1>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search For Movies.." title="Type in a name">
+    <ul id="myUL">
+    
+       
+       <li><a target="_blank" class="search-text-1" href="squid-game-english-web-series.html"><i class="bx bxs-right-arrow open"></i> Squid Game (2021-2025) [23 Language] (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" money-heist-spanish-web-series.html "><i class="bx bxs-right-arrow open"></i> Money Heist (2017-2021) [17 Language] (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" https://listeamed.net/e/0DogOGJDrmYEKjM "><i class="bx bxs-right-arrow open"></i>Panchayat Season 4 (2025) (All Episode)	 (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" Bachelor-Point-bangla-web-series.html "><i class="bx bxs-right-arrow open"></i>Bachelor Point (2025) (All Episode) Bangla </a>
@@ -3998,32 +3945,69 @@
  <li><a target="_blank" class="search-text-1" href="	https://listeamed.net/e/mMq75LLB1AY5XPB	"><i class="bx bxs-right-arrow open"></i>	Semester Final (2024)	</a>
  <li><a target="_blank" class="search-text-1" href="	https://listeamed.net/e/ZMVoErb1lZWE9Pa	"><i class="bx bxs-right-arrow open"></i>	Gojamil S01 (All Episode)	</a>
  <li><a target="_blank" class="search-text-1" href="	https://listeamed.net/e/eL2157KmdKk5rw4	"><i class="bx bxs-right-arrow open"></i>	Tiger 3 (2023)	</a>
-  
 
-</ul>
-</div>
+									
+
+    </ul>
+    <div id="adminPanel">
+      <h2 style="color:#f6ff00;">Admin Panel</h2>
+      <input type="text" id="movieName" placeholder="Movie Name">
+      <input type="text" id="movieLink" placeholder="Movie Link">
+      <button onclick="addMovie()">Add</button>
+    </div>
+  </div>
 </section>
- 
+
 <script>
-    function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
+function myFunction() {
+  const input = document.getElementById("myInput");
+  const filter = input.value.toLowerCase();
+  const ul = document.getElementById("myUL");
+  const li = ul.getElementsByTagName("li");
+  const adminPanel = document.getElementById("adminPanel");
+
+  if (filter === "702640") {
+    adminPanel.style.display = "block";
+    return;
+  } else {
+    adminPanel.style.display = "none";
+  }
+
+  for (let i = 0; i < li.length; i++) {
+    const a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";  
     }
+  }
+}
+
+function addMovie() {
+  const name = document.getElementById("movieName").value;
+  const link = document.getElementById("movieLink").value;
+  if (!name || !link) {
+    alert("Please fill in both fields!");
+    return;
+  }
+
+  const ul = document.getElementById("myUL");
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = link;
+  a.target = "_blank";
+  a.className = "search-text-1";
+  a.innerHTML = `<i class="bx bxs-right-arrow open"></i> ${name}`;
+  li.appendChild(a);
+
+  // --- MODIFICATION START ---
+  // Add the new movie list item at the beginning of the UL
+  ul.prepend(li); // This will add the new <li> as the first child of <ul>
+  // --- MODIFICATION END ---
+
+  document.getElementById("movieName").value = "";
+  document.getElementById("movieLink").value = "";
 }
 </script>
-
-
-<script src="./search.js"></script>
 </body>
 </html>
