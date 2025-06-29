@@ -11,62 +11,87 @@
 * {
   box-sizing: border-box;
   background-color: #000;
-  font-family: "Comic Sans MS", sans-serif;
+  font-family: "Lato", sans-serif; /* Changed font to Lato as per your link */
   color: #fff;
   text-decoration: none;
 }
+
+body {
+  margin: 0; /* Remove default body margin */
+  padding: 0;
+}
+
 .search-boxx {
   display: flex;
   justify-content: center;
+  padding: 20px 10px; /* Add some padding to the section itself */
 }
+
 .container {
   position: relative;
-  width: 700px;
+  width: 90%; /* Use percentage for flexibility */
+  max-width: 700px; /* Max width to prevent it from getting too wide on large screens */
   padding: 20px;
+  margin: 0 auto; /* Center the container */
 }
-@media(max-width:750px){ .container{ width: 450px; } }
-@media(max-width:550px){ .container{ width: 350px; } }
 
 #myInput {
   background-image: url('./images&videos/search-alt-regular-24.png');
-  background-position: 10px 12px;
+  background-position: 10px center; /* Center the icon vertically */
   background-repeat: no-repeat;
   width: 100%;
-  font-size: 16px;
+  font-size: 1rem; /* Use rem for better scaling */
   border-radius: 25px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #fff;
   margin-bottom: 12px;
 }
+
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 #myUL li a {
-  display: flex;
+  display: flex; /* Make the link a flex container */
+  align-items: flex-start; /* Align items (icon & text) to the top */
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #000;
   border-radius: 10px;
   padding: 12px;
-  font-size: 18px;
+  font-size: 1.1rem;
   color: #f6ff00;
 }
-#myUL li a:hover:not(.header) {
-  background-color: #2a2a2b;
-}
-.search-text {
-  font-size: 35px;
-  font-weight: 100;
-  text-align: center;
-}
+
+/* Style for the play button icon */
 .open {
   padding: 5px;
   background: #ff0000;
   border-radius: 15px;
-  margin-right: 8px;
+  margin-right: 8px; /* Space between icon and text */
+  min-width: 25px;
+  text-align: center;
+  flex-shrink: 0; /* IMP: Prevent the icon from shrinking */
 }
+
+/* Style for the movie title text container */
+#myUL li a .search-text-content {
+  flex-grow: 1; /* Allow the text to take up remaining space */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #2a2a2b;
+}
+
+.search-text {
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 #adminPanel {
   display: none;
   padding: 20px;
@@ -75,13 +100,16 @@
   margin: 20px 0;
   background-color: #111;
 }
+
 #adminPanel input {
   padding: 10px;
-  width: 60%;
-  margin: 5px;
+  width: calc(100% - 10px);
+  margin: 5px 0;
   border-radius: 5px;
   border: 1px solid #f6ff00;
+  display: block;
 }
+
 #adminPanel button {
   padding: 10px;
   background: #f6ff00;
@@ -90,6 +118,25 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Specific media queries for finer control */
+@media (max-width: 480px) {
+  .search-text {
+    font-size: 2rem; /* Smaller font for very small screens */
+  }
+
+  #myUL li a {
+    font-size: 1rem; /* Smaller font for list items */
+    padding: 10px;
+  }
+
+  #myInput {
+    font-size: 0.9rem;
+    padding: 10px 20px 10px 40px;
+  }
 }
 </style>
 </head>
@@ -99,14 +146,12 @@
     <h1 class="search-text">Search Movies</h1>
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search For Movies.." title="Type in a name">
     <ul id="myUL">
-    
-       
-       <li><a target="_blank" class="search-text-1" href="squid-game-english-web-series.html"><i class="bx bxs-right-arrow open"></i> Squid Game (2021-2025) [23 Language] (All Episode) </a>
+        <li><a target="_blank" class="search-text-1" href="squid-game-english-web-series.html"><i class="bx bxs-right-arrow open"></i> Squid Game (2021-2025) [23 Language] (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" money-heist-spanish-web-series.html "><i class="bx bxs-right-arrow open"></i> Money Heist (2017-2021) [17 Language] (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" https://listeamed.net/e/0DogOGJDrmYEKjM "><i class="bx bxs-right-arrow open"></i>Panchayat Season 4 (2025) (All Episode)	 (All Episode) </a>
   <li><a target="_blank" class="search-text-1" href=" Bachelor-Point-bangla-web-series.html "><i class="bx bxs-right-arrow open"></i>Bachelor Point (2025) (All Episode) Bangla </a>
   <li><a target="_blank" class="search-text-1" href=" //listeamed.net/e/rabVOQLDaebEKdW "><i class="bx bxs-right-arrow open"></i>Neelpodmo (2025) Bangla </a>
-  <li><a target="_blank" class="search-text-1" href=" //listeamed.net/e/b4ZJx2XmDM8O2P3 "><i class="bx bxs-right-arrow open"></i>Batashey Gungun (2025) S01 (All Episode) Hoichoi</a>
+   <li><a target="_blank" class="search-text-1" href=" //listeamed.net/e/b4ZJx2XmDM8O2P3 "><i class="bx bxs-right-arrow open"></i>Batashey Gungun (2025) S01 (All Episode) Hoichoi</a>
   <li><a target="_blank" class="search-text-1" href=" the-lincoln-lawyer-english-web-series.html "><i class="bx bxs-right-arrow open"></i>The Lincoln Lawyer (2022) (All Episode) [Hindi-English] </a>
   <li><a target="_blank" class="search-text-1" href=" Weak-Hero-korean-web-series.html "><i class="bx bxs-right-arrow open"></i>Weak Hero (2022) (All Episode) [Koren-Hindi-English] </a>
   <li><a target="_blank" class="search-text-1" href=" karma-korean-web-series.html "><i class="bx bxs-right-arrow open"></i>Karma (2025) (All Episode) Korean </a>
@@ -3946,8 +3991,6 @@
  <li><a target="_blank" class="search-text-1" href="	https://listeamed.net/e/ZMVoErb1lZWE9Pa	"><i class="bx bxs-right-arrow open"></i>	Gojamil S01 (All Episode)	</a>
  <li><a target="_blank" class="search-text-1" href="	https://listeamed.net/e/eL2157KmdKk5rw4	"><i class="bx bxs-right-arrow open"></i>	Tiger 3 (2023)	</a>
 
-									
-
     </ul>
     <div id="adminPanel">
       <h2 style="color:#f6ff00;">Admin Panel</h2>
@@ -3968,6 +4011,8 @@ function myFunction() {
 
   if (filter === "702640") {
     adminPanel.style.display = "block";
+    // Optionally clear the input field after showing admin panel if you wish:
+    // input.value = "";
     return;
   } else {
     adminPanel.style.display = "none";
@@ -3975,10 +4020,10 @@ function myFunction() {
 
   for (let i = 0; i < li.length; i++) {
     const a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
+    if (a.innerHTML.toLowerCase().includes(filter)) { // Using .includes() for broader search matching
       li[i].style.display = "";
     } else {
-      li[i].style.display = "none";  
+      li[i].style.display = "none";
     }
   }
 }
@@ -3997,16 +4042,19 @@ function addMovie() {
   a.href = link;
   a.target = "_blank";
   a.className = "search-text-1";
-  a.innerHTML = `<i class="bx bxs-right-arrow open"></i> ${name}`;
+  // Updated to include the new span for movie name
+  a.innerHTML = `<i class="bx bxs-right-arrow open"></i> <span class="search-text-content">${name}</span>`;
   li.appendChild(a);
 
-  // --- MODIFICATION START ---
   // Add the new movie list item at the beginning of the UL
-  ul.prepend(li); // This will add the new <li> as the first child of <ul>
-  // --- MODIFICATION END ---
+  ul.prepend(li);
 
   document.getElementById("movieName").value = "";
   document.getElementById("movieLink").value = "";
+
+  // Re-run the search function to immediately show the newly added item
+  // if a filter is active and the new item matches it.
+  myFunction();
 }
 </script>
 </body>
