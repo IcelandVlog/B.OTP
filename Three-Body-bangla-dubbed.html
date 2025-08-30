@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.OTT Movies</title>
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+  
+    header {
+      background: #333;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+    }
+  
+    .banner {
+      background: url("https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg") center center/cover;
+      height: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  
+    .banner h2 {
+      font-size: 36px;
+    }
+  
+    .sessions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .audio {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .session {
+      background: #bf0303;
+      padding: 10px 10px;
+      margin: 0 10px 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .audio {
+      background: #444;
+      padding: 10px 10px;
+      margin: 0 10px 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 700px) {
+      .session {
+        font-size: 12px;
+      }
+      .audio {
+        font-size: 12px;
+      }
+      .episode-title {
+        font-size: 10px;
+      }
+      .banner {
+      background: url("https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg")
+          no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
+    }
+  
+    .session:hover {
+      background: #239b02;
+      color: azure;
+    }
+  
+    .content {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .content.active {
+      display: block;
+    }
+  
+    .content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .episode {
+      margin-top: 20px;
+      padding: 15px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .episode:hover {
+      background: #444444;
+    }
+  
+    .episode img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+  
+    .episode-title {
+      font-size: 20px;
+    }
+  
+    .episode-actions button {
+      padding: 8px 16px;
+      font-size: 14px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #f44336;
+      color: white;
+    }
+  
+    .episode-actions button:hover {
+      background: #e53935;
+    }
+  
+    .episode-actions .play-btn {
+      background: #4caf50;
+    }
+  
+    .episode-actions .download-btn {
+      background: #2196f3;
+    }
+    img.imgborder {
+      border-style: solid;
+      border-color: #d2d4e3 1px;
+      height: 350px;
+    }
+  </style>
+
+</head>
+<body>
+
+
+<div class="banner">
+    <img class="imgborder" src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="">
+</div>
+
+<div class="container">
+  <div class="sessions">
+    <div class="audio" style="font-weight: 700;"> Audio:</div>
+    <div class="audio" >Bangla</div>
+  </div>
+  <div class="sessions">
+    <div class="session" onclick="showContent(1)">Season 01</div>
+  </div>
+
+<!-- Content for Season 1 -->
+  <div class="content" id="season1">
+    <h3>Season 01</h3>
+
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 01-02</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/46tgqxhirjbf')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/46tgqxhirjbf')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 03</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bvw4j3qqhksm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bvw4j3qqhksm')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 04</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/aszas37cg2cm')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/aszas37cg2cm')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 05</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pc0mgym06vg9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pc0mgym06vg9')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 06</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/en0xlrfb54n5')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/en0xlrfb54n5')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 07</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/mqhrdqn0p8jg')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/mqhrdqn0p8jg')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 08</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/rns51hxu3t1g')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/rns51hxu3t1g')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 09</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/irp5eb2jim3w')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/irp5eb2jim3w')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 10</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xnbheb7ckjth')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xnbheb7ckjth')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 11</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/6y2e3g7upxx9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/6y2e3g7upxx9')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 12</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/3o8k5c90knxx')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/3o8k5c90knxx')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 13-16</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/s65w6dbat5v1')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/s65w6dbat5v1')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 17</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2ewxd91ewz90')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2ewxd91ewz90')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 18</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/np821i3296qo')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/np821i3296qo')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 19</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m04660w97nsb')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m04660w97nsb')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 20</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/d39hmn04z3xe')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/d39hmn04z3xe')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 21</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jso510vvu3qp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jso510vvu3qp')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 22</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/3ouoxi397gt2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/3ouoxi397gt2')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 23-24</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/uah2s8u8hyia')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/uah2s8u8hyia')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 25</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/x1zz6lyd6adt')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/x1zz6lyd6adt')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 26</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/adzq2bvfmi09')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/adzq2bvfmi09')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 27</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2w9pyo11eyfz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2w9pyo11eyfz')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 28</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/k89mh20yo565')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/k89mh20yo565')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 29</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/p4wjdy4rfsuz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/p4wjdy4rfsuz')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/ac9fbe95-dc36-4894-9858-1eda309636f7/f9e6a83c-fbe5-45dc-aff2-38c89b429688.jpg" alt="Episode 1">
+      <div class="episode-title">Episode 30</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xwsfxhv0q8tk')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xwsfxhv0q8tk')">Download</button>
+      </div>
+    </div>
+
+  </div>
+<!-- Content for Season 1 -->
+
+
+</div>
+</div>
+
+<script>
+  // Show content based on season clicked
+  function showContent(season) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Show the clicked season's content
+    document.getElementById('season' + season).classList.add('active');
+  }
+
+  // Play video (redirect to YouTube)
+  function playVideo(url) {
+    window.open(url, '_blank');
+  }
+
+  // Download video (for demonstration purpose, this opens the video URL in new tab)
+  function downloadVideo(url) {
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
