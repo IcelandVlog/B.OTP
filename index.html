@@ -287,8 +287,39 @@ Genre <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
     </nav>
     </header>
 
+<!-- Style css auto video play Start -->
+
+  <style>
+    #videoOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #myVideo {
+      width: 80%;
+      height: auto;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+    
+<!-- Style css auto video play End -->
 
 
+    
     <style>
 
 .scrolling-text-container{
@@ -364,6 +395,19 @@ margin-left: 15px;
     </div>
     <!-- video card end -->
 
+
+<!-- Video html Code Start -->
+
+      <!-- ভিডিও ওভারলে -->
+  <div id="videoOverlay" class="hidden">
+    <video id="myVideo" autoplay muted playsinline controls>
+      <source src="https://icelandvlog.github.io/B.OTP/pixar.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+    
+<!-- Video html Code End -->
+    
 
 
 <!-- Alert Start  -->
@@ -1260,8 +1304,46 @@ margin-left: 15px;
     <!---- js file-->
     <script src="slider-data.js"></script>
     <script src="app.js"></script>
+
+
+<!-- Javascript Video Auto Play Start -->
+
+  <script>
+    function playVideoOncePerDay() {
+      const overlay = document.getElementById("videoOverlay");
+      const video = document.getElementById("myVideo");
+      const lastPlayed = localStorage.getItem("lastPlayed");
+
+      const now = Date.now();
+      const oneDay = 24 * 60 * 60 * 1000; // ২৪ ঘণ্টা
+
+      if (!lastPlayed || now - lastPlayed > oneDay) {
+        // overlay শো করাও
+        overlay.classList.remove("hidden");
+
+        // ভিডিও autoplay করাও
+        video.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+
+        // ভিডিও শেষ হলে overlay হাইড হবে
+        video.addEventListener("ended", function() {
+          overlay.classList.add("hidden");
+          localStorage.setItem("lastPlayed", now);
+        });
+      }
+    }
+
+    window.onload = playVideoOncePerDay;
+  </script>
+
+    
+<!-- Javascript Video Auto Play End -->
+
+    
 </body>
 </html>
+
 
 
 
