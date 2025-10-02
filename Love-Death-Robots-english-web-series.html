@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #333;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+  }
+
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/zC25FBaMbimIS0QYHddrvJIsQ0y.jpg") center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .audio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .session {
+    background: #bf0303;
+    padding: 10px 10px;
+    margin: 0 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .audio {
+    background: #444;
+    padding: 10px 10px;
+    margin: 0 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media (max-width: 700px) {
+    .session {
+      font-size: 12px;
+    }
+    .audio {
+      font-size: 12px;
+    }
+    .episode-title {
+      font-size: 10px;
+    }
+    .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/zC25FBaMbimIS0QYHddrvJIsQ0y.jpg")
+        no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  .session:hover {
+    background: #239b02;
+    color: azure;
+  }
+
+  .content {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  .content h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .episode {
+    margin-top: 20px;
+    padding: 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .episode:hover {
+    background: #444444;
+  }
+
+  .episode img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+
+  .episode-title {
+    font-size: 20px;
+  }
+
+  .episode-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #f44336;
+    color: white;
+  }
+
+  .episode-actions button:hover {
+    background: #e53935;
+  }
+
+  .episode-actions .play-btn {
+    background: #4caf50;
+  }
+
+  .episode-actions .download-btn {
+    background: #2196f3;
+  }
+  img.imgborder {
+    border-style: solid;
+    border-color: #d2d4e3 1px;
+    height: 350px;
+  }
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+  <img class="imgborder" src="https://image.tmdb.org/t/p/w1280/zC25FBaMbimIS0QYHddrvJIsQ0y.jpg" alt="">
+</div>
+
+<div class="container">
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;">Multi Audio:</div>
+  <div class="audio" >English</div>
+  <div class="audio" >Hindi</div>
+  <div class="audio" >Czech</div>
+  <div class="audio" >German</div>
+  <div class="audio" >Filipino(Tagalog)</div>
+  <div class="audio" >Spanish</div>
+  <div class="audio" >Russian</div>
+  <div class="audio" >French</div>
+  <div class="audio" >Hungarian</div>
+  <div class="audio" >Italian</div>
+  <div class="audio" >Japanese</div>
+  <div class="audio" >Polish</div>
+  <div class="audio" >Portuguese</div>
+  <div class="audio" >Thai</div>
+  <div class="audio" >Turkish</div>
+  <div class="audio" >Vietnamese</div>
+  <div class="audio" >Ukrainian</div>
+</div>
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01</div>
+  <div class="session" onclick="showContent(2)">Season 02</div>
+  <div class="session" onclick="showContent(3)">Season 03</div>
+  <div class="session" onclick="showContent(4)">Season 04</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01</h3>
+
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/atyhr2cgycbs')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/atyhr2cgycbs')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/dbijj70w4otu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/dbijj70w4otu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pgcfwelo89li')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pgcfwelo89li')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4k3fzchrrvj0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4k3fzchrrvj0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bl7lse7lbg31')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bl7lse7lbg31')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2yv7ogp07yza')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2yv7ogp07yza')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0era2butqeq4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0era2butqeq4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hm2upxt0h3a9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hm2upxt0h3a9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/t2o0g87efr7x')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/t2o0g87efr7x')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hg83wv5fbxw5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hg83wv5fbxw5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/i4x6wp794dc8')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/i4x6wp794dc8')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vuy0l6slbpc0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vuy0l6slbpc0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/iz2d4wo0ta1t')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/iz2d4wo0ta1t')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/eabd2ta95x8g')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/eabd2ta95x8g')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/e3gwrnzi7f4k')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/e3gwrnzi7f4k')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0bfk6v1r97n6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0bfk6v1r97n6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/a4yb6cp0sj8c')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/a4yb6cp0sj8c')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/8/86/Love_death_and_robots_xxlg.jpg/revision/latest?cb=20190316174727" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/v13w3hksjjgk')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/v13w3hksjjgk')">Download</button>
+    </div>
+  </div>
+
+</div>
+<!-- Content for Season 1 -->
+<!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 02</h3>
+
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/7dk5uq32su32')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/7dk5uq32su32')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/dj8nsbwvrn8d')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/dj8nsbwvrn8d')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vlnkaslv45l1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vlnkaslv45l1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vi0p5odwoaal')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vi0p5odwoaal')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/zlcpx56xu0tg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/zlcpx56xu0tg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/h0uep959qt0j')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/h0uep959qt0j')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/d8fik6ulqkc8')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/d8fik6ulqkc8')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://static.wikia.nocookie.net/lovedeathrobots/images/c/c6/LDRS2_Main_Vertical_27x40_RGB_EN-UK.jpg/revision/latest?cb=20210513202601" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pi2g309iav48')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pi2g309iav48')">Download</button>
+    </div>
+  </div>
+
+</div>
+<!-- Content for Season 2 -->
+<!-- Content for Season 3 -->
+<div class="content" id="season3">
+  <h3>Season 03</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wxsltr5ro7ny')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wxsltr5ro7ny')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5w2phtmn408s')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5w2phtmn408s')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/lwyimyk4tuuz')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/lwyimyk4tuuz')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o8w0ssngl5ry')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o8w0ssngl5ry')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ndz3a9c7aaxl')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ndz3a9c7aaxl')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/a8lez95lj33z')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/a8lez95lj33z')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/azs56ol7darl')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/azs56ol7darl')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/e78wl14iqzc4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/e78wl14iqzc4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/cRiDlzzZC5lL7fvImuSjs04SUIJ.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xj9u96z330tg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xj9u96z330tg')">Download</button>
+    </div>
+  </div>
+
+</div>
+<!-- Content for Season 3 -->
+<!-- Content for Season 4 -->
+<div class="content" id="season4">
+  <h3>Season 04</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/us4hd88o599v')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/us4hd88o599v')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/j29lq5h3aylf')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/j29lq5h3aylf')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/eoukmqu62mg6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/eoukmqu62mg6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/u9u0oahq2u82')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/u9u0oahq2u82')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ds99vdg0itp0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ds99vdg0itp0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/p51kf0bxp9ny')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/p51kf0bxp9ny')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vpgkp6zcjmpt')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vpgkp6zcjmpt')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/fh4vnriap0s7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/fh4vnriap0s7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/7cqfr8zdr09y')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/7cqfr8zdr09y')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/44408Kkom6nvibIljhE79rRoRjz.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/qcwakqbwzada')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/qcwakqbwzada')">Download</button>
+    </div>
+  </div>
+
+</div>
+<!-- Content for Season 4 -->
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+  // Hide all content
+  const contents = document.querySelectorAll('.content');
+  contents.forEach(content => content.classList.remove('active'));
+
+  // Show the clicked season's content
+  document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+  window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
