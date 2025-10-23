@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+<img class="imgborder" src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="">
+</div>
+
+<div class="container">
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;"> Audio:</div>
+  <div class="audio" >Chinese</div>
+</div>
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/zmbttzalkg7q')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/zmbttzalkg7q')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pqa9xitudqov')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pqa9xitudqov')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/qkabnirwnmax')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/qkabnirwnmax')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bixy717ypimv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bixy717ypimv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/r0cbsi8xn8ff')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/r0cbsi8xn8ff')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vzdcl4gcu6hm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vzdcl4gcu6hm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0ph96unnlhj5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0ph96unnlhj5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gyz4nbzudj6a')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gyz4nbzudj6a')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/zgqpg5sxvjoz')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/zgqpg5sxvjoz')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/b37iytuv9dlg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/b37iytuv9dlg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/g9sat3ttsb9y')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/g9sat3ttsb9y')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/lmli7ampkw9i')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/lmli7ampkw9i')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/yytbb2vz2727')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/yytbb2vz2727')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/et5dtyqont3j')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/et5dtyqont3j')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/i41op3kvz1bs')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/i41op3kvz1bs')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4bfcm08qkh5j')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4bfcm08qkh5j')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2m3jfnrwufgu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2m3jfnrwufgu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/yv3nrkultrvo')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/yv3nrkultrvo')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/3ttu6bfazrr1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/3ttu6bfazrr1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ub4msc5p3t94')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ub4msc5p3t94')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jb35ez4uhxt3')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jb35ez4uhxt3')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 22</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/rem8rrz6mmrk')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/rem8rrz6mmrk')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 23</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/kz5rd0t4tiwr')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/kz5rd0t4tiwr')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 24</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/f732v5xpzdje')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/f732v5xpzdje')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 25</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cw7qe7nwkb6j')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cw7qe7nwkb6j')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 26</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/nm3482gafper')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/nm3482gafper')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 27</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pjwzr0hjczsc')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pjwzr0hjczsc')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 28</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gz30wkkcx6ia')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gz30wkkcx6ia')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 29</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/uuierxh4fq1k')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/uuierxh4fq1k')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 30</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/b3py6vzxptqv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/b3py6vzxptqv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 31</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gwt91f2h53f1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gwt91f2h53f1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 32</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ls1v06l8t6t7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ls1v06l8t6t7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 33</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/j1s0kzgn9dzk')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/j1s0kzgn9dzk')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 34</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gnz2zw9b62g6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gnz2zw9b62g6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 35</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/58oa8idwkeyr')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/58oa8idwkeyr')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 36</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/r1w55p67uul0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/r1w55p67uul0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 37</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1874yswo4p48')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1874yswo4p48')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 38</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/j9jbb3p69zvt')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/j9jbb3p69zvt')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 39</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/kq1nceey6u42')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/kq1nceey6u42')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 40</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ktdp4rulnrs5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ktdp4rulnrs5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 41</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/t3vwxd1s95ii')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/t3vwxd1s95ii')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 42</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ms2v77jdcgj5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ms2v77jdcgj5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 43</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hiqcmp1ltmfn')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hiqcmp1ltmfn')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 44</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/lnvdn9uhsjv4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/lnvdn9uhsjv4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 45</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1lxfrgn8esf8')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1lxfrgn8esf8')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 46</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xin9r7zerd9g')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xin9r7zerd9g')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 47</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/h110k747s8bf')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/h110k747s8bf')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 48</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jxpv7t6cj7q7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jxpv7t6cj7q7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 49</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/3bxw80fga4o2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/3bxw80fga4o2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 50</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jm36qrec1ipm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jm36qrec1ipm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/rngqWUuZ53l8XIMRey2ivhJ2Lhx.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 51</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ofm1szfj11wd')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ofm1szfj11wd')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 1 -->
+
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
+
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
