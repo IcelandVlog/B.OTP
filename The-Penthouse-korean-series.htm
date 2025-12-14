@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+<img class="imgborder" src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="">
+</div>
+
+<div class="container">
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;">Dual Audio:</div>
+  <div class="audio" >Korean</div>
+  <div class="audio" >Hindi</div>
+</div>
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01 [Korean]</div>
+  <div class="session" onclick="showContent(2)">Season 01 [Hindi]</div>
+  <div class="session" onclick="showContent(3)">Season 02 [Korean]</div>
+  <div class="session" onclick="showContent(4)">Season 02 [Hindi]</div>
+  <div class="session" onclick="showContent(5)">Season 03 [Korean]</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01 [Korean]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wg9bvwwef4eb')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wg9bvwwef4eb')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ffsqrm36dosx')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ffsqrm36dosx')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pwdy17wjs8jm/The_Penthouse__War_in_Life__2020__S01_E03__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pwdy17wjs8jm/The_Penthouse__War_in_Life__2020__S01_E03__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cigavdyyidd6/The_Penthouse__War_in_Life__2020__S01_E04__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cigavdyyidd6/The_Penthouse__War_in_Life__2020__S01_E04__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/obqdc211gzls/The_Penthouse__War_in_Life__2020__S01_E05__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/obqdc211gzls/The_Penthouse__War_in_Life__2020__S01_E05__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4qtzit83rr58/The_Penthouse__War_in_Life__2020__S01_E06__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4qtzit83rr58/The_Penthouse__War_in_Life__2020__S01_E06__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hptbc476gt3t/The_Penthouse__War_in_Life__2020__S01_E07__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hptbc476gt3t/The_Penthouse__War_in_Life__2020__S01_E07__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cnh4n0go9j3c/The_Penthouse__War_in_Life__2020__S01_E08__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cnh4n0go9j3c/The_Penthouse__War_in_Life__2020__S01_E08__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/w7kfoc3vmwen/The_Penthouse__War_in_Life__2020__S01_E09__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/w7kfoc3vmwen/The_Penthouse__War_in_Life__2020__S01_E09__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/a80k2auyvmy9/The_Penthouse__War_in_Life__2020__S01_E10__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/a80k2auyvmy9/The_Penthouse__War_in_Life__2020__S01_E10__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5k61cyo9we61/The_Penthouse__War_in_Life__2020__S01_E11__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5k61cyo9we61/The_Penthouse__War_in_Life__2020__S01_E11__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hklekhwfi7f4/The_Penthouse__War_in_Life__2020__S01_E12__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hklekhwfi7f4/The_Penthouse__War_in_Life__2020__S01_E12__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/t3u1u7lffunw/The_Penthouse__War_in_Life__2020__S01_E13__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/t3u1u7lffunw/The_Penthouse__War_in_Life__2020__S01_E13__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/21u9im1rbuul/The_Penthouse__War_in_Life__2020__S01_E14__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/21u9im1rbuul/The_Penthouse__War_in_Life__2020__S01_E14__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/yp7hcre6yhh1/The_Penthouse__War_in_Life__2020__S01_E15__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/yp7hcre6yhh1/The_Penthouse__War_in_Life__2020__S01_E15__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/dxm59huxnoti/The_Penthouse__War_in_Life__2020__S01_E16__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/dxm59huxnoti/The_Penthouse__War_in_Life__2020__S01_E16__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4f2h5379fo1t/The_Penthouse__War_in_Life__2020__S01_E17__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4f2h5379fo1t/The_Penthouse__War_in_Life__2020__S01_E17__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vk2whzf0s5fi/The_Penthouse__War_in_Life__2020__S01_E18__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vk2whzf0s5fi/The_Penthouse__War_in_Life__2020__S01_E18__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0inp3h00j032/The_Penthouse__War_in_Life__2020__S01_E19__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0inp3h00j032/The_Penthouse__War_in_Life__2020__S01_E19__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/d/ymavp2gug3ha/The_Penthouse__War_in_Life__2020__S01_E20__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ymavp2gug3ha/The_Penthouse__War_in_Life__2020__S01_E20__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vxtau7ibogm0/The_Penthouse__War_in_Life__2020__S01_E21__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vxtau7ibogm0/The_Penthouse__War_in_Life__2020__S01_E21__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 1 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 01 [Hindi]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/g438q91owvbo/The_Penthouse_S01E01_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/g438q91owvbo/The_Penthouse_S01E01_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/7574wkq5sj7b/The_Penthouse_S01E02_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/7574wkq5sj7b/The_Penthouse_S01E02_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/riv7xmxma8a0/The_Penthouse_S01E03_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/riv7xmxma8a0/The_Penthouse_S01E03_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/9n0yrxufqah2/The_Penthouse_S01E04_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/9n0yrxufqah2/The_Penthouse_S01E04_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/uyssznaaodg4/The_Penthouse_S01E05_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/uyssznaaodg4/The_Penthouse_S01E05_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/97rz02p4osxo/The_Penthouse_S01E06_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/97rz02p4osxo/The_Penthouse_S01E06_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/39vwfdohutop/The_Penthouse_S01E07_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/39vwfdohutop/The_Penthouse_S01E07_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/co2trj55xrfm/The_Penthouse_S01E08_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/co2trj55xrfm/The_Penthouse_S01E08_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/dg0dxa53xo1m/The_Penthouse_S01E09_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/dg0dxa53xo1m/The_Penthouse_S01E09_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/uh7ae7oaj4qz/The_Penthouse_S01E10_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/uh7ae7oaj4qz/The_Penthouse_S01E10_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/9gj5rxys5f81/The_Penthouse_S01E11_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/9gj5rxys5f81/The_Penthouse_S01E11_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1obl9v795ewl/The_Penthouse_S01E12_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1obl9v795ewl/The_Penthouse_S01E12_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/l0zdxah7gpvl/The_Penthouse_S01E13_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/l0zdxah7gpvl/The_Penthouse_S01E13_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/40vpxk37mk71/The_Penthouse_S01E14_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/40vpxk37mk71/The_Penthouse_S01E14_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/spdsm5hypwmq/The_Penthouse_S01E15_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/spdsm5hypwmq/The_Penthouse_S01E15_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bgx1yaqtw6hp/The_Penthouse_S01E16_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bgx1yaqtw6hp/The_Penthouse_S01E16_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/8hyd3bsrl59u/The_Penthouse_S01E17_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/8hyd3bsrl59u/The_Penthouse_S01E17_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vovmrrcpddt6/The_Penthouse_S01E18_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vovmrrcpddt6/The_Penthouse_S01E18_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/96aah7ff55m8/The_Penthouse_S01E19_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/96aah7ff55m8/The_Penthouse_S01E19_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5lhst9jlzcx7/The_Penthouse_S01E20_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5lhst9jlzcx7/The_Penthouse_S01E20_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/wybv1VgIOMhcHdU3ooikn2LuR1o.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 21</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/a6z55pe6w70x/The_Penthouse_S01E21_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/a6z55pe6w70x/The_Penthouse_S01E21_Hindi_Dubbed_720p_WEBRip_x264_AAC-MsVerse.mkv')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season3">
+  <h3>Season 02 [Korean]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/73rq3rvxggkl/The_Penthouse_War_in_Life__2020__S02_E01__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/73rq3rvxggkl/The_Penthouse_War_in_Life__2020__S02_E01__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2gndw3ibp0s9/The_Penthouse_War_in_Life__2020__S02_E02__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2gndw3ibp0s9/The_Penthouse_War_in_Life__2020__S02_E02__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2y598h1uufnj/The_Penthouse_War_in_Life__2020__S02_E03__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2y598h1uufnj/The_Penthouse_War_in_Life__2020__S02_E03__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2mn4h4k4hu0y/The_Penthouse_War_in_Life__2020__S02_E04__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2mn4h4k4hu0y/The_Penthouse_War_in_Life__2020__S02_E04__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/chn0m26yzksq/The_Penthouse_War_in_Life__2020__S02_E05__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/chn0m26yzksq/The_Penthouse_War_in_Life__2020__S02_E05__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hswoop47f7qo/The_Penthouse_War_in_Life__2020__S02_E06__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hswoop47f7qo/The_Penthouse_War_in_Life__2020__S02_E06__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5im11go818cx/The_Penthouse_War_in_Life__2020__S02_E07__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5im11go818cx/The_Penthouse_War_in_Life__2020__S02_E07__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/uqt9u1mmf5l9/The_Penthouse_War_in_Life__2020__S02_E08__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/uqt9u1mmf5l9/The_Penthouse_War_in_Life__2020__S02_E08__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bugzfslv8nqt/The_Penthouse_War_in_Life__2020__S02_E09__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bugzfslv8nqt/The_Penthouse_War_in_Life__2020__S02_E09__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/y7b1teqs704z/The_Penthouse_War_in_Life__2020__S02_E10__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/y7b1teqs704z/The_Penthouse_War_in_Life__2020__S02_E10__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/lj3f61syax5j/The_Penthouse_War_in_Life__2020__S02_E11__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/lj3f61syax5j/The_Penthouse_War_in_Life__2020__S02_E11__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ols1cuhvp3yi/The_Penthouse_War_in_Life__2020__S02_E12__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ols1cuhvp3yi/The_Penthouse_War_in_Life__2020__S02_E12__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m0ugm7v8qqun/The_Penthouse_War_in_Life__2020__S02_E13__Korean___Bangla_Subtitle_.mkv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m0ugm7v8qqun/The_Penthouse_War_in_Life__2020__S02_E13__Korean___Bangla_Subtitle_.mkv')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season4">
+  <h3>Season 02 [Hindi]</h3>
+
+  <div class="episode">
+    <img src="" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0fd1yebxut50')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0fd1yebxut50')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jmsz2ucy3yoq')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jmsz2ucy3yoq')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/inlgj2se4zji')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/inlgj2se4zji')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/d3jvky5pmwyw')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/d3jvky5pmwyw')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wj130d33f3ji')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wj130d33f3ji')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/km4h97n4t7r7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/km4h97n4t7r7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/i8hlo5t543se')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/i8hlo5t543se')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/67k3ewij28r4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/67k3ewij28r4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/zxfh5yoz6ock')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/zxfh5yoz6ock')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/d5ti49faltxa')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/d5ti49faltxa')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hcqqgqsmo5d0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hcqqgqsmo5d0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/pic8wswd0kev')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/pic8wswd0kev')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/33WzWRlmxjpW00zOGin6qrx6iqU.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/vjm5kgeda17p')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/vjm5kgeda17p')">Download</button>
+    </div>
+  </div>
+
+
+
+</div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 3 -->
+<div class="content" id="season5">
+  <h3>Season 03 [Korean]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2iiyqmlpsbsq')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2iiyqmlpsbsq')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/iichpu9ilvhp')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/iichpu9ilvhp')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/0oqmjtqydrlv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/0oqmjtqydrlv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/riev1nrd3tzu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/riev1nrd3tzu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/sj43o3fs5ykj')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/sj43o3fs5ykj')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/33f6v8va0aew')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/33f6v8va0aew')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/dteoxgvrxsde')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/dteoxgvrxsde')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ddjy3midahh1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ddjy3midahh1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/rj3rnn6ejort')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/rj3rnn6ejort')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/8akpqrr0m10h')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/8akpqrr0m10h')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/u528ebdnykmj')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/u528ebdnykmj')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ouncmouynf41')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ouncmouynf41')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/mpk74j6syl3s')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/mpk74j6syl3s')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/f5SDpWYxAMNtuA4peEGAy9uQile.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cc3xnfctl54e')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cc3xnfctl54e')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
+
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
