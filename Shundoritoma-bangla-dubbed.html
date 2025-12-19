@@ -2,580 +2,848 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B.OTT Movies</title>
-  <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-  
-    header {
-      background: #333;
-      padding: 20px 0;
-      text-align: center;
-    }
-  
-    img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-      z-index: 100;
-      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-    }
-  
-    .banner {
-      background: url("https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp") center center/cover;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-  
-    .banner h2 {
-      font-size: 36px;
-    }
-  
-    .sessions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-  
-    .session {
-      background: #444;
-      padding: 10px 10px;
-      margin: 0 10px 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    @media (max-width: 700px) {
-      .session {
-        font-size: 8px;
-      }
-      .episode-title {
-        font-size: 10px;
-      }
-      .banner {
-      background: url("https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp")
-          no-repeat center center/cover;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
-    }
-  
-    .session:hover {
-      background: #1a03c8;
-      color: azure;
-    }
-  
-    .content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-  
-    .content.active {
-      display: block;
-    }
-  
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-  
-    .episode {
-      margin-top: 20px;
-      padding: 15px;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    .episode:hover {
-      background: #444444;
-    }
-  
-    .episode img {
-      width: 100px;
-      height: 150px;
-      object-fit: cover;
-      margin-right: 15px;
-    }
-  
-    .episode-title {
-      font-size: 20px;
-    }
-  
-    .episode-actions button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #f44336;
-      color: white;
-    }
-  
-    .episode-actions button:hover {
-      background: #e53935;
-    }
-  
-    .episode-actions .play-btn {
-      background: #4caf50;
-    }
-  
-    .episode-actions .download-btn {
-      background: #2196f3;
-    }
-    img.imgborder {
-      border-style: solid;
-      border-color: #d2d4e3 1px;
-      height: 350px;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.session {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 8px;
+  }
+  .episode-title {
+    font-size: 10px;0
+  }
+  .banner {
+  background: url("https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #1a03c8;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+}
+</style>
 
 </head>
 <body>
 
 
 <div class="banner">
-    <img class="imgborder" src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="">
+<img class="imgborder" src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="">
 </div>
 
 <div class="container">
-  <div class="sessions">
-    <div class="session" onclick="showContent(1)">Season 01</div>
-  </div>
+<div class="sessions">
+<div class="session" onclick="showContent(1)">Season 01 [Korean]</div>
+<div class="session" onclick="showContent(2)">Season 01 [Bengali]</div>
+<div class="session" onclick="showContent(3)">Season 01 [Hindi]</div>
+</div>
 
 <!-- Content for Season 1 -->
-  <div class="content" id="season1">
-    <h3>Season 01</h3>
+<div class="content" id="season1">
+<h3>Season 01 [Korean]</h3>
 
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 01</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/heq50123nu1y')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/heq50123nu1y')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 02</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gagk82ugcdvq')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gagk82ugcdvq')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 03</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hmadrm5owd9f')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hmadrm5owd9f')">Download</button>
-      </div>
-    </div>
-    <div>
-      <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 04</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m3j22v4auoli')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m3j22v4auoli')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 05</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bt6k7ljm4h4i')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bt6k7ljm4h4i')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 06</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/04emmhv336j0')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/04emmhv336j0')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 07</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/kji0uxhpye5c')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/kji0uxhpye5c')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 08</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1mcm23gz9sfa')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1mcm23gz9sfa')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 09</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jl3jj4u65nkw')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jl3jj4u65nkw')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 10</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1tlxyo2dd7bg')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1tlxyo2dd7bg')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 11</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ymoaw6nlvbmo')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ymoaw6nlvbmo')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 12</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xmgkf64qiwds')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xmgkf64qiwds')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 13</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/n8h09i8bn66o')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/n8h09i8bn66o')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 14</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wpjulcn2trse')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wpjulcn2trse')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 15</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ohrww5ur2keh')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ohrww5ur2keh')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 16</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/tt4j3k55d26d')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/tt4j3k55d26d')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 17</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o7tucvy1vr5d')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o7tucvy1vr5d')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 18</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5wnmxg735u87')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5wnmxg735u87')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 19</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/72uygzz0d9u9')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/72uygzz0d9u9')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 20</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/84ccckk9hqze')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/84ccckk9hqze')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 21</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ae90d2c4toqu')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ae90d2c4toqu')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 22</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/j74xz8n1p0e7')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/j74xz8n1p0e7')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 23</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/z0oqamphaw4w')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/z0oqamphaw4w')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 24</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/74wyms2pzv3h')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/74wyms2pzv3h')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 25</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/oyybjyhupl4i')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/oyybjyhupl4i')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 26</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/x2tmxfyeht6n')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/x2tmxfyeht6n')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 27</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/8wvpstquam8g')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/8wvpstquam8g')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 28</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/eohtomg25pgt')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/eohtomg25pgt')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 29</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/npnsp1y39ov3')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/npnsp1y39ov3')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 30</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cglr2t4rxwog')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cglr2t4rxwog')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 31</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5p0vzty3ipjo')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5p0vzty3ipjo')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 32</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jbc4s5zn0kdl')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jbc4s5zn0kdl')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 33</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o97erg37usxm')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o97erg37usxm')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 34</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/x8ofmbpj2yt6')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/x8ofmbpj2yt6')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 35-36</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bs7c7zyf94t4')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bs7c7zyf94t4')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 37</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/27gb624t8vpb')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/27gb624t8vpb')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 38</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2sq4wytmu3ch')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2sq4wytmu3ch')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 39</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/yoix27fvuefs')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/yoix27fvuefs')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 40</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/u7wy8k2vk0cv')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/u7wy8k2vk0cv')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 41</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/qwtschkb8h9i')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/qwtschkb8h9i')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 42</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/fptg3mvy6hlr')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/fptg3mvy6hlr')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 43</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/73t1mb49el9c')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/73t1mb49el9c')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 44</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4x3rgjofuag1')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4x3rgjofuag1')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 45</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wee8baxrkf8a')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wee8baxrkf8a')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 46</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/mynjocxzfoo0')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/mynjocxzfoo0')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Episode 47</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m2r7i1vjw8tn')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m2r7i1vjw8tn')">Download</button>
-      </div>
-    </div>
-    <div class="episode">
-      <img src="https://i.ibb.co/GwcTyRJ/She-Was-Pretty-Shundoritoma-2025-S01-E01-Bengali-Dubbed-ORG-Bongo-BD-WEB-DL-H264-AAC-4-K-1080p-720p.webp" alt="Episode 1">
-      <div class="episode-title">Coming Soon</div>
-      <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('')">Download</button>
-      </div>
-    </div>
-
-
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 01</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/mwimgh4jw755')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/mwimgh4jw755')">Download</button>
   </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 02</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/z4g23tp7419e')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/z4g23tp7419e')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 03</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/5gh6nfj97x7n')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/5gh6nfj97x7n')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 04</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/jkkjsycwf7sn')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/jkkjsycwf7sn')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 05</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/znfsbnm1xebh')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/znfsbnm1xebh')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 06</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/lpjd6dc9um3s')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/lpjd6dc9um3s')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 07</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/okv8mmmv586z')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/okv8mmmv586z')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 08</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/eqdqpca1nroo')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/eqdqpca1nroo')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 09</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/w9fis1f5gr1p')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/w9fis1f5gr1p')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 10</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/940h330ljvf7')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/940h330ljvf7')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 11</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/0kgqpbzud2a8')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/0kgqpbzud2a8')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 12</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/xpobs592ssi3')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/xpobs592ssi3')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 13</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/3ysva8626916')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/3ysva8626916')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 14</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/q6vj4fkru3hv')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/q6vj4fkru3hv')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 15</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/415ajsnkgn1h')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/415ajsnkgn1h')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 16</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/ku2o1c3waem8')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/ku2o1c3waem8')">Download</button>
+  </div>
+</div>
+
+
+</div>
+<!-- Content for Season 1 [Korean] -->
+
+<!-- Content for Season 1 [Bengali] -->
+<div class="content" id="season2">
+<h3>Season 01 [Bengali]</h3>
+
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 01</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/heq50123nu1y')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/heq50123nu1y')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 02</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/gagk82ugcdvq')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/gagk82ugcdvq')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 03</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/hmadrm5owd9f')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/hmadrm5owd9f')">Download</button>
+  </div>
+</div>
+<div>
+  <div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 04</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m3j22v4auoli')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m3j22v4auoli')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 05</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bt6k7ljm4h4i')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bt6k7ljm4h4i')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 06</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/04emmhv336j0')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/04emmhv336j0')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 07</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/kji0uxhpye5c')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/kji0uxhpye5c')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 08</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1mcm23gz9sfa')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1mcm23gz9sfa')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 09</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jl3jj4u65nkw')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jl3jj4u65nkw')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 10</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/1tlxyo2dd7bg')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/1tlxyo2dd7bg')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 11</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ymoaw6nlvbmo')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ymoaw6nlvbmo')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 12</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xmgkf64qiwds')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xmgkf64qiwds')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 13</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/n8h09i8bn66o')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/n8h09i8bn66o')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 14</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wpjulcn2trse')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wpjulcn2trse')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 15</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ohrww5ur2keh')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ohrww5ur2keh')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 16</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/tt4j3k55d26d')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/tt4j3k55d26d')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 17</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o7tucvy1vr5d')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o7tucvy1vr5d')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 18</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5wnmxg735u87')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5wnmxg735u87')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 19</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/72uygzz0d9u9')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/72uygzz0d9u9')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 20</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/84ccckk9hqze')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/84ccckk9hqze')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 21</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ae90d2c4toqu')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ae90d2c4toqu')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 22</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/j74xz8n1p0e7')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/j74xz8n1p0e7')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 23</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/z0oqamphaw4w')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/z0oqamphaw4w')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 24</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/74wyms2pzv3h')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/74wyms2pzv3h')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 25</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/oyybjyhupl4i')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/oyybjyhupl4i')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 26</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/x2tmxfyeht6n')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/x2tmxfyeht6n')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 27</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/8wvpstquam8g')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/8wvpstquam8g')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 28</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/eohtomg25pgt')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/eohtomg25pgt')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 29</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/npnsp1y39ov3')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/npnsp1y39ov3')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 30</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/cglr2t4rxwog')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/cglr2t4rxwog')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 31</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/5p0vzty3ipjo')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/5p0vzty3ipjo')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 32</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/jbc4s5zn0kdl')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/jbc4s5zn0kdl')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 33</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o97erg37usxm')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o97erg37usxm')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 34</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/x8ofmbpj2yt6')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/x8ofmbpj2yt6')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 35-36</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/bs7c7zyf94t4')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/bs7c7zyf94t4')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 37</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/27gb624t8vpb')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/27gb624t8vpb')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 38</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/2sq4wytmu3ch')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/2sq4wytmu3ch')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 39</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/yoix27fvuefs')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/yoix27fvuefs')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 40</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/u7wy8k2vk0cv')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/u7wy8k2vk0cv')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 41</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/qwtschkb8h9i')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/qwtschkb8h9i')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 42</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/fptg3mvy6hlr')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/fptg3mvy6hlr')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 43</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/73t1mb49el9c')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/73t1mb49el9c')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 44</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/4x3rgjofuag1')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/4x3rgjofuag1')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 45</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/wee8baxrkf8a')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/wee8baxrkf8a')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 46</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/mynjocxzfoo0')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/mynjocxzfoo0')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/0c62868a-303a-4caf-a020-9fb89a3da24f/b04178cd-7f6a-40b1-9c96-ef733466aade.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 47</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://filemoon.to/e/m2r7i1vjw8tn')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/m2r7i1vjw8tn')">Download</button>
+  </div>
+</div>
+
+
+</div>
 <!-- Content for Season 1 -->
+
+<!-- Content for Season 1 -->
+<div class="content" id="season3">
+<h3>Season 01 [Hindi]</h3>
+
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 01</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/8i7aehrsuvjv')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/8i7aehrsuvjv')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 02</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/vk08ev9a6tiy')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/vk08ev9a6tiy')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 03</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/x8oc4flowz03')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/x8oc4flowz03')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 04</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/r7ziduk62mlr')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/r7ziduk62mlr')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 05</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/fwpc7l36lpux')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/fwpc7l36lpux')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 06</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/462a6gf0gy3d')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/462a6gf0gy3d')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 07</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/dex6jtj5ysdx')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/dex6jtj5ysdx')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 08</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/nylnkq8ldm27')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/nylnkq8ldm27')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 09</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/e54kjphomt65')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/e54kjphomt65')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 10</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/3hc8tdbjta7v')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/3hc8tdbjta7v')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 11</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/1twhdnsmtzim')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/1twhdnsmtzim')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 12</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/0b6y2bcvwe1u')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/0b6y2bcvwe1u')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 13</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/1ne4b3vovr8e')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/1ne4b3vovr8e')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 14</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/od9jl7fno4je')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/od9jl7fno4je')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 15</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/c17599hrp75x')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/c17599hrp75x')">Download</button>
+  </div>
+</div>
+<div class="episode">
+  <img src="https://image.tmdb.org/t/p/w1280/hze4EFgDOjEgvuZ0H2KrCgD6iqv.jpg" alt="Episode 1">
+  <div class="episode-title">Episode 16</div>
+  <div class="episode-actions">
+    <button class="play-btn" onclick="playVideo('https://pqham.com/e/a7z96xoxu7r1')">Play</button>
+    <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/a7z96xoxu7r1')">Download</button>
+  </div>
+</div>
+
+
+</div>
+<!-- Content for Season 1 [Hindi] -->
 
 
 </div>
 </div>
 
 <script>
-  // Show content based on season clicked
-  function showContent(season) {
-    // Hide all content
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
 
-    // Show the clicked season's content
-    document.getElementById('season' + season).classList.add('active');
-  }
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
 
-  // Play video (redirect to YouTube)
-  function playVideo(url) {
-    window.open(url, '_blank');
-  }
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
 
-  // Download video (for demonstration purpose, this opens the video URL in new tab)
-  function downloadVideo(url) {
-    window.open(url, '_blank');
-  }
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
 </script>
 
 </body>
