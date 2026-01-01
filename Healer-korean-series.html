@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/4Zc0XtzXasrfgOyCH7wX8stqkEu.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/4Zc0XtzXasrfgOyCH7wX8stqkEu.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+<img class="imgborder" src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="">
+</div>
+
+<div class="container">
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;">Dual Audio:</div>
+  <div class="audio" >Korean</div>
+  <div class="audio" >Hindi</div>
+</div>
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01 [Korean]</div>
+  <div class="session" onclick="showContent(2)">Season 01 [Hindi]</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01 [Korean]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/mzzx9vbef3cc')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/mzzx9vbef3cc')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/3c871yb13goc')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/3c871yb13goc')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/620736j4luee')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/620736j4luee')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/vbz4m6g2a3nt')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/vbz4m6g2a3nt')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/167evlywdbmg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/167evlywdbmg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/497pialr0atg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/497pialr0atg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/8uzcmv31f6o8')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/8uzcmv31f6o8')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/701q6z6qjwb2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/701q6z6qjwb2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/nt6khega8r72')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/nt6khega8r72')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/u653guzkc95c')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/u653guzkc95c')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/m46u933j08my')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/m46u933j08my')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/cdy1fu0wigkh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/cdy1fu0wigkh')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/dqxe74bygvz2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/dqxe74bygvz2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/s4i7c0notnis')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/s4i7c0notnis')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/btvk7r7mns3o')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/btvk7r7mns3o')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/dhf9eanuqn5y')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/dhf9eanuqn5y')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/n78iy7fwor55')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/n78iy7fwor55')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/njtl8qgxh2yx')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/njtl8qgxh2yx')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/ulf3fdmy1nkh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/ulf3fdmy1nkh')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/l9r7ceu0vw26')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/l9r7ceu0vw26')">Download</button>
+    </div>
+  </div>
+
+
+
+</div>
+<!-- Content for Season 1 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 01 [Hindi]</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/pfjmp9v7ozpe')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/pfjmp9v7ozpe')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/6ppcpziomes1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/6ppcpziomes1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/x74beg696gl2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/x74beg696gl2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/f0sqm66kxclw')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/f0sqm66kxclw')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/ry4hch1sbzul')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/ry4hch1sbzul')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/tuy01fox0z7v')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/tuy01fox0z7v')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/uegw5kr4wvpc')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/uegw5kr4wvpc')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/dk70kphthjca')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/dk70kphthjca')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/by51b52fh1iu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/by51b52fh1iu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/91ds9vaaojsy')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/91ds9vaaojsy')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/0tykvdk45cun')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/0tykvdk45cun')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/mkdekz0pi7r5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/mkdekz0pi7r5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/5bd5qr03tdz7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/5bd5qr03tdz7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/oc26esd2m3w7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/oc26esd2m3w7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 15</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/jvdzry3piboo')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/jvdzry3piboo')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 16</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/xvffx42qif00')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/xvffx42qif00')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 17</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/62qy08hd46gv')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/62qy08hd46gv')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 18</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/9bbsq30xdak5')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/9bbsq30xdak5')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 19</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/h227ysdd16oy')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/h227ysdd16oy')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kUYhAq7TDBX5zPG0UQyQpSETRNn.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 20</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://pqham.com/e/wbrvrevdkiup')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://pqham.com/d/wbrvrevdkiup')">Download</button>
+    </div>
+  </div>
+
+</div>
+<!-- Content for Season 2 -->
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
+
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
