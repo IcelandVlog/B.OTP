@@ -5,219 +5,254 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>B.OTT Movies</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon"/>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #1a1a1a;
-        color: white;
-        margin: 0;
-        padding: 0;
-      }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-      header {
-        background: #333;
-        padding: 20px 0;
-        text-align: center;
-      }
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
 
-      img {
-        width: 100%;
-        max-width: 250px;
-        border-radius: 10px;
-        z-index: 100;
-        box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-      }
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
 
-      .banner {
-        background: url("https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg")
-          center center/cover;
-        height: 600px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
+.banner {
+  background: url("") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
 
-      .banner h2 {
-        font-size: 36px;
-      }
+.banner h2 {
+  font-size: 36px;
+}
 
-      .sessions {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-      }
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-      .session {
-        background: #444;
-        padding: 10px 10px;
-        margin: 0 10px;
-        font-size: 18px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      @media (max-width: 700px) {
-        .session {
-          font-size: 8px;
-        }
-        .episode-title {
-          font-size: 10px;
-        }
-        .banner {
-          background: url("https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg")
-            no-repeat center center/cover;
-          height: 400px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          text-align: center;
-        }
-      }
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
 
-      .session:hover {
-        background: #1a03c8;
-        color: azure;
-      }
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
 
-      .content {
-        display: none;
-        margin-top: 20px;
-        text-align: center;
-      }
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
 
-      .content.active {
-        display: block;
-      }
+.content.active {
+  display: block;
+}
 
-      .content h3 {
-        font-size: 28px;
-        margin-bottom: 15px;
-      }
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
 
-      .episode {
-        margin-top: 20px;
-        padding: 15px;
-        background: #333;
-        border-radius: 5px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-      .episode:hover {
-        background: #444444;
-      }
+.episode:hover {
+  background: #444444;
+}
 
-      .episode img {
-        width: 100px;
-        height: 150px;
-        object-fit: cover;
-        margin-right: 15px;
-      }
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
 
-      .episode-title {
-        font-size: 20px;
-      }
+.episode-title {
+  font-size: 20px;
+}
 
-      .episode-actions button {
-        padding: 8px 16px;
-        font-size: 14px;
-        margin: 5px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background: #f44336;
-        color: white;
-      }
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
 
-      .episode-actions button:hover {
-        background: #e53935;
-      }
+.episode-actions button:hover {
+  background: #e53935;
+}
 
-      .episode-actions .play-btn {
-        background: #4caf50;
-      }
+.episode-actions .play-btn {
+  background: #4caf50;
+}
 
-      .episode-actions .download-btn {
-        background: #2196f3;
-      }
-      img.imgborder {
-        border-style: solid;
-        border-color: #e3d4d2 1px;
-      }
-    </style>
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
   </head>
   <body>
     <div class="banner">
       <img class="imgborder" src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="" />
     </div>
 
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;">Multi Audio:</div>
+  <div class="audio" >Czech</div>
+  <div class="audio" >English</div> 
+  <div class="audio" >German</div>
+  <div class="audio" >Hindi</div>    
+  <div class="audio" >Spanish</div>
+  <div class="audio" >French</div>
+  <div class="audio" >Hungarian</div>
+  <div class="audio" >Indonesian</div>
+  <div class="audio" >Italian</div>
+  <div class="audio" >Japanese</div>
+  <div class="audio" >Polish</div>
+  <div class="audio" >Portuguese</div>
+  <div class="audio" >Turkish</div>
+</div>
+    
     <div class="container">
       <div class="sessions">
-        <div class="session" onclick="showContent(1)">Season 1</div>
+        <div class="session" onclick="showContent(1)">Season 01</div>
       </div>
 
       <!-- Content for Season 1 start -->
       <div class="content" id="season1">
-        <h3>Season 1</h3>
+        <h3>Season 01</h3>
 
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 1</div>
+        <div class="episode-title">Episode 01</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/qdl0b52j0x0m')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/dxq3o0')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/frwppck2vqwk')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/frwppck2vqwk')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 2</div>
+        <div class="episode-title">Episode 02</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/ogy2tdj1jsny')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/q6xmvd')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/ocy3ecy5k36p')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/ocy3ecy5k36p')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 3</div>
+        <div class="episode-title">Episode 03</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/ui1swu31esov')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/np1yzw')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/4ebvsl7crq46')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/4ebvsl7crq46')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 4</div>
+        <div class="episode-title">Episode 04</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qL0YEyzWjDpODRX')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qL0YEyzWjDpODRX')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/dsf8ae9mo7cp')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/dsf8ae9mo7cp')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 5</div>
+        <div class="episode-title">Episode 05</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMDagjEmX4')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMDagjEmX4')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/xkjrx2bb8471')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/xkjrx2bb8471')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 6</div>
+        <div class="episode-title">Episode 06</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWGyD45J39')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWGyD45J39')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/kzu24m0133lj')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/kzu24m0133lj')" > Download </button>
         </div>
       </div>
       <div class="episode">
        <img src="https://m.media-amazon.com/images/M/MV5BZjNmZDJlYmMtZjFhNy00NDRlLTg5N2QtOWQxYzJkMGZmMzk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Episode 1" />
-        <div class="episode-title">Episode 7</div>
+        <div class="episode-title">Episode 07</div>
           <div class="episode-actions">
-            <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwWDdzQODLj')">Play</button>
-            <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwWDdzQODLj')" > Download </button>
+            <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/s173fr7vy5ew')">Play</button>
+            <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/s173fr7vy5ew')" > Download </button>
         </div>
       </div>
 
