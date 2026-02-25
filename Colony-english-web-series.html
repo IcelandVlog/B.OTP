@@ -5,147 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B.OTT Movies</title>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+  
+ <style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background: #333;
-      padding: 20px 0;
-      text-align: center;
-    }
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
 
-    img{
-        width: 100%;
-        max-width: 250px;
-        border-radius: 10px;
-        z-index: 100;
-        box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-    }
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
 
+.banner {
+  background: url("") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
 
-    .banner {
-      background: url('https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw') center center/cover;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
+.banner h2 {
+  font-size: 36px;
+}
 
-    .banner h2 {
-      font-size: 36px;
-    }
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    .sessions {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
 
-    .session {
-      background: #444;
-      padding: 10px 10px;
-      margin: 0 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    @media(max-width:700px){
-        .session {
-      font-size: 8px;
-    }
-    .episode-title {
-      font-size: 10px;
-    }
-    .banner {
-      background: url('https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw') no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-    }
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
 
-    .session:hover {
-      background: #666;
-    }
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
 
-    .content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
+.content.active {
+  display: block;
+}
 
-    .content.active {
-      display: block;
-    }
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
 
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .episode {
-      margin-top: 20px;
-      padding: 15px;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.episode:hover {
+  background: #444444;
+}
 
-    .episode:hover {
-      background: #444;
-    }
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
 
-    .episode img {
-      width: 100px;
-      height: 150px;
-      object-fit: cover;
-      margin-right: 15px;
-    }
+.episode-title {
+  font-size: 20px;
+}
 
-    .episode-title {
-      font-size: 20px;
-    }
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
 
-    .episode-actions button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #f44336;
-      color: white;
-    }
+.episode-actions button:hover {
+  background: #e53935;
+}
 
-    .episode-actions button:hover {
-      background: #e53935;
-    }
+.episode-actions .play-btn {
+  background: #4caf50;
+}
 
-    .episode-actions .play-btn {
-      background: #4CAF50;
-    }
-
-    .episode-actions .download-btn {
-      background: #2196F3;
-    }
-    img.imgborder {border-style: solid;  border-color:#e3d4d2 1px;}
-
-
-  </style>
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
+  
 </head>
 <body>
 
@@ -154,94 +177,108 @@
     <img class="imgborder" src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="">
 </div>
 
+
+  <div class="sessions">
+  <div class="audio" style="font-weight: 700;">Multi Audio:</div>
+  <div class="audio" >German</div>
+  <div class="audio" >English</div> 
+  <div class="audio" >French</div>
+  <div class="audio" >Spanish</div>
+  <div class="audio" >Italian</div>
+  <div class="audio" >Japanese</div>
+  <div class="audio" >Portuguese</div>
+</div>
+  
+
 <div class="container">
   <div class="sessions">
-    <div class="session" onclick="showContent(1)">Season 1</div>
-    <div class="session" onclick="showContent(2)">Season 2</div>
-    <div class="session" onclick="showContent(3)">Season 3</div>
+    <div class="session" onclick="showContent(1)">Season 01</div>
+    <div class="session" onclick="showContent(2)">Season 02</div>
+    <div class="session" onclick="showContent(3)">Season 03</div>
   </div>
 
   <!-- Content for Season 1 -->
   <div class="content" id="season1">
-    <h3>Season 1</h3>
+    <h3>Season 01</h3>
+
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 1</div>
+      <div class="episode-title">Episode 01</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8lKQxYQwmJPxDGY')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8lKQxYQwmJPxDGY')">Download</button>
+        <button class="play-btn" onclick="playVideo('8lKQxYQwmJPxDGY')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('8lKQxYQwmJPxDGY')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 2</div>
+      <div class="episode-title">Episode 02</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGWklyrOKjM')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGWklyrOKjM')">Download</button>
+        <button class="play-btn" onclick="playVideo('0DogOGWklyrOKjM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('0DogOGWklyrOKjM')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 3</div>
+      <div class="episode-title">Episode 03</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/ZMVoErbK3pRE9Pa')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/ZMVoErbK3pRE9Pa')">Download</button>
+        <button class="play-btn" onclick="playVideo('ZMVoErbK3pRE9Pa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('ZMVoErbK3pRE9Pa')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 4</div>
+      <div class="episode-title">Episode 04</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5JyklpAOqQj')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JyklpAOqQj')">Download</button>
+        <button class="play-btn" onclick="playVideo('g9Vd5JyklpAOqQj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('g9Vd5JyklpAOqQj')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 5</div>
+      <div class="episode-title">Episode 05</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/Ro7kOVJwB6wOZWB')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/Ro7kOVJwB6wOZWB')">Download</button>
+        <button class="play-btn" onclick="playVideo('Ro7kOVJwB6wOZWB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('Ro7kOVJwB6wOZWB')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 6</div>
+      <div class="episode-title">Episode 06</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53BWzjGOQzp')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53BWzjGOQzp')">Download</button>
+        <button class="play-btn" onclick="playVideo('VqbX53BWzjGOQzp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('VqbX53BWzjGOQzp')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 7</div>
+      <div class="episode-title">Episode 07</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/KrdZ5kMe0LjEmX4')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/KrdZ5kMe0LjEmX4')">Download</button>
+        <button class="play-btn" onclick="playVideo('KrdZ5kMe0LjEmX4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('KrdZ5kMe0LjEmX4')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 8</div>
+      <div class="episode-title">Episode 08</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/njJYOddrRmQOe9o')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/njJYOddrRmQOe9o')">Download</button>
+        <button class="play-btn" onclick="playVideo('njJYOddrRmQOe9o')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('njJYOddrRmQOe9o')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 9</div>
+      <div class="episode-title">Episode 09</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa0jpwexZPa')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa0jpwexZPa')">Download</button>
+        <button class="play-btn" onclick="playVideo('6zeREa0jpwexZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('6zeREa0jpwexZPa')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/XBmqYSGJBuuRl_ZQj3IX7et_W2c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vUlRUVjIzMTMwNy53ZWJw" alt="Episode 1">
-      <div class="episode-title">Episode 10</div>
+      <div class="episode-title">Episode 10 {END}</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/wP20501n7QBxdmy')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP20501n7QBxdmy')">Download</button>
+        <button class="play-btn" onclick="playVideo('wP20501n7QBxdmy')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('wP20501n7QBxdmy')">Download</button>
       </div>
     </div>
 
@@ -251,109 +288,110 @@
 
   <!-- Content for Season 2 -->
   <div class="content" id="season2">
-    <h3>Season 2</h3>
+    <h3>Season 02</h3>
+    
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 1</div>
+      <div class="episode-title">Episode 01</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PlBVEZ1Xdv8xDv9')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PlBVEZ1Xdv8xDv9')">Download</button>
+        <button class="play-btn" onclick="playVideo('PlBVEZ1Xdv8xDv9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('PlBVEZ1Xdv8xDv9')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 2</div>
+      <div class="episode-title">Episode 02</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/dNjgOlPLdqKO9Wn')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/dNjgOlPLdqKO9Wn')">Download</button>
+        <button class="play-btn" onclick="playVideo('dNjgOlPLdqKO9Wn')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('dNjgOlPLdqKO9Wn')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 3</div>
+      <div class="episode-title">Episode 03</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/6zeREa0KmB0xZPa')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/6zeREa0KmB0xZPa')">Download</button>
+        <button class="play-btn" onclick="playVideo('6zeREa0KmB0xZPa')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('6zeREa0KmB0xZPa')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 4</div>
+      <div class="episode-title">Episode 04</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qA3WOmMmop2OKkz')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qA3WOmMmop2OKkz')">Download</button>
+        <button class="play-btn" onclick="playVideo('qA3WOmMmop2OKkz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('qA3WOmMmop2OKkz')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 5</div>
+      <div class="episode-title">Episode 05</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/pVa4E8vKAWm5kzM')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/pVa4E8vKAWm5kzM')">Download</button>
+        <button class="play-btn" onclick="playVideo('pVa4E8vKAWm5kzM')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('pVa4E8vKAWm5kzM')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 6</div>
+      <div class="episode-title">Episode 06</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/27BaOnaKjeBEMDX')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/27BaOnaKjeBEMDX')">Download</button>
+        <button class="play-btn" onclick="playVideo('27BaOnaKjeBEMDX')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('27BaOnaKjeBEMDX')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 7</div>
+      <div class="episode-title">Episode 07</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/PKN4OwWb6RnODLj')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/PKN4OwWb6RnODLj')">Download</button>
+        <button class="play-btn" onclick="playVideo('PKN4OwWb6RnODLj')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('PKN4OwWb6RnODLj')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 8</div>
+      <div class="episode-title">Episode 08</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/kKJVORNwdYNO3XD')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/kKJVORNwdYNO3XD')">Download</button>
+        <button class="play-btn" onclick="playVideo('kKJVORNwdYNO3XD')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('kKJVORNwdYNO3XD')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 9</div>
+      <div class="episode-title">Episode 09</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvgvlJAE8B9')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvgvlJAE8B9')">Download</button>
+        <button class="play-btn" onclick="playVideo('l4vexvgvlJAE8B9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('l4vexvgvlJAE8B9')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
       <div class="episode-title">Episode 10</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/8ozgENDkl1Y5mjA')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/8ozgENDkl1Y5mjA')">Download</button>
+        <button class="play-btn" onclick="playVideo('8ozgENDkl1Y5mjA')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('8ozgENDkl1Y5mjA')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
       <div class="episode-title">Episode 11</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/nyg9EKMVldB5bk4')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/nyg9EKMVldB5bk4')">Download</button>
+        <button class="play-btn" onclick="playVideo('nyg9EKMVldB5bk4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('nyg9EKMVldB5bk4')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
       <div class="episode-title">Episode 12</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/vQBYEbB1vYNEn1m')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/vQBYEbB1vYNEn1m')">Download</button>
+        <button class="play-btn" onclick="playVideo('vQBYEbB1vYNEn1m')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('vQBYEbB1vYNEn1m')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13512371_b_v8_ab.jpg" alt="Episode 1">
-      <div class="episode-title">Episode 13</div>
+      <div class="episode-title">Episode 13 {END}</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://listeamed.net/e/mMq75LLklZm5XPB')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/mMq75LLklZm5XPB')">Download</button>
+        <button class="play-btn" onclick="playVideo('mMq75LLklZm5XPB')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('mMq75LLklZm5XPB')">Download</button>
       </div>
     </div>
   
@@ -364,109 +402,110 @@
 
   <!-- Content for Season 3 -->
   <div class="content" id="season3">
-    <h3>Season 3</h3>
+    <h3>Season 03</h3>
+    
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 1</div>
+        <div class="episode-title">Episode 01</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/3Q0lxBbol3Gxj1J')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/3Q0lxBbol3Gxj1J')">Download</button>
+          <button class="play-btn" onclick="playVideo('3Q0lxBbol3Gxj1J')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('3Q0lxBbol3Gxj1J')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 2</div>
+        <div class="episode-title">Episode 02</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/qM1VOPekl2X5o4k')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/qM1VOPekl2X5o4k')">Download</button>
+          <button class="play-btn" onclick="playVideo('qM1VOPekl2X5o4k')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('qM1VOPekl2X5o4k')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 3</div>
+        <div class="episode-title">Episode 03</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/0DogOGW04wPOKjM')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/0DogOGW04wPOKjM')">Download</button>
+          <button class="play-btn" onclick="playVideo('0DogOGW04wPOKjM')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('0DogOGW04wPOKjM')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 4</div>
+        <div class="episode-title">Episode 04</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/LQm9OXrk3l0x1lg')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/LQm9OXrk3l0x1lg')">Download</button>
+          <button class="play-btn" onclick="playVideo('LQm9OXrk3l0x1lg')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('LQm9OXrk3l0x1lg')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 5</div>
+        <div class="episode-title">Episode 05</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/P0poO1BMqN15z17')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/P0poO1BMqN15z17')">Download</button>
+          <button class="play-btn" onclick="playVideo('P0poO1BMqN15z17')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('P0poO1BMqN15z17')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 6</div>
+        <div class="episode-title">Episode 06</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/JzkPxzzK9g8xbyd')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/JzkPxzzK9g8xbyd')">Download</button>
+          <button class="play-btn" onclick="playVideo('JzkPxzzK9g8xbyd')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('JzkPxzzK9g8xbyd')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 7</div>
+        <div class="episode-title">Episode 07</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/l4vexvgvlymE8B9')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/l4vexvgvlymE8B9')">Download</button>
+          <button class="play-btn" onclick="playVideo('l4vexvgvlymE8B9')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('l4vexvgvlymE8B9')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 8</div>
+        <div class="episode-title">Episode 08</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/wP20501n7qexdmy')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/wP20501n7qexdmy')">Download</button>
+          <button class="play-btn" onclick="playVideo('wP20501n7qexdmy')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('wP20501n7qexdmy')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 9</div>
+        <div class="episode-title">Episode 09</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/NMRLEpzMay05XaG')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/NMRLEpzMay05XaG')">Download</button>
+          <button class="play-btn" onclick="playVideo('NMRLEpzMay05XaG')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('NMRLEpzMay05XaG')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
         <div class="episode-title">Episode 10</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/eL2157KoWqb5rw4')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/eL2157KoWqb5rw4')">Download</button>
+          <button class="play-btn" onclick="playVideo('eL2157KoWqb5rw4')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('eL2157KoWqb5rw4')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
         <div class="episode-title">Episode 11</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/VqbX53BWzqzOQzp')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/VqbX53BWzqzOQzp')">Download</button>
+          <button class="play-btn" onclick="playVideo('VqbX53BWzqzOQzp')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('VqbX53BWzqzOQzp')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
         <div class="episode-title">Episode 12</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/g9Vd5JykleoOqQj')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/g9Vd5JykleoOqQj')">Download</button>
+          <button class="play-btn" onclick="playVideo('g9Vd5JykleoOqQj')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('g9Vd5JykleoOqQj')">Download</button>
         </div>
       </div>
     <div class="episode">
         <img src="https://resizing.flixster.com/bEZP-EmILNAzEDGZ273hZS_i3W0=/fit-in/352x330/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15389490_b_v9_aa.jpg" alt="Episode 1">
-        <div class="episode-title">Episode 13</div>
+        <div class="episode-title">Episode 13 {END}</div>
         <div class="episode-actions">
-          <button class="play-btn" onclick="playVideo('https://listeamed.net/e/MAlwEMWQbZk5J39')">Play</button>
-          <button class="download-btn" onclick="downloadVideo('https://listeamed.net/d/MAlwEMWQbZk5J39')">Download</button>
+          <button class="play-btn" onclick="playVideo('MAlwEMWQbZk5J39')">Play</button>
+          <button class="download-btn" onclick="downloadVideo('MAlwEMWQbZk5J39')">Download</button>
         </div>
       </div>
   
