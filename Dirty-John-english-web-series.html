@@ -6,148 +6,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B.OTT Movies</title>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
 
-    header {
-      background: #333;
-      padding: 20px 0;
-      text-align: center;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-    img{
-        width: 100%;
-        max-width: 250px;
-        border-radius: 10px;
-        z-index: 100;
-        box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-    }
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
 
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
 
-    .banner {
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl') center center/cover;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
+.banner {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
 
-    .banner h2 {
-      font-size: 36px;
-    }
+.banner h2 {
+  font-size: 36px;
+}
 
-    .sessions {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    .session {
-      background: #444;
-      padding: 10px 10px;
-      margin: 0 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    @media(max-width:700px){
-        .session {
-      font-size: 8px;
-    }
-    .episode-title {
-      font-size: 10px;
-    }
-    .banner {
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl') no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-    }
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
 
-    .session:hover {
-      background: #1a03c8;
-      color: azure;
-    }
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
 
-    .content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
 
-    .content.active {
-      display: block;
-    }
+.content.active {
+  display: block;
+}
 
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
 
-    .episode {
-      margin-top: 20px;
-      padding: 15px;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .episode:hover {
-      background: #444444;
-    }
+.episode:hover {
+  background: #444444;
+}
 
-    .episode img {
-      width: 100px;
-      height: 150px;
-      object-fit: cover;
-      margin-right: 15px;
-    }
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
 
-    .episode-title {
-      font-size: 20px;
-    }
+.episode-title {
+  font-size: 20px;
+}
 
-    .episode-actions button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #f44336;
-      color: white;
-    }
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
 
-    .episode-actions button:hover {
-      background: #e53935;
-    }
+.episode-actions button:hover {
+  background: #e53935;
+}
 
-    .episode-actions .play-btn {
-      background: #4CAF50;
-    }
+.episode-actions .play-btn {
+  background: #4caf50;
+}
 
-    .episode-actions .download-btn {
-      background: #2196F3;
-    }
-    img.imgborder {border-style: solid;  border-color:#e3d4d2 1px;}
-
-
-  </style>
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
+	
 </head>
 <body>
 
@@ -156,78 +178,93 @@
     <img class="imgborder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="">
 </div>
 
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;">Multi Audio:</div>
+  <div class="audio" >German</div>
+  <div class="audio" >English</div> 
+  <div class="audio" >Spanish</div>
+  <div class="audio" >French</div>
+  <div class="audio" >Hindi</div>    
+  <div class="audio" >Italian</div>
+  <div class="audio" >Japanese</div>
+  <div class="audio" >Polish</div>
+  <div class="audio" >Portuguese</div>
+  <div class="audio" >Russian</div>
+  <div class="audio" >Turkish</div>
+</div>
+
 <div class="container">
   <div class="sessions">
-    <div class="session" onclick="showContent(1)">Season 1</div>
-    <div class="session" onclick="showContent(2)">Season 2</div>
+    <div class="session" onclick="showContent(1)">Season 01</div>
+    <div class="session" onclick="showContent(2)">Season 02</div>
    </div>
 
   <!-- Content for Season 1 start -->
   <div class="content" id="season1">
-    <h3>Season 1</h3>
+    <h3>Season 01</h3>
 
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 1</div>
+      <div class="episode-title">Episode 01</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/58d2wv2yc3bd')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/v1p3o1')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/rvc00ebyg4rx')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/rvc00ebyg4rx')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 2</div>
+      <div class="episode-title">Episode 02</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/62gdrusp12ua')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/2k72op')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/szw8v5i0ddt4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/szw8v5i0ddt4')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 3</div>
+      <div class="episode-title">Episode 03</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/vuqyuozacw6d')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/npo2mw')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/ogs9ooftwqa0')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/ogs9ooftwqa0')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 4</div>
+      <div class="episode-title">Episode 04</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/e67kzezqiav1')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/v1p3m3')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/o5dgelkfhzgd')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/o5dgelkfhzgd')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 5</div>
+      <div class="episode-title">Episode 05</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/g75gkk7kijmn')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/6qe2ox')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/yxhql73dt16a')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/yxhql73dt16a')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 6</div>
+      <div class="episode-title">Episode 06</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/wusxp38jiiq2')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/yg6vg6')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/gbqmrwsjfpdw')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/gbqmrwsjfpdw')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 7</div>
+      <div class="episode-title">Episode 07</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/h451biqmi8nh')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/kzvoz2')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/3338yiellcby')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/3338yiellcby')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6we-nwPB7-wosEwHGJzLil71NVgR3gSmSqQ&s" alt="Episode 1">
-      <div class="episode-title">Episode 8</div>
+      <div class="episode-title">Episode 08 {END}</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/vz0dr8r87ir4')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/0mwomn')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/vceoiow7v711')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/vceoiow7v711')">Download</button>
       </div>
     </div>
   
@@ -236,70 +273,70 @@
   <!-- Content for Season 1 end -->
   <!-- Content for Season 2 start -->
   <div class="content" id="season2">
-    <h3>Season 2</h3>
+    <h3>Season 02</h3>
 
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 1</div>
+      <div class="episode-title">Episode 01</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/ert0v2kymu2a')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/34ed0j')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/3teaeyrqqfdp')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/3teaeyrqqfdp')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 2</div>
+      <div class="episode-title">Episode 02</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/lqtsr1fa4kkb')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/w8ym0j')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/75fxdragaijo')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/75fxdragaijo')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 3</div>
+      <div class="episode-title">Episode 03</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/zyf43qa27j1u')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/ejgxq6')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/3ijpjbdmqfgh')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/3ijpjbdmqfgh')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 4</div>
+      <div class="episode-title">Episode 04</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/bvn89rxbpeup')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/xq3gnp')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://byseraguci.com/e/z25c3jgt97hz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://byseraguci.com/d/z25c3jgt97hz')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 5</div>
+      <div class="episode-title">Episode 05</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/jbf6gt4qmd4k')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/70e8ej')">Download</button>
+        <button class="play-btn" onclick="playVideo('http://byseraguci.com/e/57l5kyfb7udf')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('http://byseraguci.com/d/57l5kyfb7udf')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 6</div>
+      <div class="episode-title">Episode 06</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/10n4ajg1c707')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/dx0w3e')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://byseraguci.com/e/rfu05fn6uxef')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://byseraguci.com/d/rfu05fn6uxef')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 7</div>
+      <div class="episode-title">Episode 07</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/8fbsajt6e1qv')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/npo611')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://byseraguci.com/e/fylzmzpjmngz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://byseraguci.com/d/fylzmzpjmngz')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYCkRjijumA3ITdjcOc6RtcJxP4NDvXQP6FOjWWvotmEtQZXl" alt="Episode 1">
-      <div class="episode-title">Episode 8</div>
+      <div class="episode-title">Episode 08 {END}</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://iplayerhls.com/e/9i1zvqqcicpo')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://doodrive.com/f/j9n2dn')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://byseraguci.com/e/gb0xu0ju85n4')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://byseraguci.com/d/gb0xu0ju85n4')">Download</button>
       </div>
     </div>
   
