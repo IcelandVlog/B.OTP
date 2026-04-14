@@ -7,151 +7,168 @@
   <title>B.OTT Movies</title>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-  
-    header {
-      background: #333;
-      padding: 20px 0;
-      text-align: center;
-    }
-  
-    img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-      z-index: 100;
-      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-    }
-  
-    .banner {
-      background: url("https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png") center center/cover;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-  
-    .banner h2 {
-      font-size: 36px;
-    }
-  
-    .sessions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-  
-    .session {
-      background: #444;
-      padding: 10px 10px;
-      margin: 0 10px 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    @media (max-width: 700px) {
-      .session {
-        font-size: 8px;
-      }
-      .episode-title {
-        font-size: 10px;
-      }
-      .banner {
-      background: url("https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png")
-          no-repeat center center/cover;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
-    }
-  
-    .session:hover {
-      background: #1a03c8;
-      color: azure;
-    }
-  
-    .content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-  
-    .content.active {
-      display: block;
-    }
-  
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-  
-    .episode {
-      margin-top: 20px;
-      padding: 15px;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    .episode:hover {
-      background: #444444;
-    }
-  
-    .episode img {
-      width: 100px;
-      height: 150px;
-      object-fit: cover;
-      margin-right: 15px;
-    }
-  
-    .episode-title {
-      font-size: 20px;
-    }
-  
-    .episode-actions button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #f44336;
-      color: white;
-    }
-  
-    .episode-actions button:hover {
-      background: #e53935;
-    }
-  
-    .episode-actions .play-btn {
-      background: #4caf50;
-    }
-  
-    .episode-actions .download-btn {
-      background: #2196f3;
-    }
-    img.imgborder {
-      border-style: solid;
-      border-color: #d2d4e3 1px;
-      height: 350px;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
 
 </head>
 <body>
@@ -159,6 +176,11 @@
 
 <div class="banner">
     <img class="imgborder" src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="">
+</div>
+
+  <div class="sessions">
+  <div class="audio" style="font-weight: 700;"> Audio:</div>
+  <div class="audio" >Bengali</div>
 </div>
 
 <div class="container">
@@ -172,60 +194,93 @@
 
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episodes (01-18)</div>
+      <div class="episode-title">Episodes (01-05)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/z0oc4clk4gky')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/z0oc4clk4gky')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/5nble7me35c8')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/5nble7me35c8')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episodes (19-30)</div>
+      <div class="episode-title">Episodes (06-10)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/keiprh766s0k')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/keiprh766s0k')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/4lt9fdzoqkdo')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/4lt9fdzoqkdo')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episodes (31-40)</div>
+      <div class="episode-title">Episodes (11-15)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/3u9tqu0pwddo')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/3u9tqu0pwddo')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/ftj8czodvubi')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/ftj8czodvubi')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episodes (41-50)</div>
+      <div class="episode-title">Episodes (16-20)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/xhj5tbox2mni')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/xhj5tbox2mni')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/u7b095t80vwl')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/u7b095t80vwl')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episode 51</div>
+      <div class="episode-title">Episodes (21-25)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/qh29pchvl3dp')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/qh29pchvl3dp')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/bymilh0ia70f')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/bymilh0ia70f')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episode 52</div>
+      <div class="episode-title">Episodes (26-30)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/naha6dcfs7yz')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/naha6dcfs7yz')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/owz8b3czxbdx')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/owz8b3czxbdx')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
-      <div class="episode-title">Episode 53 {END}</div>
+      <div class="episode-title">Episodes (31-35)</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://bysetayico.com/e/k4xh5n0rh7yl')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://bysetayico.com/d/k4xh5n0rh7yl')">Download</button>
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/k51s0dgmq6ia')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/k51s0dgmq6ia')">Download</button>
       </div>
     </div>
+    <div class="episode">
+      <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
+      <div class="episode-title">Episodes (36-40)</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/8hb35961f2uz')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/8hb35961f2uz')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
+      <div class="episode-title">Episodes (41-45)</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/odf4h1gozpw9')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/odf4h1gozpw9')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
+      <div class="episode-title">Episodes (46-50)</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/xvhx4kl2dixu')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/xvhx4kl2dixu')">Download</button>
+      </div>
+    </div>
+    <div class="episode">
+      <img src="https://assets-prod.services.toffeelive.com/w_640,q_75,f_webp/Tq8RgJYBrjBfS2_RVIKz/posters/4bade4b9-c681-47b6-bf0b-1bdd0c43bdb6.png" alt="Episode 1">
+      <div class="episode-title">Episodes (51-53) {END}</div>
+      <div class="episode-actions">
+        <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/aezau4oanyoi')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/aezau4oanyoi')">Download</button>
+      </div>
+    </div>
+
 
   </div>
 <!-- Content for Season 1 -->
