@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+<img class="imgborder" src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="">
+</div>
+
+<div class="container">
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;"> Audio:</div>
+  <div class="audio" >English</div> 
+</div>
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01</div>
+  <div class="session" onclick="showContent(2)">Season 02</div>
+  <div class="session" onclick="showContent(3)">Season 03</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01</h3>
+
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/747wu6kkat2b')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/747wu6kkat2b')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/k0dgi5zqs9jy')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/k0dgi5zqs9jy')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/hkhbcg679ke2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/hkhbcg679ke2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/vulgy37uk6p6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/vulgy37uk6p6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/dx14rp1kuu3x')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/dx14rp1kuu3x')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/z293fjur9xd2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/z293fjur9xd2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/pdj9fmq1c11v')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/pdj9fmq1c11v')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/gc2esga2w0c9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/gc2esga2w0c9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/p1prlh19jtrr')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/p1prlh19jtrr')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BYzE4NGY0ODctOGNhOC00ZDgxLTkyMzctZGZhODZhMWRiZjkwXkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/33i509xxpbc0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/33i509xxpbc0')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 1 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 02</h3>
+
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/l95sx85r0o1z')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/l95sx85r0o1z')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/7hyufj7wjplk')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/7hyufj7wjplk')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/tsx9y93y0d40')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/tsx9y93y0d40')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/by5p98upyk4y')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/by5p98upyk4y')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/frbuk3wgdoh6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/frbuk3wgdoh6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/ssuvv0idikyi')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/ssuvv0idikyi')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/08jhtmu4aklo')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/08jhtmu4aklo')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/7bpdw55jagm2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/7bpdw55jagm2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/u25bep66uipx')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/u25bep66uipx')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://m.media-amazon.com/images/M/MV5BNTE5MjE3NTUtNTQxMC00ZjIwLWE2ZjctNmQ2NDc3ZmY2YTE0XkEyXkFqcGc@._V1_.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/hfvfc4guqrg6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/hfvfc4guqrg6')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 3 -->
+<div class="content" id="season3">
+  <h3>Season 03</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/l5dmvtnctw25')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/l5dmvtnctw25')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/06x57213z97c')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/06x57213z97c')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/zuq8t8u8mrja')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/zuq8t8u8mrja')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/8lplt1hnhc14')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/8lplt1hnhc14')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/4mpbrstv4xwp')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/4mpbrstv4xwp')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/2vnty0cnb8jg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/2vnty0cnb8jg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/guzds9lycxtt')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/guzds9lycxtt')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/3lcrl23lvf6e')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/3lcrl23lvf6e')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/urc9y51p8qts')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/urc9y51p8qts')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysesayeveum.com/e/43px85ts604g')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysesayeveum.com/d/43px85ts604g')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
+
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
