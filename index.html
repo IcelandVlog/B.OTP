@@ -226,9 +226,9 @@
 
 <!--=============== HEADER SECTION END ===============-->
     
-<!-- Style css auto video play Start -->
+<!-- Style Start -->
 
-  <style>
+<style>
     #videoOverlay {
       position: fixed;
       top: 0;
@@ -253,13 +253,7 @@
     .hidden {
       display: none !important;
     }
-  </style>
     
-<!-- Style css auto video play End -->
-
-
-    
-    <style>
 
 .scrolling-text-container{
 display: flex;
@@ -287,8 +281,96 @@ align-items: center;
 background-color: fff;
 margin-left: 15px;
 }
+}
+
+/* ================== CSS CODE START ================== */
+/* Video Card Start */
+
+/* মেইন কন্টেইনার */
+.explore-row { 
+    display: flex; 
+    gap: 20px; 
+    padding: 30px 20px; 
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+}
+.explore-row::-webkit-scrollbar { display: none; } 
+
+/* কার্ড ডিজাইন */
+.explore-card {
+    min-width: 250px; 
+    height: 155px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* কার্ড হোভার ইফেক্ট */
+.explore-card:hover {
+    transform: scale(1.09); /* কার্ডটি সামান্য বড় হবে */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* কার্ডের ভেতরকার কন্টেন্ট */
+.card-content {
+    text-align: center;
+    color: white;
+}
+
+/* আইকন এনিমেশন - মেইন পার্ট */
+.icon-box { 
+    font-size: 60px; 
+    margin-bottom: 10px; 
+    transition: transform 0.4s ease; /* স্মুথ ট্রানজিশন */
+}
+
+/* হোভার করলে আইকন বড় এবং হালকা রোটেট হবে */
+.explore-card:hover .icon-box {
+    transform: scale(1.3) rotate(10deg); 
+}
+
+.card-name { 
+    font-size: 22px; 
+    font-weight: bold; 
+    letter-spacing: 1px;
+}
+
+/* আইকন ইমেজ বা যেকোনো বড় ইমেজের জন্য */
+.icon-img {
+    /* আপনি এখানে আপনার পছন্দমতো সাইজ দিন */
+    /* সাইজ ছোট রাখতে চাইলে */
+    object-fit: contain; /* ইমেজটি কার্ডের ভেতর সুন্দরভাবে ফিট হবে */
+    margin-bottom: 10px;
+    transition: transform 0.4s ease;
+}
+
+/* যদি আপনি চান ইমেজটি কার্ডের যতটুকু জায়গা আছে সবটুকু জুড়ে থাকুক */
+.explore-card .icon-img {
+    max-width: 80%;    /* কার্ডের প্রস্থের ৮০% এর বেশি হবে না */
+    max-height: 90%;   /* কার্ডের উচ্চতার ৫০% এর বেশি হবে না */
+}
+
+/* আলাদা আলাদা কালার গ্রেডিয়েন্ট */
+.card-encryption { background: linear-gradient(135deg, #260b0b, #0a1d02); }
+.card-backup { background: linear-gradient(135deg, #d0fafa, #28ccc6); }
+.card-encryption1 { background: linear-gradient(135deg, #0ba8d0, #3b1992); }
+.card-encryption2 { background: linear-gradient(135deg, #bba9e0, #9f7af4); }
+.card-encryption3 { background: linear-gradient(135deg, #ffffff, #ffffff); }
+.card-encryption4 { background: linear-gradient(135deg, #64adee, #8ca7d3); }
+.card-encryption5 { background: linear-gradient(135deg, #39174c, #2b0404); }
+
+
+/* Video Card End */
+/* ================== CSS CODE END ================== */
 
 </style>
+
+<!-- Style End -->
 
 
     
@@ -298,41 +380,73 @@ margin-left: 15px;
         </div>
     </div>
     <!-- carousel section end -->
+    
 
-    <!-- video card start -->
-    <div class="video-card-container">
-        <!-- video card start -->
-        <div class="video-card">
-            <a href="#"><img src="disney.PNG" alt="" class="video-card-image"></a>
-            <a href="disney.html"><video src="disney.mp4" class="card-video"></video></a>
+    <!-- Video Card Html Start -->
+
+<div class="explore-row">
+
+    <a href="netflix.html" class="explore-card card-encryption">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/rmByCNBV/pngwing-com.png" alt="Icon" class="icon-img">
+            <div class="card-name">Netflix Mirror</div>
         </div>
-         <!-- video card end -->
-        <!-- video card start -->
-        <div class="video-card">
-            <a href="#"><img src="pixar.PNG" alt="" class="video-card-image"></a>
-            <a href="pixer.html"><video src="pixar.mp4" class="card-video"></video></a>
+    </a>
+
+    <a href="prime-video.html" class="explore-card card-backup">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/xC0BrJKD/pngwing-com-(1).png" alt="Icon" class="icon-img">
+            <div style="color: #044f4d;" class="card-name">Prime Video Mirror</div>
         </div>
-         <!-- video card end -->
-        <!-- video card start -->
-        <div class="video-card">
-            <a href="#"><img src="marvel.PNG" alt="" class="video-card-image"></a>
-            <a href="marvel.html"><video src="marvel.mp4" class="card-video"></video></a>
+    </a>
+
+    <a href="disney.html" class="explore-card card-encryption1">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/gkWp4JT7/download.png" alt="Icon" class="icon-img">
+            <div class="card-name">Disney Plus</div>
         </div>
-         <!-- video card end -->
-        <!-- video card start -->
-        <div class="video-card">
-            <a href="#"><img src="https://i.postimg.cc/YSkY5djF/Untitled-1-1.png" width="" alt="" class="video-card-image"></a>
-            <a href="islamic.html"><video src="Islamic.mp4" class="card-video"></video></a>
+    </a>
+
+    <a href="apple-tv.html" class="explore-card card-encryption5">
+        <div class="card-content">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/PC1Kf2TS2__FzsGmQOd4Mg/512x512.png" alt="Icon" class="icon-img">
+            <div class="card-name">Apple Tv</div>
         </div>
-         <!-- video card end -->
-        <!-- video card start -->
-        <div class="video-card">
-            <a href="#"><img src="DC.webp" alt="" class="video-card-image"></a>
-            <a href="dc1.html"><video src="dc.video.jpg" class="card-video"></video></a>
+    </a>
+
+    <a href="hbo-max.html" class="explore-card card-encryption2">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/6px8rtr5/pngwing-com-(2).png" alt="Icon" class="icon-img">
+            <div class="card-name">HBO MAX</div>
         </div>
-         <!-- video card end -->
-    </div>
-    <!-- video card end -->
+    </a>
+
+    <a href="marvel.html" class="explore-card card-encryption3">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/nLDjBr5J/pngwing-com-(4).png" alt="Icon" class="icon-img">
+            <div style="color: #760606;" class="card-name">MARVEL STUDIOS</div>
+        </div>
+    </a>
+
+    <a href="dc1.html" class="explore-card card-encryption3">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/vZ8C464x/fan-art-logo-concepts-for-the-newly-announced-dc-studios-v0-pk10svbuo9w91-removebg-preview.png" alt="Icon" class="icon-img">
+            <div style="color: #0c21bd;" class="card-name">DC STUDIOS</div>
+        </div>
+    </a>
+
+    <a href="pixer.html" class="explore-card card-encryption4">
+        <div class="card-content">
+            <img src="https://i.postimg.cc/7h0bJWWH/PIXAR3D169-removebg-preview.png" alt="Icon" class="icon-img">
+            <div class="card-name">PIXAR STUDIOS</div>
+        </div>
+    </a>
+
+
+</div>
+
+
+    <!-- Video Card Html End -->
 
 
 <!-- Video html Code Start -->
@@ -1097,12 +1211,15 @@ margin-left: 15px;
         </form>
        </div>
 
-<style>
+<!-- Style Start -->
+
+    <style>
 
 .contact-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
 }
 .contact{
     display: flex;
@@ -1164,6 +1281,8 @@ margin-left: 15px;
 }
 
 </style>
+    
+<!-- Style End -->
 
     <script>
 
