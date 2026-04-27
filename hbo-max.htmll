@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.OTT Movies</title>
+
+    <!--=============== REMIXICONS ===============-->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!---sample or main css file---->
+    <link rel="stylesheet" href="style.css">
+      <!-- Box icons -->
+      <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+
+    <!-----favi icon or icon show link-->
+    <link rel="icon" type="image/png" href="logo1.png">
+
+</head>
+<body>
+
+    <!--=============== HEADER SECTION START ===============-->
+<header class="header-1">
+ <nav class="nav container-1">
+   <div class="nav__data-1">
+
+    <a href="index.html" class="nav__logo-1"><img style="width: 150px;" src="./logo.png" alt=""></a>
+
+      <div class="nav__toggle-1" id="nav-toggle-1">
+          <i class="ri-menu-line nav__burger-1"></i>
+          <i class="ri-close-line nav__close-1"></i>
+      </div>
+        
+    </div>
+    
+    <!--=============== NAV MENU ===============-->
+ <div class="nav__menu-1" id="nav-menu-1">
+<ul class="nav__list-1">
+
+<li><a href="index.html" class="nav__link-1">Home</a></li>
+
+<li class="dropdown__item-1">
+
+<div class="nav__link-1">
+    Web Series <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+</div>
+
+<ul class="dropdown__menu-1">
+    <li>
+        <a href="english-tv-series.html" class="dropdown__link-1">
+           <i class="ri-pie-chart-line"></i>Enlish Web Series
+        </a>                          
+    </li>
+    
+    <li>
+        <a href="hindi-tv-series.html" class="dropdown__link-1">
+           <i class="ri-pie-chart-line"></i>Hindi Web Series
+        </a>                          
+    </li>
+    
+    <li>
+        <a href="bangla-tv-series.html" class="dropdown__link-1">
+           <i class="ri-pie-chart-line"></i>Bangla Web Series
+        </a>       
+    </li>
+    
+<li class="dropdown__subitem-1">
+
+    <div class="dropdown__link-1">
+    <i class="ri-bar-chart-line"></i>More Web Series <i class="ri-add-line dropdown__add-1"></i>
+</div>
+
+<ul class="dropdown__submenu-1">
+    <li>
+        <a href="korean-web-series.html" class="dropdown__sublink-1">
+            <i class="ri-pie-chart-line"></i> Korean, Japanese & Chinese Web Series
+        </a>
+    </li>
+
+    <li>
+        <a href="spanish-tv-series.html" class="dropdown__sublink-1">
+            <i class="ri-pie-chart-line"></i>German & Spanish Web Series 
+        </a>
+    </li>
+
+    <li>
+        <a href="arabic-tv-series.html" class="dropdown__sublink-1">
+            <i class="ri-pie-chart-line"></i>Arabic & Turkey Web Series  
+        </a>
+    </li>
+
+</ul>
+</li>
+
+<!--=============== DROPDOWN SUBMENU ===============-->
+
+
+</ul>
+
+</li>
+<!-- Start -->
+
+<li class="dropdown__item-1">
+
+<div class="nav__link-1">
+    Movies  <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+</div>
+
+<ul class="dropdown__menu-1">
+
+    <li>
+        <a href="english.html" class="dropdown__link-1">
+        <i class="ri-global-fill"></i> English Movies
+        </a>                          
+    </li>
+
+    <li>
+        <a href="hindi.html" class="dropdown__link-1">
+        <i class="ri-global-fill"></i> Hindi Movies
+        </a>
+    </li>
+
+    <li>
+        <a href="bangla.html" class="dropdown__link-1">
+        <i class="ri-global-fill"></i> Bangla Movies
+        </a>
+    </li>
+
+<li class="dropdown__subitem-1">
+
+<div class="dropdown__link-1">
+   <i class="ri-bar-chart-line"></i>More Movies <i class="ri-add-line dropdown__add-1"></i>
+</div>
+
+<ul class="dropdown__submenu-1">
+
+    <li>
+        <a href="korean.html" class="dropdown__link-1">
+        <i class="ri-global-fill"></i> Korean, Chinese & Japanese
+        </a>
+    </li>
+    
+    <li>
+        <a href="spanish.html" class="dropdown__link-1">
+            <i class="ri-global-fill"></i> Spanish, Italian & German
+        </a>
+    </li>
+
+</ul>
+</li>
+</ul>
+</li>
+    
+<!-- End -->
+
+
+<!-- Start -->
+
+<li class="dropdown__item-1">
+
+<div class="nav__link-1">
+ Dubbed Movies & Series <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+</div>
+
+<ul class="dropdown__menu-1">
+    <li>
+        <a href="bangla-dubbed.html" class="dropdown__link-1">
+        <i class="ri-global-fill"></i> Bangla Dubbed
+        </a>                          
+    </li>
+
+</ul>
+
+</li>
+    
+<!-- End -->
+
+
+<!--=============== DROPDOWN 1 ===============-->
+<li class="dropdown__item-1">
+
+<div class="nav__link-1">
+  Genre <i class="ri-arrow-down-s-line dropdown__arrow-1"></i>
+</div>
+
+<ul class="dropdown__menu-1">
+
+<li>
+    <a href="animation.html" class="dropdown__link-1">
+    <i class="ri-pie-chart-line"></i>Animation
+    </a>                          
+</li>
+
+<li>
+    <a href="horror.html" class="dropdown__sublink-1">
+        <i class="ri-pie-chart-line"></i> Horror & Thriller
+    </a>
+</li>
+
+   <li>
+        <a href="romance.html" class="dropdown__sublink-1">
+            <i class="ri-pie-chart-line"></i> Romance & Comedy
+        </a>
+   </li>
+
+
+<!--=============== DROPDOWN SUBMENU ===============-->
+
+
+</ul>
+
+</li>
+
+
+<!--=============== DROPDOWN 2 ===============-->
+    
+    <li><a href="https://crocodilebox.free.nf/t/index.php" class="nav__link-1"> Sports & TV</a></li>
+
+    <li><a href="search.html" style="font-size: 20px; color: #f7e700;" class="nav__link-1">Search Box</a></li>
+      
+</ul>
+</div>
+</nav>
+</header>
+
+<!--=============== HEADER SECTION END ===============-->
+
+
+<h2 class="title2">English Tv-Series</h2>
+
+<section class="movies">
+<div class="movies-content">
+
+
+
+<!-- <div class="card" title="	 "><img src=" 	" alt="" class="card-img"><div class="card-body"><h2 class="name"> 	</h2><a href="		" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="		" title="Download"><i class='bx bxs-download down'></i></a></div></div> -->
+<div class="card" title=" Game of Thrones (2011-19) "><img src=" https://m.media-amazon.com/images/M/MV5BNGZmOGQ0ZWEtYzVmNi00ODUzLWJjZDgtMjFkNGM0YzkzMmE0XkEyXkFqcGc@._V1_FMjpg_UY2000_.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> "Game of Thrones (2011-19)	</h2><a href="	Game-of-Thrones.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Game-of-Thrones.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	House of the Dragon (2022-26)  	"><img src="	https://m.media-amazon.com/images/M/MV5BM2QzMGVkNjUtN2Y4Yi00ODMwLTg3YzktYzUxYjJlNjFjNDY1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name">	House of the Dragon (2022-26)  	</h2><a href="	House-of-the-Dragon-english-web-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	House-of-the-Dragon-english-web-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+<div class="card" title="	A Knight Of The Seven Kingdom (2026) "><img src=" https://image.tmdb.org/t/p/w1280/2Zfw5Pe8Ztgzs0vFxy7LeC1wARE.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> A Knight Of The Seven Kingdom (2026)	</h2><a href="	A-Knight-Of-The-Seven-Kingdom-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	A-Knight-Of-The-Seven-Kingdom-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	Euphoria (2019-26) "><img src=" https://image.tmdb.org/t/p/w1280/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> Euphoria (2019-26)	</h2><a href="	Euphoria-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Euphoria-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	Hacks (2021-26) "><img src=" https://m.media-amazon.com/images/M/MV5BMjE0MmM5YzktNGY0NS00ZmQ0LWI1YjEtZjY2NDA4ZmZiNGQ2XkEyXkFqcGc@._V1_.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> Hacks (2021-26)	</h2><a href="	Hacks-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Hacks-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	The Pitt (2025-26) "><img src=" https://image.tmdb.org/t/p/w1280/w4OMBBg8Zf5nIewuWzfhxgYk91j.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> The Pitt (2025-26)	</h2><a href="	The-Pitt-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	The-Pitt-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	Doom Patrol (2019-23)	"><img src="	https://m.media-amazon.com/images/M/MV5BYjY1MDExMzctMzQ4Mi00NmU1LWIyMWItZTkzZDk2YmY2NGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name">	Doom Patrol (2019-23) 	</h2><a href="	Doom-Patrol-english-web-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Doom-Patrol-english-web-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+<div class="card" title="	Westworld (2016-22) "><img src=" https://image.tmdb.org/t/p/w1280/zVVGSoW83jDo1m3HrZC5Vgqumml.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> Westworld (2016-22)	</h2><a href="	Westworld-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Westworld-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	Warrior (2019-23) "><img src=" https://image.tmdb.org/t/p/w1280/j9agQlINODEeVEumyAGBCukt1f3.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> Warrior (2019-23)	</h2><a href="	Warrior-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Warrior-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	True Detective (2014-24) "><img src=" https://image.tmdb.org/t/p/w1280/mV16EBXQ6kDWpj31P6BEhmzTTkd.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> True Detective (2014-24)	</h2><a href="	True-Detective-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	True-Detective-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>
+<div class="card" title="	The White Lotus (2021)	"><img src="	https://image.tmdb.org/t/p/w1280/gbSaK9v1CbcYH1ISgbM7XObD2dW.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> The White Lotus (2021)	</h2><a href="	The-White-Lotus-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	The-White-Lotus-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+<div class="card" title="	The Last of Us (2023-25)	"><img src="	https://image.tmdb.org/t/p/w1280/2OGtqsyHQK2tPwYxqxBtN8mmQ0V.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name"> The Last of Us (2023-25)	</h2><a href="	The-Last-of-Us-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	The-Last-of-Us-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+<div class="card" title="	IT Welcome to Derry (2025)	"><img src="	https://image.tmdb.org/t/p/w1280/ycC53SEDcY7YDOSrFqPQigxaCyx.jpg	" alt="" class="card-img"><div class="card-body"><h2 class="name">	IT Welcome to Derry (2025)	</h2><a href="	IT-Welcome-to-Derry-english-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	IT-Welcome-to-Derry-english-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+<div class="card" title="	Devil in the Web (2022)  	"><img src="	https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS_E9S_03Tp4Sbnb93KLGwQrrNU3ml_8ExmdpmjoOyXMtlK5cjf	" alt="" class="card-img"><div class="card-body"><h2 class="name">	Devil in the Web (2022)  	</h2><a href="	Devil-in-the-Web-English-web-series.html	" title="Watch"><i class="bx bxs-right-arrow open"></i></a> <a href="	Devil-in-the-Web-English-web-series.html	" title="Download"><i class='bx bxs-download down'></i></a></div></div>	
+
+ 
+</div>
+</div>
+</section>
+
+
+<div class="load">
+<div id="load-more"> Load More . . . </div>
+</div>
+
+
+<style>
+
+.card{
+display: none;
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4),
+.card:nth-child(5),
+.card:nth-child(6),
+.card:nth-child(7),
+.card:nth-child(8),
+.card:nth-child(9),
+.card:nth-child(10),
+.card:nth-child(11),
+.card:nth-child(12),
+.card:nth-child(13),
+.card:nth-child(14),
+.card:nth-child(15),
+.card:nth-child(16),
+.card:nth-child(17),
+.card:nth-child(18),
+.card:nth-child(19),
+.card:nth-child(20){
+display: flex;
+} 
+
+
+#load-more{
+margin-top: 20px;
+display: inline-block;
+padding:13px 30px;
+font-weight: 900;
+border:1px solid #334;
+color:#334;
+font-size: 16px;
+background-color: #fff;
+cursor: pointer;
+}
+
+.load{
+display: block;
+position: relative;
+top: 150px;
+text-align: center;
+}
+
+#load-more:hover{
+background-color: crimson;
+border-color: crimson;
+color:#fff;
+}
+
+
+.contact-container{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.contact{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+}
+
+.contact-title h2{
+font-weight: 600;
+color: rgb(255, 0, 149);
+font-size: 30px;
+margin-bottom: 5px;
+}
+
+.contact-title hr{
+border: none;
+width: 180px;
+height: 3px;
+background-color: #f70000;
+} 
+
+.contact-inputs{
+width: 500px;
+height: 50px;
+border: none;
+font-size: 16px;
+outline: none;
+padding-left: 25px;
+font-weight: 500;
+color: rgb(255, 255, 255);
+background-color: #211f1f;
+border-radius: 50px;
+}
+
+.contact-inputs:focus{
+border: 2px solid #211f1f;
+}
+
+.contact-inputs::placeholder{
+color: #5f5e5e;
+}
+
+.contact button{
+display: flex;
+align-items: center;
+padding: 12px 22px;
+font-weight: 600;
+font-size: 15px;
+color: #1c068c;
+background-color: #01d0fe;
+border: none;
+gap: 10px;
+outline: none;
+cursor: pointer;
+}
+
+.contact button:hover{
+background-color: #90fe01;
+}
+
+@media(max-width:800px){
+.contact-inputs{
+width: 80vw;
+}
+} 
+
+</style>
+
+
+<script>
+
+/*=============== SHOW MENU ===============*/
+const showMenu = (toggleId, navId) =>{
+const toggle = document.getElementById(toggleId),
+nav = document.getElementById(navId)
+
+toggle.addEventListener('click', () =>{
+// Add show-menu class to nav menu
+nav.classList.toggle('show-menu-1')
+
+// Add show-icon to show and hide the menu icon
+toggle.classList.toggle('show-icon-1')
+})
+}
+
+showMenu('nav-toggle-1','nav-menu-1')
+
+</script>
+
+<script>
+
+let loadMoreBtn = document.querySelector('#load-more');
+let currentItem = 20;
+
+loadMoreBtn.onclick = () =>{
+let boxes = [...document.querySelectorAll('.movies-content .card')];
+for (var i = currentItem; i < currentItem + 20; i++){
+boxes[i].style.display = 'flex';
+}
+currentItem += 20;
+
+if(currentItem >= boxes.length){
+loadMoreBtn.style.display = 'none';
+}
+}
+
+</script>
+
+<!---- js file-->
+<script src="slider-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
