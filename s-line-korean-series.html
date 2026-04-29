@@ -7,151 +7,168 @@
   <title>B.OTT Movies</title>
   <link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-  
-    header {
-      background: #333;
-      padding: 20px 0;
-      text-align: center;
-    }
-  
-    img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-      z-index: 100;
-      box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
-    }
-  
-    .banner {
-      background: url("https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg") center center/cover;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-  
-    .banner h2 {
-      font-size: 36px;
-    }
-  
-    .sessions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-  
-    .session {
-      background: #444;
-      padding: 10px 10px;
-      margin: 0 10px 10px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    @media (max-width: 700px) {
-      .session {
-        font-size: 8px;
-      }
-      .episode-title {
-        font-size: 10px;
-      }
-      .banner {
-      background: url("https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg")
-          no-repeat center center/cover;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
-    }
-  
-    .session:hover {
-      background: #1a03c8;
-      color: azure;
-    }
-  
-    .content {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-  
-    .content.active {
-      display: block;
-    }
-  
-    .content h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-  
-    .episode {
-      margin-top: 20px;
-      padding: 15px;
-      background: #333;
-      border-radius: 5px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  
-    .episode:hover {
-      background: #444444;
-    }
-  
-    .episode img {
-      width: 100px;
-      height: 150px;
-      object-fit: cover;
-      margin-right: 15px;
-    }
-  
-    .episode-title {
-      font-size: 20px;
-    }
-  
-    .episode-actions button {
-      padding: 8px 16px;
-      font-size: 14px;
-      margin: 5px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #f44336;
-      color: white;
-    }
-  
-    .episode-actions button:hover {
-      background: #e53935;
-    }
-  
-    .episode-actions .play-btn {
-      background: #4caf50;
-    }
-  
-    .episode-actions .download-btn {
-      background: #2196f3;
-    }
-    img.imgborder {
-      border-style: solid;
-      border-color: #d2d4e3 1px;
-      height: 350px;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg") center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
 
 </head>
 <body>
@@ -159,6 +176,12 @@
 
 <div class="banner">
     <img class="imgborder" src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="">
+</div>
+
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;"> Dual Audio:</div>
+  <div class="audio" >Korean</div>
+  <div class="audio" >Hindi</div>
 </div>
 
 <div class="container">
@@ -174,48 +197,48 @@
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 01</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/o09bgxdrwsha')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/o09bgxdrwsha')">Download</button>
+        <button class="play-btn" onclick="playVideo('o09bgxdrwsha')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('o09bgxdrwsha')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 02</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xfms9npw0izu')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xfms9npw0izu')">Download</button>
+        <button class="play-btn" onclick="playVideo('xfms9npw0izu')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('xfms9npw0izu')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 03</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/xucppono1r85')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/xucppono1r85')">Download</button>
+        <button class="play-btn" onclick="playVideo('xucppono1r85')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('xucppono1r85')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 04</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/a6ej0wtqv0t2')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/a6ej0wtqv0t2')">Download</button>
+        <button class="play-btn" onclick="playVideo('a6ej0wtqv0t2')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('a6ej0wtqv0t2')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 05</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/3aewgihg7m6l')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/3aewgihg7m6l')">Download</button>
+        <button class="play-btn" onclick="playVideo('3aewgihg7m6l')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('3aewgihg7m6l')">Download</button>
       </div>
     </div>
     <div class="episode">
       <img src="https://image.tmdb.org/t/p/w1280/7TGolwcia6AI6uvInBOoedAi9Il.jpg" alt="Episode 1">
       <div class="episode-title">Episode 06 {END}</div>
       <div class="episode-actions">
-        <button class="play-btn" onclick="playVideo('https://filemoon.to/e/ggpckouum1ov')">Play</button>
-        <button class="download-btn" onclick="downloadVideo('https://filemoon.to/d/ggpckouum1ov')">Download</button>
+        <button class="play-btn" onclick="playVideo('ggpckouum1ov')">Play</button>
+        <button class="download-btn" onclick="downloadVideo('ggpckouum1ov')">Download</button>
       </div>
     </div>
 
