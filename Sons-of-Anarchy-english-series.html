@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.OTT Movies</title>
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/IcelandVlog/B.OTP/refs/heads/main/logo1.png" type="image/x-icon">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #1a1a1a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  padding: 20px 0;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(192, 185, 185, 0.1);
+}
+
+.banner {
+  background: url("https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg") 
+    center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 36px;
+}
+
+.sessions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.session {
+  background: #bf0303;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.audio {
+  background: #444;
+  padding: 10px 10px;
+  margin: 0 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .session {
+    font-size: 12px;
+  }
+  .audio {
+    font-size: 12px;
+  }
+  .episode-title {
+    font-size: 10px;
+  }
+  .banner {
+    background: url("https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg")
+      no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+}
+
+.session:hover {
+  background: #239b02;
+  color: azure;
+}
+
+.content {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.episode {
+  margin-top: 20px;
+  padding: 15px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.episode:hover {
+  background: #444444;
+}
+
+.episode img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.episode-title {
+  font-size: 20px;
+}
+
+.episode-actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #f44336;
+  color: white;
+}
+
+.episode-actions button:hover {
+  background: #e53935;
+}
+
+.episode-actions .play-btn {
+  background: #4caf50;
+}
+
+.episode-actions .download-btn {
+  background: #2196f3;
+}
+img.imgborder {
+  border-style: solid;
+  border-color: #d2d4e3 1px;
+  height: 350px;
+  object-fit: cover;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="banner">
+   <img class="imgborder" src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="">
+</div>
+
+<div class="container">
+
+<div class="sessions">
+  <div class="audio" style="font-weight: 700;"> Audio:</div>
+  <div class="audio" >English</div> 
+</div>
+
+<div class="sessions">
+  <div class="session" onclick="showContent(1)">Season 01</div>
+  <div class="session" onclick="showContent(2)">Season 02</div>
+  <div class="session" onclick="showContent(3)">Season 03</div>
+  <div class="session" onclick="showContent(4)">Season 04</div>
+  <div class="session" onclick="showContent(5)">Season 05</div>
+  <div class="session" onclick="showContent(6)">Season 06</div>
+  <div class="session" onclick="showContent(7)">Season 07</div>
+</div>
+
+<!-- Content for Season 1 -->
+<div class="content" id="season1">
+  <h3>Season 01</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/h809t4arwqpm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/h809t4arwqpm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/c6gxf8a61sn9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/c6gxf8a61sn9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/gris15nhzhg4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/gris15nhzhg4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/olg6bhr4f2d0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/olg6bhr4f2d0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/p5jxipodnlv0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/p5jxipodnlv0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/u7kiwjukutce')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/u7kiwjukutce')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/gwcq0lswc0ov')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/gwcq0lswc0ov')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/xjexg3gqwwt6')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/xjexg3gqwwt6')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/onypdf3g384n')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/onypdf3g384n')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ss7teqmr1zo7')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ss7teqmr1zo7')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/vpyphmb3p4bh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/vpyphmb3p4bh')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/k80e9swptsdn')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/k80e9swptsdn')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/eZJPW8G7o0b2fH7GC7Av4MOKTj3.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/wlcawv1rqfds')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/wlcawv1rqfds')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 1 -->
+
+<!-- Content for Season 2 -->
+<div class="content" id="season2">
+  <h3>Season 02</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/yegthn5a09rp')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/yegthn5a09rp')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/64904jqik1wg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/64904jqik1wg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/92uspoce9h7o')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/92uspoce9h7o')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/rv2ca36ofw1h')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/rv2ca36ofw1h')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/7nlrvwzv1c0e')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/7nlrvwzv1c0e')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/4lrcxhdlng8t')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/4lrcxhdlng8t')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/8tmyyc923fnm')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/8tmyyc923fnm')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/6i686oy5xj70')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/6i686oy5xj70')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/zayigqxb07fa')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/zayigqxb07fa')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/jpqmll2bq34c')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/jpqmll2bq34c')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/nk2qkv0cofhh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/nk2qkv0cofhh')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/8hnwyetnwiro')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/8hnwyetnwiro')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/aIZ8Fze3sJHC0OWtYXIYVCKnpMr.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/qyyl2eheibjr')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/qyyl2eheibjr')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 2 -->
+
+<!-- Content for Season 3 -->
+<div class="content" id="season3">
+  <h3>Season 03</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/s033jwrv8jja')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/s033jwrv8jja')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/b8e4p5pfrpso')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/b8e4p5pfrpso')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/8gw3pihnmu4p')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/8gw3pihnmu4p')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/fvma4707tm0a')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/fvma4707tm0a')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/vahxsoqgcom9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/vahxsoqgcom9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/x1pwrrx7m762')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/x1pwrrx7m762')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/t4q8flmf7txz')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/t4q8flmf7txz')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/qoaceqmzspko')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/qoaceqmzspko')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ipgxi128mbgg')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ipgxi128mbgg')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/7rc74zol3lhb')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/7rc74zol3lhb')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ryo4z0x95g01')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ryo4z0x95g01')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/lxwxxj5xizoo')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/lxwxxj5xizoo')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/d4lotm8GPAjYwsCjpmwFHIQQzal.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/1q29qp68juji')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/1q29qp68juji')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 3 -->
+
+<!-- Content for Season 4 -->
+<div class="content" id="season4">
+  <h3>Season 04</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/vjv8ck21lwvn')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/vjv8ck21lwvn')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ooqewvze50qq')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ooqewvze50qq')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/xzucbloz4ru8')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/xzucbloz4ru8')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/5jucx1r0mm4a')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/5jucx1r0mm4a')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/19dkcjbdo6pq')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/19dkcjbdo6pq')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/6fy8vws59a85')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/6fy8vws59a85')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/p1ypwd38idah')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/p1ypwd38idah')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/9xkf3vfzmzip')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/9xkf3vfzmzip')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/oqgbshxz2kn4')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/oqgbshxz2kn4')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/i3fenntkpjz9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/i3fenntkpjz9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ilfwwlkuox8y')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ilfwwlkuox8y')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/e2ivfp8ns8si')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/e2ivfp8ns8si')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/1fqs5ifye0ds')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/1fqs5ifye0ds')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/zdIQEDozzhmyG15h8VFHG2fDZzE.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 14 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/9dnd80qzwbeh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/9dnd80qzwbeh')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 4 -->
+
+<!-- Content for Season 5 -->
+<div class="content" id="season5">
+  <h3>Season 05</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/wlr2rqqqf3co')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/wlr2rqqqf3co')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/8u0mbxfgd51r')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/8u0mbxfgd51r')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/nez9973pyoqj')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/nez9973pyoqj')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/zs1j5fj0t1ky')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/zs1j5fj0t1ky')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ikjwa0x01i6e')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ikjwa0x01i6e')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/evvckq8beudt')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/evvckq8beudt')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/4l5w2d3orjts')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/4l5w2d3orjts')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ke2mtgwgs5zd')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ke2mtgwgs5zd')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/awsjjxx9p6o1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/awsjjxx9p6o1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/kwhwylpcb4jj')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/kwhwylpcb4jj')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/ksem1amy88iu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/ksem1amy88iu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/qrdjnt280sz2')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/qrdjnt280sz2')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/sW67RSH740Ogrp6LGDCgpgGaK1u.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/niyq962zbuvs')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/niyq962zbuvs')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 5 -->
+
+<!-- Content for Season 6 -->
+<div class="content" id="season6">
+  <h3>Season 06</h3>
+
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/fovyw5qlqh8r')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/fovyw5qlqh8r')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/wwlh0e22w42x')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/wwlh0e22w42x')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/2sz5jbn2romo')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/2sz5jbn2romo')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/fzu8x8u4qgqb')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/fzu8x8u4qgqb')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/cruenz2a0zsb')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/cruenz2a0zsb')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/samvybzra049')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/samvybzra049')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/2yw6g2gyus0n')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/2yw6g2gyus0n')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/gh3fg2ttcb2b')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/gh3fg2ttcb2b')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/qa2gik56r4hu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/qa2gik56r4hu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/nm2fql06ywn1')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/nm2fql06ywn1')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/m0tndrx2xy44')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/m0tndrx2xy44')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/o2umx7p6lphp')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/o2umx7p6lphp')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://media.themoviedb.org/t/p/w260_and_h390_face/jhx1pAks85hmxbXwtg2ib4dnS9e.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/mpc2equt8eeb')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/mpc2equt8eeb')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 6 -->
+
+<!-- Content for Season 7 -->
+<div class="content" id="season7">
+  <h3>Season 07</h3>
+
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 01</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/bxwx3dx3gph9')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/bxwx3dx3gph9')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 02</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/gq9rcs69b4v0')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/gq9rcs69b4v0')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 03</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/jno8e29m72r3')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/jno8e29m72r3')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 04</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/busf2wbzj91l')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/busf2wbzj91l')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 05</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/wy12u630cxrh')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/wy12u630cxrh')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 06</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/lygi7yqy9j27')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/lygi7yqy9j27')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 07</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/lgcwh6b2769q')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/lgcwh6b2769q')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 08</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/7wpof8u13ljn')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/7wpof8u13ljn')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 09</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/fzlb6w5vd5mu')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/fzlb6w5vd5mu')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 10</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/x2itb0x99i6p')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/x2itb0x99i6p')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 11</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/v8a1rqqudr06')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/v8a1rqqudr06')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 12</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/694zc5d900up')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/694zc5d900up')">Download</button>
+    </div>
+  </div>
+  <div class="episode">
+    <img src="https://image.tmdb.org/t/p/w1280/kiy8BHtIHAslh81rvFcZ4wbNGdY.jpg" alt="Episode 1">
+    <div class="episode-title">Episode 13 {END}</div>
+    <div class="episode-actions">
+      <button class="play-btn" onclick="playVideo('https://bysefujedu.com/e/khiu684r3viq')">Play</button>
+      <button class="download-btn" onclick="downloadVideo('https://bysefujedu.com/d/khiu684r3viq')">Download</button>
+    </div>
+  </div>
+
+
+</div>
+<!-- Content for Season 7 -->
+
+
+</div>
+</div>
+
+<script>
+// Show content based on season clicked
+function showContent(season) {
+// Hide all content
+const contents = document.querySelectorAll('.content');
+contents.forEach(content => content.classList.remove('active'));
+
+// Show the clicked season's content
+document.getElementById('season' + season).classList.add('active');
+}
+
+// Play video (redirect to YouTube)
+function playVideo(url) {
+window.open(url, '_blank');
+}
+
+// Download video (for demonstration purpose, this opens the video URL in new tab)
+function downloadVideo(url) {
+window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
